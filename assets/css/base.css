@@ -1,0 +1,58 @@
+
+/* khai báo biến define để sao gọi tên dùng cho nhanh */
+:root {
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+    --primary-color: #ED2B91;
+
+
+    --sidebar-bg: rgba(255, 255, 255, 0.05);
+    --active-color: rgba(255, 255, 255, 0.1);
+
+    --side-padding: 28px;
+    --sidebar-width: 240px;
+    --music-control-height: 90px;
+}
+
+/* seleter * apply tất cả css lên tất cả phần tử html */
+* {
+    /* có tính chất kế thừa thẻ cha, cứ ghi vào đây sau giải thích */
+    box-sizing: inherit;
+}
+
+html {
+    /* font-size 62.5% thì sai 1 rem = 10px */
+    font-size: 62.5%;
+    /* đặt chiều cao chữ cho all page, chữ nào chiều cao khác set sau */
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    /* box-sizing: để không bị độn chiều cao box khi padding */
+    box-sizing: border-box;
+}
+
+/* -- css Scroll-Bar --  */
+/* width */
+::-webkit-scrollbar {
+    width: 4px;
+}
+  
+/* background */
+::-webkit-scrollbar-track {
+    background: transparent; 
+}
+
+/* scrollBar */
+::-webkit-scrollbar-thumb {
+    background: transparent; 
+}
+
+/* scrollBar on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #7b47a5;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
