@@ -519,6 +519,9 @@
     margin: 0;
     padding: 0;
     list-style: none;
+    overflow-y: auto;
+    /* 168px là trừ khoảng height phía trên chữ tiếp theo  */
+    height: calc(100vh - var(--music-control-height) - 168px); 
 }
 
 .nextsong__last-item:hover .nextsong__item-playbtn {
