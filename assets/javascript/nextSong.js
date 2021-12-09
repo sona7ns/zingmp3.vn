@@ -3,7 +3,7 @@ const $$ = document.querySelectorAll.bind(document);
 const playList0 = $('.nextsong__fist');
 const playList1 = $('.nextsong__last-list');
 
-const nextSong0 = [
+const listSong0 = [
     {
         background: './assets/img/next-song/0.webp',
         name1: 'Cưới Luôn Được Không',
@@ -11,7 +11,7 @@ const nextSong0 = [
         pathSong: './assets/music/next-song/0.mp3',
     },
 ]
-const nextSong1 = [
+const listSong1 = [
     {
         background: './assets/img/next-song/1.webp',
         name1: 'Ôi Bạn Ơi',
@@ -155,17 +155,16 @@ function renderPlayList1(playListElement, songs) {
 }
 
 // render bài đang phát 
-renderPlayList0(playList0, nextSong0);
+renderPlayList0(playList0, listSong0);
 //render list bài tiếp theo
-renderPlayList1(playList1, nextSong1);
+renderPlayList1(playList1, listSong1);
 
 
-
+// khi bấm vào trái tym thì add class để đổi tym rỗng
 const actionHearts = $$('.nextsong__item-action-heart');
 
-for (var actionHeart of actionHearts) {
+actionHearts.forEach((actionHeart, index) => {
     actionHeart.onclick = function() {
-        actionHeart.classList.toggle('nextsong__item-action-heart--unheart');
-        console.log(actionHeart)
+        this.classList.toggle('nextsong__item-action-heart--unheart');
     }
-} 
+});

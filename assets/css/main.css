@@ -67,6 +67,7 @@
 .sidebar__item.sidebar__item--active {
     background-color: var(--active-color);
     border-left: 3px solid #ED2B91;
+    padding-left: calc(var(--side-padding) - 3px);
 }
 
 .sidebar__item i {
@@ -263,7 +264,7 @@
 /*=== BEGIN NEXT-SONG ===*/
 
 .main-nextsong {
-    width: 320px;
+    width: 329px;
     /* background-color: var(--sidebar-bg); */
     border-left: 1px solid rgba(255, 255, 255, 0.1);
     position: fixed;
@@ -344,9 +345,9 @@
 }
 
 .nextsong__option-alarm {
-    background-color: var(--primary-color);
+    background-color: var(--active-color);
     padding: 7px 9px;
-    margin-left: 4px;
+    margin-left: 12px;
 }
 
 .nextsong__option-more {
@@ -368,7 +369,7 @@
 }
 
 .nextsong__item {
-    width: 303px;
+    width: 313px;
     height: 56px;
     border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -377,6 +378,10 @@
     -o-border-radius: 5px;
     display: flex;
     align-items: center;
+}
+
+.nextsong__last-item:hover {
+    background-color: var(--active-color);
 }
 
 .nextsong__item:hover .nextsong__item-action{
@@ -516,7 +521,7 @@
 }
 
 .nextsong__last-list {
-    margin: 0;
+    margin: 0 0 0 4px;
     padding: 0;
     list-style: none;
     overflow-y: auto;
