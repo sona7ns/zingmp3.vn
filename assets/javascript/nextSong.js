@@ -1,5 +1,3 @@
-const $ = document.querySelector.bind(document);
-const $$ = document.querySelectorAll.bind(document);
 const playList0 = $('.nextsong__fist');
 const playList1 = $('.nextsong__last-list');
 
