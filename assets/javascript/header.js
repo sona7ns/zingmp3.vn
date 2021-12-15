@@ -9,6 +9,10 @@ const themeOverlay = $('.theme-modal__overlay');
 const themeBody = $('.theme-modal__body');
 
 
+const themeItems = $$('.theme-modal__body-group-item-img');
+
+
+
 
 // setting
 headerSetting.onclick = function(e) {
@@ -48,3 +52,9 @@ themeOverlay.onclick = function() {
 }
 
 
+//theme apply
+themeItems.forEach((themeItem, index) => {
+    themeItem.onclick = function() {
+        $('.main').style.backgroundImage =`url('./assets/img/background-theme/backroundThemes/${index}.${index === 0 ? "svg" : "jpg"}')`;
+    }
+});

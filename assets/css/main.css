@@ -1,5 +1,4 @@
 .main {
-    background-image: url(../img/background-theme/backroundThemes/backgroundTheme1/theme-1.svg);
     background-size: 1920px auto;
     position: fixed;
     top: 0;
@@ -529,6 +528,10 @@
     padding: 6px 10px;
 }
 
+.theme-modal__close-btn:hover {
+    color: var(--primary-color);
+}
+
 .theme-modal__body-headding {
     font-size: 2rem;
     font-weight: 600;
@@ -559,6 +562,13 @@
 .theme-modal__body-group-item {
     padding-right: 20px;
     cursor: pointer;
+    position: relative;
+}
+
+.theme-modal__body-group-item-img-wrapper {
+    overflow: hidden;
+    border-radius: 5px;
+    position: relative;
 }
 
 .theme-modal__body-group-item-img {
@@ -567,10 +577,50 @@
     background-size: contain;
     background-repeat: no-repeat;
     border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
+    transition: transform linear  0.4s;
+}
+
+.theme-modal__body-group-item-img-cntrl {
+    width: 126px;
+    height: 84px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.theme-modal__body-group-item-img:hover ~ .theme-modal__body-group-item-img-cntrl-name2 {
+    display: flex;
+}
+
+.theme-modal__body-group-item-img-cntrl-name1,
+.theme-modal__body-group-item-img-cntrl-name2 {
+    display: block;
+    text-align: center;
+    font-size: 1.2rem;
+    min-width: 80%;
+    padding: 2px 0;
+    margin: 6px 0;
+    border-radius: 10px;
+}
+
+.theme-modal__body-group-item-img-cntrl-name1 {
+    background-color: var(--primary-color);
+    box-shadow: 0 0 2px #666;
+}
+
+.theme-modal__body-group-item-img-cntrl-name2 {
+    border: 1px solid var(--white-color);
+    opacity: 0.8;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.theme-modal__body-group-item-img:hover {
+    filter: brightness(50%);
+    transform: scale(115%);
 }
 
 .theme-modal__body-group-item-name {
@@ -612,6 +662,48 @@
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
 }
+span {
+    display: block;
+}
+/* profile */
+
+.profile {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: blue;
+    margin-top: 108px;
+}
+
+.profile__img {
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+}
+
+.profile__name {
+    color: var(--white-color);
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.profile__vip {
+    position: absolute;
+}
+
+.profile__vip-upgrate {
+
+}
+
+.profile__vip-entercode {
+
+}
+
+.profile__vip-more {
+
+}
+
 
 
 

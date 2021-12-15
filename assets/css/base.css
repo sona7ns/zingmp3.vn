@@ -46,6 +46,10 @@ html {
     box-sizing: border-box;
 }
 
+span {
+    display: block;
+}
+
 /* -- css Scroll-Bar --  */
 /* width */
 ::-webkit-scrollbar {
@@ -71,6 +75,31 @@ html {
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* animation */
 @keyframes fadeIn {
