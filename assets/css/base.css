@@ -11,6 +11,7 @@
 
     --sidebar-bg: rgba(255, 255, 255, 0.05);
     --active-color: rgba(255, 255, 255, 0.1);
+    --blur-color: rgba(255, 255, 255, 0.5);
 
     --side-padding: 28px;
     --next-song-width: 329px;
@@ -19,6 +20,7 @@
     --header-height: 70px;
     --search-width: 540px;
     --search-height: 40px;
+    --profile-height: 180px;
 }
 
 .hover:hover {
@@ -50,6 +52,11 @@ span {
     display: block;
 }
 
+/* ul */
+ul {
+    list-style: none;
+}
+
 /* -- css Scroll-Bar --  */
 /* width */
 ::-webkit-scrollbar {
@@ -75,6 +82,208 @@ span {
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
 }
+
+/* button */
+.btn {
+    height: 28px;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 13px;
+    font-weight: 300;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin-left: 14px;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+/* more-list */
+.more-list {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transform: translateX(-20px);
+    opacity: 0;
+    transition: all linear 0.35s;
+}
+
+.more-list:hover i,
+.more-list:hover span{
+    color: var(--primary-color);
+}
+
+.more-list span {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+    padding-right: 8px;
+}
+
+.more-list i {
+    font-size: 1.4rem;
+    margin-top: -2px;
+}
+
+/* song item */
+.songs-list {
+    /* list-style: none; */
+    padding-left: 0;
+}
+
+.songs-item {
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-bottom: 1px solid var(--active-color);
+}
+
+.songs-item:hover .songs-item-right-mv,
+.songs-item:hover .songs-item-right-lyric,
+.songs-item:hover .songs-item-right-more{
+    display: block;
+}
+
+.songs-item:hover .songs-item-right-duration{
+    display: none;
+}
+
+.songs-item:hover {
+    background-color: var(--active-color);
+}
+
+.songs-item.songs-item--active {
+    background-color: var(--active-color);
+}
+
+.songs-item-left {
+    display: flex;
+    align-items: center;
+}
+
+.songs-item-left-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.songs-item-left-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 10px;
+    width: 300px;
+}
+
+.songs-item-left-body-name {
+    font-size: 1.4rem;
+    font-weight: 500;
+    padding: 0;
+    margin: 0;
+    padding-bottom: 5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.songs-item-left-body-singer {
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding-top: 5px;
+    margin: 0;
+    padding: 0;
+    color: rgba(255, 255, 255, 0.5);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.songs-item-center {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1.2rem;
+    font-weight: 500;
+    display: flex;
+    width: 300px;
+}
+
+.songs-item-right {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    width: 190px;
+}
+
+.songs-item-right-tym {
+    font-size: 1.5rem;
+    padding: 10px 11px;
+    color: var(--primary-color);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.songs-item-right-tym.songs-item-right-tym--active .songs-item-right-tym-first {
+    display: none;
+}
+
+.songs-item-right-tym.songs-item-right-tym--active .songs-item-right-tym-last {
+    display: block;
+}
+
+.songs-item-right-tym .songs-item-right-tym-last {
+    display: none;
+}
+
+.songs-item-right-duration {
+    width: 50px;
+    color: var(--blur-color);
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-align: right;
+}
+
+.songs-item-right-mv,
+.songs-item-right-lyric,
+.songs-item-right-more {
+    color: var(--white-color);
+    font-size: 1.4rem;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 0 7px;
+    display: none;
+}
+
+.songs-item-right-tym:hover,
+.songs-item-right-mv:hover,
+.songs-item-right-lyric:hover,
+.songs-item-right-more:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.songs-item-right-mv {
+    padding : 10px 10px;
+}
+
+.songs-item-right-lyric {
+    padding : 10px 14px;
+}
+
+.songs-item-right-more {
+    padding : 9px 11px;
+    display: none;
+    margin-left: 16px;
+    margin-right: -2px;
+}
+
 
 
 

@@ -3,101 +3,101 @@ const playList1 = $('.nextsong__last-list');
 
 const listSong0 = [
     {
-        background: './assets/img/next-song/0.webp',
-        name1: 'Cưới Luôn Được Không',
-        name2: 'Út Nhị x KenPham Remix',
+        background: './assets/img/songs/0.webp',
+        name: 'Cưới Luôn Được Không',
+        singer: 'Út Nhị x KenPham Remix',
         pathSong: './assets/music/next-song/0.mp3',
     },
 ]
 const listSong1 = [
     {
-        background: './assets/img/next-song/1.webp',
-        name1: 'Ôi Bạn Ơi',
-        name2: 'TikTok',
+        background: './assets/img/songs/1.webp',
+        name: 'Ôi Bạn Ơi',
+        singer: 'TikTok',
         pathSong: './assets/music/next-song/1.mp3',
     },
     {
-        background: './assets/img/next-song/2.webp',
-        name1: 'Là Ai Từ Bỏ, Là Ai Vô Tình',
-        name2: 'Hương Ly, Jombie',
+        background: './assets/img/songs/2.webp',
+        name: 'Là Ai Từ Bỏ, Là Ai Vô Tình',
+        singer: 'Hương Ly, Jombie',
         pathSong: './assets/music/next-song/2.mp3',
     },
     {
-        background: './assets/img/next-song/3.jpg',
-        name1: 'Cưới Thôi',
-        name2: 'Masew x Masiu x B Ray x TAP',
+        background: './assets/img/songs/3.jpg',
+        name: 'Cưới Thôi',
+        singer: 'Masew x Masiu x B Ray x TAP',
         pathSong: './assets/music/next-song/3.mp3',
     },
     {
-        background: './assets/img/next-song/4.webp',
-        name1: 'Yêu Là Cưới',
-        name2: 'Phát Hồ, X2X',
+        background: './assets/img/songs/4.webp',
+        name: 'Yêu Là Cưới',
+        singer: 'Phát Hồ, X2X',
         pathSong: './assets/music/next-song/4.mp3',
     },
     {
-        background: './assets/img/next-song/5.jpg',
-        name1: 'Sắp 30',
-        name2: 'Trình Đình Quang',
+        background: './assets/img/songs/5.jpg',
+        name: 'Sắp 30',
+        singer: 'Trình Đình Quang',
         pathSong: './assets/music/next-song/5.mp3',
     },
     {
-        background: './assets/img/next-song/6.jpg',
-        name1: 'Độ Tộc 2',
-        name2: 'Masew, Pháo, Phúc Du, Độ Mixi',
+        background: './assets/img/songs/6.jpg',
+        name: 'Độ Tộc 2',
+        singer: 'Masew, Pháo, Phúc Du, Độ Mixi',
         pathSong: './assets/music/next-song/6.mp3',
     },
     {
-        background: './assets/img/next-song/7.jpg',
-        name1: 'Sài Gòn Đêm Nay Mưa',
-        name2: 'Hoàng Duyên, Jsol',
+        background: './assets/img/songs/7.jpg',
+        name: 'Sài Gòn Đêm Nay Mưa',
+        singer: 'Hoàng Duyên, Jsol',
         pathSong: './assets/music/next-song/7.mp3',
     },
     {
-        background: './assets/img/next-song/8.jpg',
-        name1: 'Tình Bạn Diệu Kỳ',
-        name2: 'AMee, Ricky Star, Lăng LD',
+        background: './assets/img/songs/8.jpg',
+        name: 'Tình Bạn Diệu Kỳ',
+        singer: 'AMee, Ricky Star, Lăng LD',
         pathSong: './assets/music/next-song/8.mp3',
     },
     {
-        background: './assets/img/next-song/9.jpg',
-        name1: 'Phải Chăng Em Đã Yêu?',
-        name2: 'Juky San, RedT',
+        background: './assets/img/songs/9.jpg',
+        name: 'Phải Chăng Em Đã Yêu?',
+        singer: 'Juky San, RedT',
         pathSong: './assets/music/next-song/9.mp3',
     },
     {
-        background: './assets/img/next-song/10.jpg',
-        name1: 'Muộn Rồi Mà Sao Còn',
-        name2: 'Sơn Tùng M-TP',
+        background: './assets/img/songs/10.jpg',
+        name: 'Muộn Rồi Mà Sao Còn',
+        singer: 'Sơn Tùng M-TP',
         pathSong: './assets/music/next-song/10.mp3',
     },
     {
-        background: './assets/img/next-song/11.webp',
-        name1: 'Xin Đừng Nhấc Máy',
-        name2: 'B Ray, Han Sara, Great',
+        background: './assets/img/songs/11.webp',
+        name: 'Xin Đừng Nhấc Máy',
+        singer: 'B Ray, Han Sara, Great',
         pathSong: './assets/music/next-song/11.mp3',
     },
     {
-        background: './assets/img/next-song/12.webp',
-        name1: 'Phố Đã Lên Đèn',
-        name2: 'Huyền Tâm Môn',
+        background: './assets/img/songs/12.webp',
+        name: 'Phố Đã Lên Đèn',
+        singer: 'Huyền Tâm Môn',
         pathSong: './assets/music/next-song/12.mp3',
     },
     {
-        background: './assets/img/next-song/13.webp',
-        name1: 'Ai Mang Cô Đơn Đi',
-        name2: 'K-ICM, APJ',
+        background: './assets/img/songs/13.webp',
+        name: 'Ai Mang Cô Đơn Đi',
+        singer: 'K-ICM, APJ',
         pathSong: './assets/music/next-song/13.mp3',
     },
     {
-        background: './assets/img/next-song/14.webp',
-        name1: 'Kẹo Bông Gòn',
-        name2: 'H2K, TRUNKY',
+        background: './assets/img/songs/14.webp',
+        name: 'Kẹo Bông Gòn',
+        singer: 'H2K, TRUNKY',
         pathSong: './assets/music/next-song/14.mp3',
     },
     {
-        background: './assets/img/next-song/15.webp',
-        name1: 'Phố Cũ Còn Anh',
-        name2: 'Quinn, Chilly',
+        background: './assets/img/songs/15.webp',
+        name: 'Phố Cũ Còn Anh',
+        singer: 'Quinn, Chilly',
         pathSong: './assets/music/next-song/15.mp3',
     },
 ]
@@ -110,8 +110,8 @@ function renderPlayList0(playListElement, songs) {
                     <div class="nextsong__item-playbtn"><i class="fas fa-play"></i></div>
                 </div>
                 <div class="nextsong__item-body">
-                    <span class="nextsong__item-body-heading">${song.name1}</span>
-                    <span class="nextsong__item-body-depsc">${song.name2}</span>
+                    <span class="nextsong__item-body-heading">${song.name}</span>
+                    <span class="nextsong__item-body-depsc">${song.singer}</span>
                 </div>
                 <div class="nextsong__item-action">
                     <span class="nextsong__item-action-heart">
@@ -135,8 +135,8 @@ function renderPlayList1(playListElement, songs) {
                     <div class="nextsong__item-playbtn"><i class="fas fa-play"></i></div>
                 </div>
                 <div class="nextsong__item-body">
-                    <span class="nextsong__item-body-heading">${song.name1}</span>
-                    <span class="nextsong__item-body-depsc">${song.name2}</span>
+                    <span class="nextsong__item-body-heading">${song.name}</span>
+                    <span class="nextsong__item-body-depsc">${song.singer}</span>
                 </div>
                 <div class="nextsong__item-action">
                     <span class="nextsong__item-action-heart">
