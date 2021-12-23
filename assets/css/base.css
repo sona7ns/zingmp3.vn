@@ -55,6 +55,7 @@ span {
 /* ul */
 ul {
     list-style: none;
+    padding-left: 0;
 }
 
 /* -- css Scroll-Bar --  */

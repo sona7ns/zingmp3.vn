@@ -2,8 +2,7 @@ const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
 const optionAllSongList = $('.option-all__songs-list');
-
-
+const musicNowTym = $('.music-control__left-action-tym-box');
 
 
 const app = {
@@ -161,6 +160,10 @@ const app = {
                 songTym.classList.toggle('songs-item-right-tym--active');
             }
         });
+
+        musicNowTym.onclick = function() {
+            this.classList.toggle('music-control__left-action-tym-box-active');
+        }
     },
 
 
