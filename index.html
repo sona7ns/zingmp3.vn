@@ -867,12 +867,35 @@
                     </div>
                     <div class="col l-6">
                         <div class="music-control__center">
-                            <input id="progress" class="progress" type="range" value="0" step="1" min="0" max="100">
+                            <div class="music-control__center-action music-control__icon">
+                                <i class="fas fa-random music-control__icon1"></i>
+                                <i class="fas fa-caret-left music-control__icon2"></i>
+                                <i class="fas fa-play music-control__icon3"></i>
+                                <i class="fas fa-caret-right music-control__icon4"></i>
+                                <i class="fas fa-redo music-control__icon5"></i>
+                            </div>
+                            <div class="music-control__progress">
+                                <span class="music-control__progress-time-start">00:00</span>
+                                <input id="progress" class="music-control__progress-input" type="range" value="0" step="1" min="0" max="100">
+                                <!-- <div class="music-control__progress-update">
+                                    <div class="music-control__progress-update-timeline"></div>
+                                </div> -->
+                                <span class="music-control__progress-time-duration">03:52</span>
+                            </div>
+                            <audio id="audio" src="./assets/music/next-song/0.mp3"></audio>
                         </div>
                     </div>
                     <div class="col l-3">
+                        <!-- music-control__right--active -->
                         <div class="music-control__right">
-                            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+                            <i class="music-control__right-icon1 fas fa-photo-video"></i>
+                            <i class="music-control__right-icon2 fas fa-microphone"></i>
+                            <i class="music-control__right-icon3 far fa-square"></i>
+                            <i class="music-control__right-icon4 fas fa-volume-down"></i>
+                            <i class="music-control__right-icon5 fas fa-volume-mute"></i>
+                            <div class="music-control__volume-progress">
+                                <input id="progress1" class="music-control__volume-input" type="range" value="80" step="1" min="0" max="100">
+                            </div>
                         </div>
                     </div>
                 </div>

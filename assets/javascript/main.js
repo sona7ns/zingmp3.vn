@@ -3,6 +3,9 @@ const $$ = document.querySelectorAll.bind(document);
 
 const optionAllSongList = $('.option-all__songs-list');
 const musicNowTym = $('.music-control__left-action-tym-box');
+const volumeIcon = $('.music-control__right');
+const audio = $('#audio');
+const cdThumb = $('.music-control__left-img');
 
 
 const app = {
@@ -161,15 +164,29 @@ const app = {
             }
         });
 
+        // click tym ở thanh phát nhạc
         musicNowTym.onclick = function() {
             this.classList.toggle('music-control__left-action-tym-box-active');
         }
+
+        // bật tắt mute ở volume
+        volumeIcon.onclick = function() {
+            this.classList.toggle('music-control__right--active');
+        }
+
+        // Xử lý CD quay / dừng
+        const cdThumbAnimate = cdThumb.animate([{ transform: "rotate(360deg)" }], {
+            duration: 10000, // 10 seconds
+            iterations: Infinity
+          });
+        //   cdThumbAnimate.pause();
     },
 
 
     start: function () {
         this.renderPlayList(optionAllSongList,this.songsData)       
         this.handleEvents(); 
+        audio.play();
     },
 
 }
