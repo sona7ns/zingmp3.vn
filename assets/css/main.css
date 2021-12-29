@@ -843,10 +843,109 @@
     padding-right: 8px;
 }
 
+/* option-all__song-slider */
+
 .option-all__song-slider {
-    background-color: blue;
+    width: 270px;
     height: 244px;
+    position: relative;
 }
+
+.option-all__song-slider-img {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform .9s;
+    transition-property: all;
+    transition-duration: 0.9s;
+    transition-timing-function: linear;
+    transition-delay: 0s;
+}
+
+/* .option-all__song-slider-img-first {
+    width: 230px;
+    height: 230px;
+    position: absolute;
+    right: 0;
+    top: 7px;
+    bottom: 7px;
+    z-index: 3;
+    opacity: 1;
+}
+
+.option-all__song-slider-img-second {
+    width: 196px;
+    height: 196px;
+    position: absolute;
+    left: calc((230px - 162px)/4);
+    top: 24px;
+    bottom: 24px;
+    z-index: 2;
+    opacity: 0.7;
+}
+
+
+
+.option-all__song-slider-img-third {
+    width: 162px;
+    height: 162px;
+    z-index: 1;
+    opacity: 0.3;
+    position: absolute;
+    left: 0;
+    top: 41px;
+    bottom: 41px;
+} */
+
+.option-all__song-slider-img-first {
+    width: 230px;
+    height: 230px;
+    position: absolute;
+    right: 0;
+    top: 7px;
+    bottom: 7px;
+    z-index: 3;
+    opacity: 1;
+    /* transform: scale(100%); */
+    /* transform: translateX(0); */
+
+}
+
+.option-all__song-slider-img-second {
+    width: 196px;
+    height: 196px;
+    position: absolute;
+    /* left: calc((230px - 162px)/4); */
+    /* right: 55px; */
+    right: 0px;
+    top: 24px;
+    bottom: 24px;
+    z-index: 2;
+    opacity: 0.7;
+    /* transform: scale(50%); */
+    transform: translateX(-60px);
+}
+
+.option-all__song-slider-img-third {
+    width: 162px;
+    height: 162px;
+    z-index: 1;
+    opacity: 0.3;
+    position: absolute;
+    /* right: 108px; */
+    right: 0;
+    top: 41px;
+    bottom: 41px;
+    /* transform: scale(70%); */
+    transform: translateX(-110px);
+}
+
+
+
+
+
+
+
+
 
 /* option-all__songs */
 .option-all__songs {
@@ -1694,11 +1793,11 @@
     margin-right: 12px;
 }
 
-.music-control__right.music-control__right--active .music-control__right-icon4 {
+.music-control__right-volume-icon.music-control__right--active .music-control__right-icon4 {
     display: none;
 }
 
-.music-control__right.music-control__right--active .music-control__right-icon5 {
+.music-control__right-volume-icon.music-control__right--active .music-control__right-icon5 {
     display: block;
 }
 
@@ -1746,8 +1845,7 @@
 }
 
 .music-control__right .music-control__right-icon5 {
-    padding: 6px 6px 6px 6px;
-    margin-left: 1px;
+    padding: 6px 6px 6px 7px;
     display: none;
 }
 
