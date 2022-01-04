@@ -149,6 +149,65 @@ ul {
     border-bottom: 1px solid var(--active-color);
 }
 
+.songs-item:active {
+    opacity: 0.8;
+}
+
+.songs-item-left-img .songs-item-left-img-playbtn {
+    font-size: 1.5rem;
+    color: #fff;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    cursor: pointer;
+    display: none;
+}
+
+.songs-item-left-img-playing-box {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    border-radius: 5px;
+}
+
+.songs-item-left-img-playing {
+    margin: auto;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+/* không hover khi bài nhạc đang chạy */
+.songs-item:hover:not(.songs-item-playing--active-onplay) .songs-item-left-img-playbtn {
+    display: flex;
+}
+
+.songs-item-left-img-playbtn:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.songs-item-playbtn--active .songs-item-left-img-playbtn {
+    display: flex;
+}
+
+.songs-item-playing--active-onplay .songs-item-left-img-playing-box {
+    display: flex;
+}
+
+.songs-item-playing--active-onplay .songs-item-left-img-playbtn {
+    display: none;
+}
+    
 .songs-item:hover .songs-item-right-mv,
 .songs-item:hover .songs-item-right-lyric,
 .songs-item:hover .songs-item-right-more{
@@ -195,6 +254,7 @@ ul {
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    cursor: default;
 }
 
 .songs-item-left-body-singer {
@@ -207,6 +267,7 @@ ul {
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    cursor: default;
 }
 
 .songs-item-center {
@@ -215,6 +276,11 @@ ul {
     font-weight: 500;
     display: flex;
     width: 300px;
+    cursor: default;
+}
+
+.songs-item-center span{
+    cursor: default;
 }
 
 .songs-item-right {

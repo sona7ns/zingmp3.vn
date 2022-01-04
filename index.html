@@ -241,14 +241,18 @@
     
                             </div>
                             <div class="header__user hover">
-                                <img src="./assets/img/header/user/0.jpg" alt="user" class="header__user-img">
+                                <a href="https://www.facebook.com/son.ic.haui">
+                                    <img src="./assets/img/header/user/0.jpg" alt="user" class="header__user-img">
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="profile">
-                    <img src="./assets/img/header/user/0.jpg" alt="avata" class="profile__img">
+                    <a href="https://www.facebook.com/son.ic.haui">
+                        <img src="./assets/img/header/user/0.jpg" alt="avata" class="profile__img">
+                    </a>
                     <span class="profile__name">Văn Sơn Nguyễn</span>
                     <div class="profile__vip">
                         <span class="profile__vip-upgrate btn">Nâng cấp vip</span>
@@ -294,8 +298,8 @@
                             <div class="col l-3">
                                 <div class="option-all__song-slider">
                                     <!-- first second -->
-                                    <img src="./assets/img/slider/0.webp" alt="anh slider" class="option-all__song-slider-img option-all__song-slider-img-third">
-                                    <img src="./assets/img/slider/1.webp" alt="anh slider" class="option-all__song-slider-img option-all__song-slider-img-third">
+                                    <img src="./assets/img/slider/0.webp" alt="anh slider" class="option-all__song-slider-img option-all__song-slider-img-first">
+                                    <img src="./assets/img/slider/1.webp" alt="anh slider" class="option-all__song-slider-img option-all__song-slider-img-second">
                                     <img src="./assets/img/slider/2.webp" alt="anh slider" class="option-all__song-slider-img option-all__song-slider-img-third">
                                     <img src="./assets/img/slider/3.webp" alt="anh slider" class="option-all__song-slider-img option-all__song-slider-img-third">
                                     <img src="./assets/img/slider/4.webp" alt="anh slider" class="option-all__song-slider-img option-all__song-slider-img-third">
@@ -866,7 +870,27 @@
                 <div class="row">
                     <div class="col l-3">
                         <div class="music-control__left">
-                            <div class="music-control__left-img" style="background-image: url(./assets/img/songs/0.webp);"></div>
+                            <div class="music-control__left-img-box">
+                                <div class="music-control__left-img" style="background-image: url(./assets/img/songs/0.webp);"></div>
+
+                                <svg fill="#fff" viewBox="0 0 512 512" class="img-note vetinh-1">
+                                    <path
+                                        d="M470.38 1.51L150.41 96A32 32 0 0 0 128 126.51v261.41A139 139 0 0 0 96 384c-53 0-96 28.66-96 64s43 64 96 64 96-28.66 96-64V214.32l256-75v184.61a138.4 138.4 0 0 0-32-3.93c-53 0-96 28.66-96 64s43 64 96 64 96-28.65 96-64V32a32 32 0 0 0-41.62-30.49z"
+                                    ></path>
+                                </svg>
+                                <svg fill="#fff" viewBox="0 0 384 512" class="img-note vetinh-2">
+                                    <path d="M310.94 1.33l-96.53 28.51A32 32 0 0 0 192 60.34V360a148.76 148.76 0 0 0-48-8c-61.86 0-112 35.82-112 80s50.14 80 112 80 112-35.82 112-80V148.15l73-21.39a32 32 0 0 0 23-30.71V32a32 32 0 0 0-41.06-30.67z"></path>
+                                </svg>
+                                <svg fill="#fff" viewBox="0 0 512 512" class="img-note vetinh-3">
+                                    <path
+                                        d="M470.38 1.51L150.41 96A32 32 0 0 0 128 126.51v261.41A139 139 0 0 0 96 384c-53 0-96 28.66-96 64s43 64 96 64 96-28.66 96-64V214.32l256-75v184.61a138.4 138.4 0 0 0-32-3.93c-53 0-96 28.66-96 64s43 64 96 64 96-28.65 96-64V32a32 32 0 0 0-41.62-30.49z"
+                                    ></path>
+                                </svg>
+                                <svg fill="#fff" viewBox="0 0 384 512" class="img-note vetinh-4">
+                                    <path d="M310.94 1.33l-96.53 28.51A32 32 0 0 0 192 60.34V360a148.76 148.76 0 0 0-48-8c-61.86 0-112 35.82-112 80s50.14 80 112 80 112-35.82 112-80V148.15l73-21.39a32 32 0 0 0 23-30.71V32a32 32 0 0 0-41.06-30.67z"></path>
+                                </svg> 
+                            </div>
+                            
                             <div class="music-control__left-content">
                                 <span class="music-control__left-content-song">Cưới luôn được không</span>
                                 <span class="music-control__left-content-singer">Út nhị Cover</span>
@@ -884,10 +908,16 @@
                     <div class="col l-6">
                         <div class="music-control__center">
                             <div class="music-control__center-action music-control__icon">
+                                <!-- music-control__icon-random--active -->
                                 <i class="fas fa-random music-control__icon1"></i>
                                 <i class="fas fa-caret-left music-control__icon2"></i>
-                                <i class="fas fa-play music-control__icon3"></i>
+                                <!-- music-control__icon-play--active -->
+                                <div class="music-control__icon-play">
+                                    <i class="fas fa-play music-control__icon3"></i>
+                                    <i class="fas fa-pause music-control__icon33"></i>
+                                </div>
                                 <i class="fas fa-caret-right music-control__icon4"></i>
+                                <!-- music-control__icon-repeat--active -->
                                 <i class="fas fa-redo music-control__icon5"></i>
                             </div>
                             <div class="music-control__progress">
@@ -896,7 +926,7 @@
                                 <!-- <div class="music-control__progress-update">
                                     <div class="music-control__progress-update-timeline"></div>
                                 </div> -->
-                                <span class="music-control__progress-time-duration">03:52</span>
+                                <span class="music-control__progress-time-duration">00:00</span>
                             </div>
                             <audio id="audio" src="./assets/music/list-song/0.mp3"></audio>
                         </div>
@@ -912,7 +942,7 @@
                                 <i class="music-control__right-icon5 fas fa-volume-mute"></i>
                             </div>
                             <div class="music-control__volume-progress">
-                                <input id="progress1" class="music-control__volume-input" type="range" value="80" step="1" min="0" max="100">
+                                <input id="progress1" class="music-control__volume-input" type="range" value="100" step="1" min="0" max="100">
                             </div>
                         </div>
                     </div>
@@ -925,7 +955,5 @@
 
 
     <script src="./assets/javascript/main.js"></script>
-    <script src="./assets/javascript/nextSong.js"></script>
-    <script src="./assets/javascript/header.js"></script>
 </body>
 </html>
