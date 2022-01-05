@@ -1310,6 +1310,15 @@
     opacity: 0.8;
 }
 
+.nextsong__option-random {
+    font-size: 1.4rem;
+    line-height: 4rem;
+    font-weight: 500;
+    color: var(--blur-color);
+    margin: 50px 50px;
+    text-align: center;
+}
+
 
 
 .nextsong__fist-item {

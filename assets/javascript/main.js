@@ -360,10 +360,7 @@ const app = {
     // RENDER LIST NEXT SONG 
     renderNextSongList: function(playListElement) {
         // xoá đi 1 phần tử vị trí currentIndex trong mảng
-        const a =this.songsDataRemain.shift(this.currentIndex,1);
-        console.log(this.currentIndex)
-        console.log(a)
-
+        this.songsDataRemain.shift(this.currentIndex,1);
         const htmls = this.songsDataRemain.map((song, index) => {
             return `
                 <li class="nextsong__last-item nextsong__item">
@@ -386,6 +383,14 @@ const app = {
                 </li>`
         })
         playListElement.innerHTML = htmls.join('');
+    },
+
+    // RENDER LIST NEXT SONG RANDOM
+    renderNextSongListRandom: function(playListElement) {
+        const htmls =  `<span class="nextsong__option-random">
+                            Bật chế độ random thì cần gì xem bài phát tiếp theo nhể, đỡ phải code :)
+                        </span>`
+        playListElement.innerHTML = htmls;
     },
 
     
@@ -618,31 +623,45 @@ const app = {
         nextBtn.onclick = function() {
             if (_this.isRandom) {
                 _this.RandomSong();
+                // không render list next song
+                _this.renderNextSongListRandom(nextSongList);
             } else {
-            _this.nextSong();
+                _this.nextSong();
+                // render list next song bằng mảng song từ vị trí tứ curentIndex
+                _this.songsDataRemain = _this.songsData.slice();
+                _this.songsDataRemain.splice(0, _this.currentIndex);
+                _this.renderNextSongList(nextSongList);
             }
             audio.play();
             deleteActive();
             _this.scrollToActiveSong();
             _this.changeRenderNextSongHeadding();
 
-            _this.renderNextSongList(nextSongList);
-            // console.log(_this.songsDataRemain)
-            // console.log(_this.songsData)
+            // _this.renderNextSongList(nextSongList);
+            // nếu phát hết next song thì songsDataRemain copy lại cả mang ban đầu của songsData
+            _this.songsDataRemain.length === 0 ? _this.songsDataRemain = _this.songsData.slice() : '';
+
         }
 
         // KHI PREV SONG
         prevBtn.onclick = function() {
             if (_this.isRandom) {
                 _this.RandomSong();
+                // không render list next song
+                _this.renderNextSongListRandom(nextSongList);
             } else {
-            _this.prevSong();
+                _this.prevSong();
+                // render list next song bằng mảng song từ vị trí tứ curentIndex
+                _this.songsDataRemain = _this.songsData.slice();
+                _this.songsDataRemain.splice(0, _this.currentIndex);
+                _this.renderNextSongList(nextSongList);
             }
             audio.play();
             deleteActive();
             _this.scrollToActiveSong();
             _this.changeRenderNextSongHeadding();
-
+            // nếu phát hết next song thì songsDataRemain copy lại cả mang ban đầu của songsData
+            _this.songsDataRemain.length === 0 ? _this.songsDataRemain = _this.songsData.slice() : '';
         }
 
         // KHI BAM VÀO NÚT PHÁT TẤT CẢ
@@ -678,6 +697,16 @@ const app = {
             // _this.setConfig("isRandom", _this.isRandom);
             randomBtn.classList.toggle("music-control__icon-random--active", _this.isRandom);
             repeatBtn.classList.toggle("music-control__icon-repeat--active", _this.isRepeat);
+
+            if(_this.isRandom) {
+                // không render next song list
+                _this.renderNextSongListRandom(nextSongList);
+            } else {
+                // render list next song bằng mảng song từ vị trí tứ curentIndex
+                _this.songsDataRemain = _this.songsData.slice();
+                _this.songsDataRemain.splice(0, _this.currentIndex);
+                _this.renderNextSongList(nextSongList);
+            }
         }
 
         // KHI BẬT NÚT CHẠY REPEAT
