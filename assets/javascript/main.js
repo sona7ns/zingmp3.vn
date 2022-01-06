@@ -328,9 +328,13 @@ const app = {
     // RENDER HEADDING NEXT SONG 
     renderNextSongHeadding: function(playListElement, songs){
         const htmls = `
+            <!-- nextsong__fist-item-headding--active -->
             <div class="nextsong__fist-item nextsong__item">
                 <div class="nextsong__item-img" style="background-image: url(${songs[this.currentIndex].background});">
                     <div class="nextsong__item-playbtn"><i class="fas fa-play"></i></div>
+                    <div class="songs-item-left-img-playing-box">
+                        <img class = "songs-item-left-img-playing" src="./assets/img/songs/icon-playing.gif" alt="playing">
+                    </div>
                 </div>
                 <div class="nextsong__item-body">
                     <span class="nextsong__item-body-heading">${songs[this.currentIndex].name}</span>
@@ -388,7 +392,7 @@ const app = {
     // RENDER LIST NEXT SONG RANDOM
     renderNextSongListRandom: function(playListElement) {
         const htmls =  `<span class="nextsong__option-random">
-                            Bật chế độ random thì cần gì xem bài phát tiếp theo nhể, đỡ phải code :)
+                            Bật chế độ random thì cần gì xem trước bài phát tiếp theo nhể, đỡ phải code :)
                         </span>`
         playListElement.innerHTML = htmls;
     },
@@ -480,7 +484,11 @@ const app = {
         const _this = this;
         const songTyms = $$('.songs-item-right-tym');
         const songItems = $$('.songs-item');
+        const nextSongItemHeadding = $('.nextsong__fist-item');
+        
         const playBtnIcons = $$('.songs-item-left-img');
+        const playNextSongBtnIcons = $$('.nextsong__item-img');
+        
         const actionHeartNextSongs = $$('.nextsong__item-action-heart');
 
         var sliderIndex = 1;
@@ -573,11 +581,13 @@ const app = {
             // player.classList.add("playing");
             cdThumbAnimate.play();
             playBtn.classList.add('music-control__icon-play--active');
+            nextSongItemHeadding.classList.add('nextsong__fist-item-headding--active');
             thunbPlayerBox.style.transform = "translateX(20px)";
-            
+
             songItems[_this.currentIndex].classList.add('songs-item-playing--active-onplay');
             songItems[_this.currentIndex].classList.add('songs-item--active');            
             songItems[_this.currentIndex].classList.remove('songs-item-playbtn--active');
+
            
             
         };
@@ -588,6 +598,7 @@ const app = {
             // player.classList.remove("playing");
             cdThumbAnimate.pause();
             playBtn.classList.remove('music-control__icon-play--active');
+            nextSongItemHeadding.classList.remove('nextsong__fist-item-headding--active');
             thunbPlayerBox.style.transform = "translateX(0)";
             songItems[_this.currentIndex].classList.remove('songs-item-playing--active-onplay');
             // songItems[_this.currentIndex].classList.remove('songs-item--active');
@@ -690,6 +701,35 @@ const app = {
             }
         });
 
+        playNextSongBtnIcons.forEach((playBtnIcon, index) => {
+            playBtnIcon.onclick = function() {
+                if (_this.isPlaying && index == 0) {
+                    audio.pause();
+                } else if (!_this.isPlaying && index == 0) {
+                    audio.play();
+                } else if (index != _this.currentIndex) {
+                    // _this.songsData.forEach((song, index) => {
+                        
+                    // })
+                    
+                    // _this.currentIndex = index;
+                    // _this.loadCurrentSong();
+                    // audio.play();
+                    // deleteActive();
+
+                    // render list next song bằng mảng song từ vị trí tứ curentIndex
+                    // _this.songsDataRemain = _this.songsData.slice();
+                    // _this.songsDataRemain.splice(0, _this.currentIndex);
+                    // _this.changeRenderNextSongHeadding();
+                    // _this.renderNextSongList(nextSongList);
+                }
+            }
+        });
+
+
+
+        
+
         // KHI BẬT NÚT CHẠY RANDOM
         randomBtn.onclick = function() {
             _this.isRandom = !_this.isRandom;
@@ -705,6 +745,7 @@ const app = {
                 // render list next song bằng mảng song từ vị trí tứ curentIndex
                 _this.songsDataRemain = _this.songsData.slice();
                 _this.songsDataRemain.splice(0, _this.currentIndex);
+                _this.changeRenderNextSongHeadding();
                 _this.renderNextSongList(nextSongList);
             }
         }
@@ -754,7 +795,19 @@ const app = {
                 _this.loadCurrentSong();
                 deleteActive();
                 audio.play();
+
+                if(_this.isRandom) {
+                    // không render next song list
+                    _this.renderNextSongListRandom(nextSongList);
+                } else {
+                    // render list next song bằng mảng song từ vị trí tứ curentIndex
+                    _this.changeRenderNextSongHeadding();
+                    _this.songsDataRemain = _this.songsData.slice();
+                    _this.songsDataRemain.splice(0, _this.currentIndex);
+                    _this.renderNextSongList(nextSongList);
+                }
             }
+            
         })
 
         // KHI CLICK VÀO TYM NEXT SONG

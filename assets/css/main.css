@@ -1325,6 +1325,14 @@
     background-color: var(--primary-color);
 }
 
+.nextsong__fist-item.nextsong__fist-item-headding--active .nextsong__item-playbtn {
+    display: none;
+}
+
+.nextsong__fist-item.nextsong__fist-item-headding--active .songs-item-left-img-playing-box{
+    display: flex;
+}
+
 .nextsong__item {
     width: 313px;
     height: 56px;

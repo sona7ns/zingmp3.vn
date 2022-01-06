@@ -177,7 +177,7 @@ ul {
     height: 40px;
     background-color: rgba(0, 0, 0, 0.5);
     display: none;
-    border-radius: 5px;
+    border-radius: 4px;
 }
 
 .songs-item-left-img-playing {
