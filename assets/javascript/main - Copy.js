@@ -294,7 +294,7 @@ const app = {
         const htmls = songsData.map((song, index) => {
             return `
                 <!-- songs-item-playing--active-onplay songs-item--active songs-item-playbtn--active -->
-                <li class="songs-item ${index == this.currentIndex ? 'songs-item--active' : ''} " data-index="${index}">
+                <li class="songs-item" data-index="${index}">
                     <div class="songs-item-left">
                         <div style="background-image: url(${song.background});" class="songs-item-left-img">
                             <div class="songs-item-left-img-playbtn"><i class="fas fa-play"></i></div>
@@ -327,19 +327,18 @@ const app = {
     },
     // RENDER HEADDING NEXT SONG 
     renderNextSongHeadding: function(playListElement, songs){
-        const htmls = this.songsData.map((song, index) => {
-            return index <= this.currentIndex ? `
+        const htmls = `
             <!-- nextsong__fist-item-headding--active -->
-            <div class="nextsong__fist-item nextsong__item ${index == this.currentIndex ? 'nextsong__fist-item-background--active' : ''}" data-index="${index}">
-                <div class="nextsong__item-img" style="background-image: url(${song.background});">
+            <div class="nextsong__fist-item nextsong__item">
+                <div class="nextsong__item-img" style="background-image: url(${songs[this.currentIndex].background});">
                     <div class="nextsong__item-playbtn"><i class="fas fa-play"></i></div>
                     <div class="songs-item-left-img-playing-box">
                         <img class = "songs-item-left-img-playing" src="./assets/img/songs/icon-playing.gif" alt="playing">
                     </div>
                 </div>
                 <div class="nextsong__item-body">
-                    <span class="nextsong__item-body-heading">${song.name}</span>
-                    <span class="nextsong__item-body-depsc">${song.singer}</span>
+                    <span class="nextsong__item-body-heading">${songs[this.currentIndex].name}</span>
+                    <span class="nextsong__item-body-depsc">${songs[this.currentIndex].singer}</span>
                 </div>
                 <div class="nextsong__item-action">
                     <span class="nextsong__item-action-heart">
@@ -350,43 +349,44 @@ const app = {
                         <i class="fas fa-ellipsis-h "></i>
                     </span>
                 </div>
-            </div>` : ''
-        })
-        playListElement.innerHTML = htmls.join('');
+            </div>`
+
+        playListElement.innerHTML = htmls;
     },
+
+    changeRenderNextSongHeadding: function() {
+       $('.nextsong__item-img').style.backgroundImage =`url(${this.songsData[this.currentIndex].background})`;
+       $('.nextsong__item-body-heading').textContent = this.songsData[this.currentIndex].name;
+       $('.nextsong__item-body-depsc').textContent = this.songsData[this.currentIndex].singer;
+    },
+
 
     // RENDER LIST NEXT SONG 
     renderNextSongList: function(playListElement) {
-        if (this.currentIndex >= this.songsData.length - 1) {
-            playListElement.innerHTML = `
-            <span class="nextsong__last-item-end">
-                HẾT BÀI RỒI BẠN ƠI! HAHA
-            </span>`;
-        } else {
-            const htmls = this.songsData.map((song, index) => {
-                return index > this.currentIndex ? `
-                    <li class="nextsong__last-item nextsong__item" data-index="${index}">
-                        <div class="nextsong__item-img" style="background-image: url(${song.background});">
-                            <div class="nextsong__item-playbtn"><i class="fas fa-play"></i></div>
-                        </div>
-                        <div class="nextsong__item-body">
-                            <span class="nextsong__item-body-heading">${song.name}</span>
-                            <span class="nextsong__item-body-depsc">${song.singer}</span>
-                        </div>
-                        <div class="nextsong__item-action">
-                            <span class="nextsong__item-action-heart">
-                                <i class="fas fa-heart nextsong__item-action-heart-icon1"></i>
-                                <i class="far fa-heart nextsong__item-action-heart-icon2"></i>
-                            </span>
-                            <span class="nextsong__item-action-dot">
-                                <i class="fas fa-ellipsis-h "></i>
-                            </span>
-                        </div>
-                    </li>` : ''
-            })
-            playListElement.innerHTML = htmls.join('');
-        }
-        
+        // xoá đi 1 phần tử vị trí currentIndex trong mảng
+        this.songsDataRemain.shift(this.currentIndex,1);
+        const htmls = this.songsDataRemain.map((song, index) => {
+            return `
+                <li class="nextsong__last-item nextsong__item">
+                    <div class="nextsong__item-img" style="background-image: url(${song.background});">
+                        <div class="nextsong__item-playbtn"><i class="fas fa-play"></i></div>
+                    </div>
+                    <div class="nextsong__item-body">
+                        <span class="nextsong__item-body-heading">${song.name}</span>
+                        <span class="nextsong__item-body-depsc">${song.singer}</span>
+                    </div>
+                    <div class="nextsong__item-action">
+                        <span class="nextsong__item-action-heart">
+                            <i class="fas fa-heart nextsong__item-action-heart-icon1"></i>
+                            <i class="far fa-heart nextsong__item-action-heart-icon2"></i>
+                        </span>
+                        <span class="nextsong__item-action-dot">
+                            <i class="fas fa-ellipsis-h "></i>
+                        </span>
+                    </div>
+                </li>`
+        })
+        playListElement.innerHTML = htmls.join('');
     },
 
     // RENDER LIST NEXT SONG RANDOM
@@ -405,16 +405,6 @@ const app = {
           $(".songs-item--active").scrollIntoView({
             behavior: "smooth",
             block: "nearest"
-          });
-        }, 300);
-    },
-
-    // KHI ACTIVE KHUẤT THÌ ĐƯA NEXT SONG ITEM ACTIVE LÊN VIEW
-    scrollToActiveNextSong: function () {
-        setTimeout(() => {
-          $(".nextsong__fist-item-headding--active").scrollIntoView({
-            behavior: "smooth",
-            block: "center"
           });
         }, 300);
     },
@@ -494,16 +484,12 @@ const app = {
         const _this = this;
         const songTyms = $$('.songs-item-right-tym');
         const songItems = $$('.songs-item');
-        const nextSongsItem = $$('.nextsong__item');
+        const nextSongItemHeadding = $('.nextsong__fist-item');
         
         const playBtnIcons = $$('.songs-item-left-img');
         const playNextSongBtnIcons = $$('.nextsong__item-img');
         
         const actionHeartNextSongs = $$('.nextsong__item-action-heart');
-        const nextSongBox = $('.nextsong__box');
-        
-
-
 
         var sliderIndex = 1;
         var sliderLenght = _this.songsData.length;
@@ -591,31 +577,32 @@ const app = {
 
         // Khi song được play
         audio.onplay = function () {
-            const nextSongsItemHeadding = $$('.nextsong__fist-item');
-
             _this.isPlaying = true;
             // player.classList.add("playing");
             cdThumbAnimate.play();
             playBtn.classList.add('music-control__icon-play--active');
+            nextSongItemHeadding.classList.add('nextsong__fist-item-headding--active');
             thunbPlayerBox.style.transform = "translateX(20px)";
 
             songItems[_this.currentIndex].classList.add('songs-item-playing--active-onplay');
             songItems[_this.currentIndex].classList.add('songs-item--active');            
-            songItems[_this.currentIndex].classList.remove('songs-item-playbtn--active');  
-            const nextSongItems = $$('.nextsong__item')
-            nextSongItems[_this.currentIndex].classList.add('nextsong__fist-item-headding--active');          
+            songItems[_this.currentIndex].classList.remove('songs-item-playbtn--active');
+
+           
+            
         };
   
         // KHI SONG BỊ PAUSE
         audio.onpause = function () {
             _this.isPlaying = false;
+            // player.classList.remove("playing");
             cdThumbAnimate.pause();
             playBtn.classList.remove('music-control__icon-play--active');
+            nextSongItemHeadding.classList.remove('nextsong__fist-item-headding--active');
             thunbPlayerBox.style.transform = "translateX(0)";
             songItems[_this.currentIndex].classList.remove('songs-item-playing--active-onplay');
+            // songItems[_this.currentIndex].classList.remove('songs-item--active');
             songItems[_this.currentIndex].classList.add('songs-item-playbtn--active');
-            const nextSongItems = $$('.nextsong__item')
-            nextSongItems[_this.currentIndex].classList.remove('nextsong__fist-item-headding--active');
 
         }
 
@@ -651,12 +638,20 @@ const app = {
                 _this.renderNextSongListRandom(nextSongList);
             } else {
                 _this.nextSong();
-                _this.renderNexrSong();
-                _this.scrollToActiveNextSong();
+                // render list next song bằng mảng song từ vị trí tứ curentIndex
+                _this.songsDataRemain = _this.songsData.slice();
+                _this.songsDataRemain.splice(0, _this.currentIndex);
+                _this.renderNextSongList(nextSongList);
             }
             audio.play();
             deleteActive();
             _this.scrollToActiveSong();
+            _this.changeRenderNextSongHeadding();
+
+            // _this.renderNextSongList(nextSongList);
+            // nếu phát hết next song thì songsDataRemain copy lại cả mang ban đầu của songsData
+            _this.songsDataRemain.length === 0 ? _this.songsDataRemain = _this.songsData.slice() : '';
+
         }
 
         // KHI PREV SONG
@@ -667,12 +662,17 @@ const app = {
                 _this.renderNextSongListRandom(nextSongList);
             } else {
                 _this.prevSong();
-                _this.renderNexrSong();
-                _this.scrollToActiveNextSong();
+                // render list next song bằng mảng song từ vị trí tứ curentIndex
+                _this.songsDataRemain = _this.songsData.slice();
+                _this.songsDataRemain.splice(0, _this.currentIndex);
+                _this.renderNextSongList(nextSongList);
             }
             audio.play();
             deleteActive();
             _this.scrollToActiveSong();
+            _this.changeRenderNextSongHeadding();
+            // nếu phát hết next song thì songsDataRemain copy lại cả mang ban đầu của songsData
+            _this.songsDataRemain.length === 0 ? _this.songsDataRemain = _this.songsData.slice() : '';
         }
 
         // KHI BAM VÀO NÚT PHÁT TẤT CẢ
@@ -682,8 +682,11 @@ const app = {
             audio.play();
             deleteActive();
             _this.scrollToActiveSong();
-            _this.renderNexrSong();
-            _this.scrollToActiveNextSong();
+            _this.changeRenderNextSongHeadding();
+            // render list next song bằng mảng song từ vị trí tứ curentIndex
+            _this.songsDataRemain = _this.songsData.slice();
+            _this.songsDataRemain.splice(0, _this.currentIndex);
+            _this.renderNextSongList(nextSongList);
         }
 
         playBtnIcons.forEach((playBtnIcon, index) => {
@@ -697,70 +700,42 @@ const app = {
                     _this.loadCurrentSong();
                     audio.play();
                     deleteActive();
-                    _this.renderNexrSong();
-                    _this.scrollToActiveNextSong();
+                    // render list next song bằng mảng song từ vị trí tứ curentIndex
+                    _this.changeRenderNextSongHeadding();
+                    _this.songsDataRemain = _this.songsData.slice();
+                    _this.songsDataRemain.splice(0, _this.currentIndex);
+                    _this.renderNextSongList(nextSongList);
                 }
             }
         });
 
-        // KHI CLICK VÀO NEXT SONG BOX
-        nextSongBox.onclick = function (e) {
-            const songNode = e.target.closest(".nextsong__item");
-            if ( songNode) {
-                if (e.target.closest(".nextsong__item-action-heart")) {
-                    e.target.closest(".nextsong__item-action-heart").classList.toggle('nextsong__item-action-heart--unheart');   
-                }
-                if (e.target.closest(".nextsong__item-img")) {
-                    if (_this.isPlaying && Number(songNode.dataset.index) == _this.currentIndex) {
-                        audio.pause();
-                        _this.isPlaying = false;
-                        songNode.classList.remove('nextsong__fist-item-headding--active');
-                    }else if (!_this.isPlaying && Number(songNode.dataset.index) == _this.currentIndex) {
-                        audio.play();
-                        _this.isPlaying = true;
-                        songNode.classList.add('nextsong__fist-item-headding--active');
-                        
-                    }else if (Number(songNode.dataset.index) != _this.currentIndex) {
-                        _this.currentIndex = Number(songNode.dataset.index);
-                        _this.loadCurrentSong();
-                        _this.renderNexrSong();
-                        deleteActive();
-                        _this.scrollToActiveSong();
-                        audio.play();
-                        _this.isPlaying = true;
-                        const nextSongItems = $$('.nextsong__item')
-                        nextSongItems[_this.currentIndex].classList.add('nextsong__fist-item-headding--active');
-                    }  
-                }
-            }
-        };
-
-        // KHI CLICK DUP VÀO NEXT SONG BOX
-        nextSongBox.ondblclick = function (e) {
-            const songNode = e.target.closest(".nextsong__item:not(.nextsong__fist-item-headding--active)");
-            if ( songNode) {
-                if (_this.isPlaying && Number(songNode.dataset.index) == _this.currentIndex) {
+        playNextSongBtnIcons.forEach((playBtnIcon, index) => {
+            playBtnIcon.onclick = function() {
+                if (_this.isPlaying && index == 0) {
                     audio.pause();
-                    _this.isPlaying = false;
-                    songNode.classList.remove('nextsong__fist-item-headding--active');
-                }else if (!_this.isPlaying && Number(songNode.dataset.index) == _this.currentIndex) {
+                } else if (!_this.isPlaying && index == 0) {
                     audio.play();
-                    _this.isPlaying = true;
-                    songNode.classList.add('nextsong__fist-item-headding--active');
+                } else if (index != _this.currentIndex) {
+                    console.log(index)
                     
-                }else if (Number(songNode.dataset.index) != _this.currentIndex) {
-                    _this.currentIndex = Number(songNode.dataset.index);
-                    _this.loadCurrentSong();
-                    _this.renderNexrSong();
-                    deleteActive();
-                    _this.scrollToActiveSong();
-                    audio.play();
-                    _this.isPlaying = true;
-                    const nextSongItems = $$('.nextsong__item')
-                    nextSongItems[_this.currentIndex].classList.add('nextsong__fist-item-headding--active');
-                }  
+                    
+                    // _this.currentIndex = index;
+                    // _this.loadCurrentSong();
+                    // audio.play();
+                    // deleteActive();
+
+                    // render list next song bằng mảng song từ vị trí tứ curentIndex
+                    // _this.songsDataRemain = _this.songsData.slice();
+                    // _this.songsDataRemain.splice(0, _this.currentIndex);
+                    // _this.changeRenderNextSongHeadding();
+                    // _this.renderNextSongList(nextSongList);
+
+                    // _this.currentIndex = index;
+
+
+                }
             }
-        };
+        });
 
 
 
@@ -778,8 +753,11 @@ const app = {
                 // không render next song list
                 _this.renderNextSongListRandom(nextSongList);
             } else {
-                _this.renderNexrSong();
-                _this.scrollToActiveNextSong();
+                // render list next song bằng mảng song từ vị trí tứ curentIndex
+                _this.songsDataRemain = _this.songsData.slice();
+                _this.songsDataRemain.splice(0, _this.currentIndex);
+                _this.changeRenderNextSongHeadding();
+                _this.renderNextSongList(nextSongList);
             }
         }
 
@@ -798,10 +776,28 @@ const app = {
               audio.play();
             } else {
               nextBtn.click();
-              _this.renderNexrSong();
-              _this.scrollToActiveNextSong();
             }
           };
+
+        // KHI CLICK VÀO CẢ LIST NHẠC
+        // optionAllSongList.onclick = function (e) {
+        //     const songNode = e.target.closest(".songs-item:not(.songs-item--active)");
+        //     if (songNode || e.target.closest(".songs-item-left-img") || e.target.closest(".songs-item-right-mv") || e.target.closest(".songs-item-right-lyric") || e.target.closest(".songs-item-right-tym") || e.target.closest(".songs-item-right-duration") || e.target.closest(".songs-item-right-more")) {
+        //         // Xử lý khi click vào song
+        //         if (songNode) {
+        //             _this.currentIndex = Number(songNode.dataset.index);
+        //             _this.loadCurrentSong();
+        //             // _this.render();
+        //             audio.play();
+        //             console.log(_this.currentIndex)
+        //         }
+        
+        //         // Xử lý khi click vào song more, tương tự vs mấy option còn lại
+        //         if (e.target.closest(".songs-item-right-more")) {
+        //             // khi bấm vào option thì làm gì đó trong này
+        //         }
+        //     }
+        // };
 
         // KHI CLICK DUP VÀO BÀI NHẠC THÌ PHÁT NHẠC
         songItems.forEach((songItem, index) => {
@@ -815,13 +811,22 @@ const app = {
                     // không render next song list
                     _this.renderNextSongListRandom(nextSongList);
                 } else {
-                    _this.renderNexrSong();
-                    _this.scrollToActiveNextSong();
+                    // render list next song bằng mảng song từ vị trí tứ curentIndex
+                    _this.songsDataRemain = _this.songsData.slice();
+                    _this.songsDataRemain.splice(0, _this.currentIndex);
+                    _this.changeRenderNextSongHeadding();
+                    _this.renderNextSongList(nextSongList);
                 }
             }
             
         })
 
+        // KHI CLICK VÀO TYM NEXT SONG
+        actionHeartNextSongs.forEach((actionHeart, index) => {
+            actionHeart.onclick = function() {
+                actionHeart.classList.toggle('nextsong__item-action-heart--unheart');
+            }
+        })
 
         // CUỘN LÊN THÌ LÀM TRONG THANH HEADER
         mainContainer.onscroll = function() {

@@ -1480,11 +1480,7 @@
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-.nextsong__box {
-    /* height: calc(100vh - var(--music-control-height) - 70px -100px); */
-    height: calc(100vh - var(--music-control-height) - 70px); 
-    overflow-y: auto;
-}
+
 
 .nextsong__fist {
     display: flex;
@@ -1506,19 +1502,13 @@
     margin: 0 0 0 4px;
     padding: 0;
     list-style: none;
+    /* overflow-y: auto; */
     /* 168px là trừ khoảng height phía trên chữ tiếp theo  */
-    /* height: calc(100vh - var(--music-control-height) - 168px);  */
+    height: calc(100vh - var(--music-control-height) - 168px); 
 }
 
 .nextsong__last-item:hover .nextsong__item-playbtn {
     display: flex;
-}
-
-.nextsong__last-item-end {
-    font-size: 1.4rem;
-    font-weight: 500;
-    color: var(--blur-color);
-    padding: 20px 0 50px 0;
 }
 
 .nextsong__last-heading {
