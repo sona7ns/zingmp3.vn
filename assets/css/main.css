@@ -1325,8 +1325,9 @@
     background-color: var(--primary-color);
 }
 
-
-
+.nextsong__fist-item.nextsong__fist-item-playbtn--active.nextsong__fist-item-background--active .nextsong__item-playbtn {
+    display: flex;
+}
 
 .nextsong__fist-item.nextsong__fist-item-headding--active .nextsong__item-playbtn {
     display: none;
@@ -1516,9 +1517,11 @@
 
 .nextsong__last-item-end {
     font-size: 1.4rem;
+    line-height: 2.6rem;
     font-weight: 500;
     color: var(--blur-color);
     padding: 20px 0 50px 0;
+    text-align: center;
 }
 
 .nextsong__last-heading {

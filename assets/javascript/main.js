@@ -329,8 +329,38 @@ const app = {
     renderNextSongHeadding: function(playListElement, songs){
         const htmls = this.songsData.map((song, index) => {
             return index <= this.currentIndex ? `
-            <!-- nextsong__fist-item-headding--active -->
-            <div class="nextsong__fist-item nextsong__item ${index == this.currentIndex ? 'nextsong__fist-item-background--active' : ''}" data-index="${index}">
+            <!-- nextsong__fist-item-headding--active nextsong__fist-item-playbtn--active-->
+            <div class="nextsong__fist-item nextsong__item ${audio.onplay && index == this.currentIndex ? 'nextsong__fist-item-headding--active' : ''} ${index == this.currentIndex ? 'nextsong__fist-item-background--active' : ''}" data-index="${index}">
+                <div class="nextsong__item-img" style="background-image: url(${song.background});">
+                    <div class="nextsong__item-playbtn"><i class="fas fa-play"></i></div>
+                    <div class="songs-item-left-img-playing-box">
+                        <img class = "songs-item-left-img-playing" src="./assets/img/songs/icon-playing.gif" alt="playing">
+                    </div>
+                </div>
+                <div class="nextsong__item-body">
+                    <span class="nextsong__item-body-heading">${song.name}</span>
+                    <span class="nextsong__item-body-depsc">${song.singer}</span>
+                </div>
+                <div class="nextsong__item-action">
+                    <span class="nextsong__item-action-heart">
+                        <i class="fas fa-heart nextsong__item-action-heart-icon1"></i>
+                        <i class="far fa-heart nextsong__item-action-heart-icon2"></i>
+                    </span>
+                    <span class="nextsong__item-action-dot">
+                        <i class="fas fa-ellipsis-h "></i>
+                    </span>
+                </div>
+            </div>` : ''
+        })
+        playListElement.innerHTML = htmls.join('');
+    },
+
+    // RENDER HEADDING NEXT SONG BAN ĐẦU
+    renderNextSongHeaddingStart: function(playListElement, songs){
+        const htmls = this.songsData.map((song, index) => {
+            return index <= this.currentIndex ? `
+            <!-- nextsong__fist-item-headding--active nextsong__fist-item-playbtn--active-->
+            <div class="nextsong__fist-item nextsong__item nextsong__fist-item-playbtn--active ${audio.onplay && index == this.currentIndex ? 'nextsong__fist-item-headding--active' : ''} ${index == this.currentIndex ? 'nextsong__fist-item-background--active' : ''}" data-index="${index}">
                 <div class="nextsong__item-img" style="background-image: url(${song.background});">
                     <div class="nextsong__item-playbtn"><i class="fas fa-play"></i></div>
                     <div class="songs-item-left-img-playing-box">
@@ -604,6 +634,7 @@ const app = {
             songItems[_this.currentIndex].classList.remove('songs-item-playbtn--active');  
             const nextSongItems = $$('.nextsong__item')
             nextSongItems[_this.currentIndex].classList.add('nextsong__fist-item-headding--active');          
+            nextSongItems[_this.currentIndex].classList.remove('nextsong__fist-item-playbtn--active');          
         };
   
         // KHI SONG BỊ PAUSE
@@ -616,7 +647,7 @@ const app = {
             songItems[_this.currentIndex].classList.add('songs-item-playbtn--active');
             const nextSongItems = $$('.nextsong__item')
             nextSongItems[_this.currentIndex].classList.remove('nextsong__fist-item-headding--active');
-
+            nextSongItems[_this.currentIndex].classList.add('nextsong__fist-item-playbtn--active');          
         }
 
         // KHI TIẾN ĐỘ BÀI HÁT THAY ĐỔI
@@ -648,7 +679,12 @@ const app = {
             if (_this.isRandom) {
                 _this.RandomSong();
                 // không render list next song
-                _this.renderNextSongListRandom(nextSongList);
+                _this.renderNextSongHeadding(nextSongHeadding,this.songsData);
+                nextSongList.innerHTML = `
+                    <span class="nextsong__last-item-end">
+                        Bật chế độ random thì cần gì xem trước bài phát tiếp theo nhể, đỡ phải code :)
+                    </span>`;
+                _this.scrollToActiveNextSong();
             } else {
                 _this.nextSong();
                 _this.renderNexrSong();
@@ -664,7 +700,12 @@ const app = {
             if (_this.isRandom) {
                 _this.RandomSong();
                 // không render list next song
-                _this.renderNextSongListRandom(nextSongList);
+                _this.renderNextSongHeadding(nextSongHeadding,this.songsData);
+                nextSongList.innerHTML = `
+                    <span class="nextsong__last-item-end">
+                        Bật chế độ random thì cần gì xem trước bài phát tiếp theo nhể, đỡ phải code :)
+                    </span>`;
+                _this.scrollToActiveNextSong();
             } else {
                 _this.prevSong();
                 _this.renderNexrSong();
@@ -682,8 +723,17 @@ const app = {
             audio.play();
             deleteActive();
             _this.scrollToActiveSong();
-            _this.renderNexrSong();
-            _this.scrollToActiveNextSong();
+            if(_this.isRandom) {
+                _this.renderNextSongHeadding(nextSongHeadding,_this.songsData);
+                nextSongList.innerHTML = `
+                    <span class="nextsong__last-item-end">
+                        Bật chế độ random thì cần gì xem trước bài phát tiếp theo nhể, đỡ phải code :)
+                    </span>`;
+            } else {
+                _this.renderNexrSong();
+                // setTimeout(_this.scrollToActiveNextSong(), 2000);
+                _this.scrollToActiveNextSong();
+            }
         }
 
         playBtnIcons.forEach((playBtnIcon, index) => {
@@ -697,6 +747,18 @@ const app = {
                     _this.loadCurrentSong();
                     audio.play();
                     deleteActive();
+                    _this.renderNexrSong();
+                    _this.scrollToActiveNextSong();
+                }
+                if(_this.isRandom) {
+                    _this.renderNextSongHeadding(nextSongHeadding,_this.songsData);
+                    nextSongList.innerHTML = `
+                        <span class="nextsong__last-item-end">
+                            Bật chế độ random thì cần gì xem trước bài phát tiếp theo nhể, đỡ phải code :)
+                        </span>`;
+                } else if (!_this.isRandom && _this.currentIndex >= _this.songsData.length - 1) {
+                    $('.nextsong__last-item-end').textContent = 'HẾT BÀI RỒI BẠN ƠI! HAHA';
+                } else {
                     _this.renderNexrSong();
                     _this.scrollToActiveNextSong();
                 }
@@ -770,16 +832,21 @@ const app = {
         randomBtn.onclick = function() {
             _this.isRandom = !_this.isRandom;
             _this.isRepeat = false;
-            // _this.setConfig("isRandom", _this.isRandom);
             randomBtn.classList.toggle("music-control__icon-random--active", _this.isRandom);
             repeatBtn.classList.toggle("music-control__icon-repeat--active", _this.isRepeat);
-
             if(_this.isRandom) {
-                // không render next song list
-                _this.renderNextSongListRandom(nextSongList);
+                _this.renderNextSongHeadding(nextSongHeadding,_this.songsData);
+                nextSongList.innerHTML = `
+                    <span class="nextsong__last-item-end">
+                        Bật chế độ random thì cần gì xem trước bài phát tiếp theo nhể, đỡ phải code :)
+                    </span>`;
             } else {
-                _this.renderNexrSong();
-                _this.scrollToActiveNextSong();
+                if (_this.currentIndex >= _this.songsData.length - 1) {
+                    $('.nextsong__last-item-end').textContent = 'HẾT BÀI RỒI BẠN ƠI! HAHA';
+                } else {
+                    _this.renderNexrSong();
+                    _this.scrollToActiveNextSong();
+                }
             }
         }
 
@@ -813,7 +880,7 @@ const app = {
 
                 if(_this.isRandom) {
                     // không render next song list
-                    _this.renderNextSongListRandom(nextSongList);
+                    _this.renderNextSongHeadding(nextSongHeadding,_this.songsData);
                 } else {
                     _this.renderNexrSong();
                     _this.scrollToActiveNextSong();
@@ -892,6 +959,9 @@ const app = {
 
         // render next song
         this.renderNexrSong();
+
+        // render next song start
+        this.renderNextSongHeaddingStart(nextSongHeadding,this.songsData);
 
         // Define các thuộc tính cho object
         this.defineProperties();
