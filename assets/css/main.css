@@ -36,8 +36,7 @@
     content: '';
     width: var(--sidebar-width);
     height: 20px;
-    /* background-image: linear-gradient(0deg, #411465, transparent); */
-    background-image: linear-gradient(180deg, #411465, transparent);
+    /* background-image: linear-gradient(180deg, #411465, transparent); */
     position: absolute;
     bottom: -37px;
     left: 0;
@@ -871,23 +870,17 @@
     bottom: 7px;
     z-index: 3;
     opacity: 1;
-    /* transform: scale(100%); */
-    /* transform: translateX(0); */
-
 }
 
 .option-all__song-slider-img-second {
     width: 196px;
     height: 196px;
     position: absolute;
-    /* left: calc((230px - 162px)/4); */
-    /* right: 55px; */
     right: 0px;
     top: 24px;
     bottom: 24px;
     z-index: 2;
     opacity: 0.7;
-    /* transform: scale(50%); */
     transform: translateX(-57px);
 }
 
@@ -897,11 +890,9 @@
     z-index: 1;
     opacity: 0.3;
     position: absolute;
-    /* right: 108px; */
     right: 0;
     top: 41px;
     bottom: 41px;
-    /* transform: scale(70%); */
     transform: translateX(-110px);
 }
 

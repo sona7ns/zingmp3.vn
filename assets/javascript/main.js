@@ -37,6 +37,12 @@ const themeBody = $('.theme-modal__body');
 const themeItems = $$('.theme-modal__body-group-item-img');
 
 
+x = 100  // center
+y = 50   // center
+r = 50   // radius
+a = 2    // angle (from 0 to Math.PI * 2)
+
+
 
 
 
@@ -70,122 +76,8 @@ const app = {
         },
         {
             background: './assets/img/songs/3.jpg',
-            name: 'Cưới Thôi',
-            singer: 'Masew x Masiu x B Ray x TAP',
-            pathSong: './assets/music/list-song/3.mp3',
-            duration : '04:20',
-        },
-        {
-            background: './assets/img/songs/4.webp',
-            name: 'Yêu Là Cưới',
-            singer: 'Phát Hồ, X2X',
-            pathSong: './assets/music/list-song/4.mp3',
-            duration : '05:16',
-        },
-        {
-            background: './assets/img/songs/5.jpg',
-            name: 'Sắp 30',
-            singer: 'Trình Đình Quang',
-            pathSong: './assets/music/list-song/5.mp3',
-            duration : '04:10',
-        },
-        {
-            background: './assets/img/songs/6.jpg',
-            name: 'Độ Tộc 2',
-            singer: 'Masew, Pháo, Phúc Du, Độ Mixi',
-            pathSong: './assets/music/list-song/6.mp3',
-            duration : '05:05',
-        },
-        {
-            background: './assets/img/songs/7.jpg',
-            name: 'Sài Gòn Đêm Nay Mưa',
-            singer: 'Hoàng Duyên, Jsol',
-            pathSong: './assets/music/list-song/7.mp3',
-            duration : '03:16',
-        },
-        {
-            background: './assets/img/songs/8.jpg',
-            name: 'Tình Bạn Diệu Kỳ',
-            singer: 'AMee, Ricky Star, Lăng LD',
-            pathSong: './assets/music/list-song/8.mp3',
-            duration : '04:20',
-        },
-        {
-            background: './assets/img/songs/9.jpg',
-            name: 'Phải Chăng Em Đã Yêu?',
-            singer: 'Juky San, RedT',
-            pathSong: './assets/music/list-song/9.mp3',
-            duration : '03:23',
-        },
-        {
-            background: './assets/img/songs/10.jpg',
-            name: 'Muộn Rồi Mà Sao Còn',
-            singer: 'Sơn Tùng M-TP',
-            pathSong: './assets/music/list-song/10.mp3',
-            duration : '03:55',
-        },
-        {
-            background: './assets/img/songs/11.webp',
-            name: 'Xin Đừng Nhấc Máy',
-            singer: 'B Ray, Han Sara, Great',
-            pathSong: './assets/music/list-song/11.mp3',
-            duration : '04:45',
-        },
-        {
-            background: './assets/img/songs/12.webp',
-            name: 'Phố Đã Lên Đèn',
-            singer: 'Huyền Tâm Môn',
-            pathSong: './assets/music/list-song/12.mp3',
-            duration : '06:01',
-        },
-        {
-            background: './assets/img/songs/13.webp',
-            name: 'Ai Mang Cô Đơn Đi',
-            singer: 'K-ICM, APJ',
-            pathSong: './assets/music/list-song/13.mp3',
-            duration : '05:02',
-        },
-        {
-            background: './assets/img/songs/14.webp',
-            name: 'Kẹo Bông Gòn',
-            singer: 'H2K, TRUNKY',
-            pathSong: './assets/music/list-song/14.mp3',
-            duration : '03:25',
-        },
-        {
-            background: './assets/img/songs/15.webp',
-            name: 'Phố Cũ Còn Anh',
-            singer: 'Quinn, Chilly',
-            pathSong: './assets/music/list-song/15.mp3',
-            duration : '04:12',
-        },
-    ],
-    songsDataRemain: [
-        {
-            background: './assets/img/songs/0.webp',
-            name: 'Cưới Luôn Được Không',
-            singer: 'Út Nhị Cover',
-            pathSong: './assets/music/list-song/0.mp3',
-            duration : '04:27',
-        },
-        {
-            background: './assets/img/songs/1.webp',
-            name: 'Cưa Là Đổ',
-            singer: 'Phát Hồ, X2X',
-            pathSong: './assets/music/list-song/1.mp3',
-            duration : '04:05',
-        },
-        {
-            background: './assets/img/songs/2.webp',
-            name: 'Là Ai Từ Bỏ, Là Ai Vô Tình',
-            singer: 'Hương Ly, Jombie',
-            pathSong: './assets/music/list-song/2.mp3',
-            duration : '03:51',
-        },
-        {
-            background: './assets/img/songs/3.jpg',
-            name: 'Cưới Thôi',
-            singer: 'Masew x Masiu x B Ray x TAP',
+            name: 'Cưới Đi',
+            singer: '2T, ChangC',
             pathSong: './assets/music/list-song/3.mp3',
             duration : '04:20',
         },
@@ -444,7 +336,7 @@ const app = {
         setTimeout(() => {
           $(".nextsong__fist-item-headding--active").scrollIntoView({
             behavior: "smooth",
-            block: "center"
+            block: "nearest"
           });
         }, 300);
     },
@@ -587,7 +479,6 @@ const app = {
         });
         cdThumbAnimate.pause();
 
-
         //   LÀM SLIDER
         changeImage = function() {
             sliderItems.forEach((item,index) => {
@@ -684,15 +575,14 @@ const app = {
                     <span class="nextsong__last-item-end">
                         Bật chế độ random thì cần gì xem trước bài phát tiếp theo nhể, đỡ phải code :)
                     </span>`;
-                _this.scrollToActiveNextSong();
             } else {
                 _this.nextSong();
                 _this.renderNexrSong();
-                _this.scrollToActiveNextSong();
             }
             audio.play();
-            deleteActive();
+            _this.scrollToActiveNextSong();
             _this.scrollToActiveSong();
+            deleteActive();
         }
 
         // KHI PREV SONG
@@ -838,7 +728,7 @@ const app = {
                 _this.renderNextSongHeadding(nextSongHeadding,_this.songsData);
                 nextSongList.innerHTML = `
                     <span class="nextsong__last-item-end">
-                        Bật chế độ random thì cần gì xem trước bài phát tiếp theo nhể, đỡ phải code :)
+                        Bật chế độ random thì cần gì xem trước <br> bài phát tiếp theo nhể, đỡ phải code :)
                     </span>`;
             } else {
                 if (_this.currentIndex >= _this.songsData.length - 1) {
@@ -857,6 +747,8 @@ const app = {
             // _this.setConfig("isRepeat", _this.isRepeat);
             repeatBtn.classList.toggle("music-control__icon-repeat--active", _this.isRepeat);
             randomBtn.classList.toggle("music-control__icon-random--active", _this.isRandom);
+            _this.renderNexrSong();
+            _this.scrollToActiveNextSong();
         }
 
         // XỬ LÝ KHI AUDIO KẾT THÚC
@@ -950,7 +842,17 @@ const app = {
 
     },
 
-    
+    // QUAY NỐT NHẠC VỆ TINH
+    musicNote : function() {
+        setInterval(function() {
+            a = (a + Math.PI / 300) % (Math.PI * 2);
+            var px = x + r * Math.cos(a);
+            var py = y + r * Math.sin(a);
+            document.querySelector('.vetinh-1').style.left = px + "px";
+            document.querySelector('.vetinh-1').style.top = py + "px"; 
+        })
+    },
+        
 
     //=================================================================
     start: function() {
@@ -973,7 +875,7 @@ const app = {
         this.displayDurationTime();
 
 
-        
+        this.musicNote();
     }
 
 }
@@ -986,25 +888,7 @@ app.start();
 
 
 
-x = 100  // center
-y = 50   // center
-r = 50   // radius
-a = 0    // angle (from 0 to Math.PI * 2)
-
-function rotate(a) {
-  
-  var px = x + r * Math.cos(a); // <-- that's the maths you need
-  var py = y + r * Math.sin(a);
-  
-  document.querySelector('.vetinh-1').style.left = px + "px";
-  document.querySelector('.vetinh-1').style.top = py + "px"; 
-  
-
-}
 
 
-setInterval(function() {
-  a = (a + Math.PI / 360) % (Math.PI * 2);
-  rotate(a);
-})
+
 
