@@ -29,18 +29,22 @@ const mainContainer = $('.main-container');
 const headerSetting = $('.header__setting');
 const headerOverlay = $('.header__right-overlay');
 const headerSettingList = $('.header__setting-list');
+
 const themeModal = $('.theme-modal');
 const themebtn = $('.header__theme');
 const themeClosebtn = $('.theme-modal__close-btn');
 const themeOverlay = $('.theme-modal__overlay');
 const themeBody = $('.theme-modal__body');
-const themeItems = $$('.theme-modal__body-group-item-img');
+const themeItems = $$('.js-theme-item');
+var backgroundIndex= 0;
 
 
-x = 100  // center
-y = 50   // center
-r = 50   // radius
-a = 2    // angle (from 0 to Math.PI * 2)
+
+
+// x = 100  // center
+// y = 50   // center
+// r = 50   // radius
+// a = 2    // angle (from 0 to Math.PI * 2)
 
 
 
@@ -792,7 +796,7 @@ const app = {
             // làm cách này mà ko làm cách trên để tránh bị gật lag 
             if(scrollTop > 5) {
                 Object.assign(header.style, {
-                    backgroundColor: 'var(--header-color)',
+                    backgroundColor: `var(--header-color-${backgroundIndex})`,
                     boxShadow: '0 3px 5px rgba(0,0,0,0.1)',
                 })
             } else {
@@ -836,22 +840,69 @@ const app = {
         // THEME APPLY SKIN
         themeItems.forEach((themeItem, index) => {
             themeItem.onclick = function() {
-                $('.main').style.backgroundImage =`url('./assets/img/background-theme/backroundThemes/${index}.${index === 0 ? "svg" : "jpg"}')`;
+                if (index == 0) {
+                    backgroundIndex = 0;
+                    $('.main').style.backgroundImage = 'url(./assets/img/background-theme/backroundThemes/0.svg)';
+                    // $('.main-music-control').style.backgroundImage = 'url("../img/cntrl-player/playerThemes/theme1.png")';
+                    $('.main-music-control').style.backgroundColor = 'transparent';
+                    $('.sidebar__add-playlist').style.backgroundColor = '#411465';
+                    $('.nextsong__option-wrapper-listplay').style.backgroundColor = '#816399';
+                    $('.nextsong__option-wrapper').style.backgroundColor = '#4B206E';
+                    $('.header__width-search-sub').style.backgroundColor = '#6A39AF';
+                    $('.header__setting-list').style.backgroundColor = '#6A39AF';
+                    $('.theme-modal__body').style.backgroundColor = '#6A39AF';
+                } else if (index == 1) {
+                    backgroundIndex = 1;
+                    $('.main').style.backgroundImage = 'url(./assets/img/background-theme/backroundThemes/1.jpg)';
+                    $('.main-music-control').style.backgroundImage = 'none';
+                    $('.main-music-control').style.backgroundColor = '#202020';
+                    $('.sidebar__add-playlist').style.backgroundColor = '#333333';
+                    $('.nextsong__option-wrapper-listplay').style.backgroundColor = '#787878';
+                    $('.nextsong__option-wrapper').style.backgroundColor = '#3e3e3e';
+                    $('.header__width-search-sub').style.backgroundColor = '#3d3d3d';
+                    $('.header__setting-list').style.backgroundColor = '#3d3d3d';
+                    $('.theme-modal__body').style.backgroundColor = '#3d3d3d';
+                } else if (index == 2) {
+                    backgroundIndex = 2;
+                    $('.main').style.backgroundImage = 'url(./assets/img/background-theme/backroundThemes/2.jpg)';
+                    $('.main-music-control').style.backgroundImage = 'none';
+                    $('.main-music-control').style.backgroundColor = '#051740';
+                    $('.sidebar__add-playlist').style.backgroundColor = '#132958';
+                    $('.nextsong__option-wrapper').style.backgroundColor = '#1F3461';
+                    $('.header__width-search-sub').style.backgroundColor = '#1F3461';
+                    $('.header__setting-list').style.backgroundColor = '#1F3461';
+                    $('.theme-modal__body').style.backgroundColor = '#1F3461';
+                    $('.nextsong__option-wrapper-listplay').style.backgroundColor = '#637191';
+                } else if (index == 3) {
+                    backgroundIndex = 3;
+                    $('.main').style.backgroundImage = 'url(./assets/img/background-theme/backroundThemes/3.jpg)';
+                    $('.main-music-control').style.backgroundImage = 'none';
+                    $('.main-music-control').style.backgroundColor = '#D0CCC5';
+                    $('.sidebar__add-playlist').style.backgroundColor = '#DAD6D3';
+                    $('.nextsong__option-wrapper').style.backgroundColor = '#DAD6D3';
+                    $('.header__width-search-sub').style.backgroundColor = '#FFFFFE';
+                    $('.header__setting-list').style.backgroundColor = '#FFFFFE';
+                    $('.theme-modal__body').style.backgroundColor = '#E5E2E0';
+                    $('.nextsong__option-wrapper-listplay').style.backgroundColor = '#E5E2E0';
+                }
+                
+
+
+                
             }
         });
-
     },
 
     // QUAY NỐT NHẠC VỆ TINH
-    musicNote : function() {
-        setInterval(function() {
-            a = (a + Math.PI / 300) % (Math.PI * 2);
-            var px = x + r * Math.cos(a);
-            var py = y + r * Math.sin(a);
-            document.querySelector('.vetinh-1').style.left = px + "px";
-            document.querySelector('.vetinh-1').style.top = py + "px"; 
-        })
-    },
+    // musicNote : function() {
+    //     setInterval(function() {
+    //         a = (a + Math.PI / 300) % (Math.PI * 2);
+    //         var px = x + r * Math.cos(a);
+    //         var py = y + r * Math.sin(a);
+    //         document.querySelector('.vetinh-1').style.left = px + "px";
+    //         document.querySelector('.vetinh-1').style.top = py + "px"; 
+    //     })
+    // },
         
 
     //=================================================================
@@ -875,7 +926,7 @@ const app = {
         this.displayDurationTime();
 
 
-        this.musicNote();
+        // this.musicNote();
     }
 
 }

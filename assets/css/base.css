@@ -5,9 +5,13 @@
     --black-color: #000;
     --text-color: #333;
     --primary-color: #ED2B91;
-    --header-color: #37075d;
     --sub-color: #6A39AF;
-
+    
+    --header-color-0: #37075d;
+    --header-color-1: #282828;
+    --header-color-2: #061D50;
+    --header-color-3: #E7DFDD;
+    
 
     --sidebar-bg: rgba(255, 255, 255, 0.05);
     --active-color: rgba(255, 255, 255, 0.1);
