@@ -185,6 +185,83 @@ const app = {
         })
     },
 
+    // THEME APPLY SKIN
+    applyTheme: function() {
+        themeItems.forEach((themeItem, index) => {
+            themeItem.onclick = function() {
+                if (index == 0) {
+                    backgroundIndex = 0;
+                    $('.main').style.backgroundImage = 'url(./assets/img/background-theme/backroundThemes/0.svg)';
+                    // $('.main-music-control').style.backgroundImage = 'url("../img/cntrl-player/playerThemes/theme1.png")';
+                    $('.main-music-control').style.backgroundColor = 'transparent';
+                    $('.sidebar__add-playlist').style.backgroundColor = '#411465';
+                    $('.nextsong__option-wrapper-listplay').style.backgroundColor = '#816399';
+                    $('.nextsong__option-wrapper').style.backgroundColor = '#4B206E';
+                    $('.header__width-search-sub').style.backgroundColor = '#6A39AF';
+                    $('.header__setting-list').style.backgroundColor = '#6A39AF';
+                    $('.theme-modal__body').style.backgroundColor = '#6A39AF';
+                } else if (index == 1) {
+                    backgroundIndex = 1;
+                    $('.main').style.backgroundImage = 'url(./assets/img/background-theme/backroundThemes/1.jpg)';
+                    $('.main-music-control').style.backgroundImage = 'none';
+                    $('.main-music-control').style.backgroundColor = '#202020';
+                    $('.sidebar__add-playlist').style.backgroundColor = '#333333';
+                    $('.nextsong__option-wrapper-listplay').style.backgroundColor = '#787878';
+                    $('.nextsong__option-wrapper').style.backgroundColor = '#3e3e3e';
+                    $('.header__width-search-sub').style.backgroundColor = '#3d3d3d';
+                    $('.header__setting-list').style.backgroundColor = '#3d3d3d';
+                    $('.theme-modal__body').style.backgroundColor = '#3d3d3d';
+                } else if (index == 2) {
+                    backgroundIndex = 2;
+                    $('.main').style.backgroundImage = 'url(./assets/img/background-theme/backroundThemes/2.jpg)';
+                    $('.main-music-control').style.backgroundImage = 'none';
+                    $('.main-music-control').style.backgroundColor = '#051740';
+                    $('.sidebar__add-playlist').style.backgroundColor = '#132958';
+                    $('.nextsong__option-wrapper').style.backgroundColor = '#1F3461';
+                    $('.header__width-search-sub').style.backgroundColor = '#1F3461';
+                    $('.header__setting-list').style.backgroundColor = '#1F3461';
+                    $('.theme-modal__body').style.backgroundColor = '#1F3461';
+                    $('.nextsong__option-wrapper-listplay').style.backgroundColor = '#637191';
+                } else if (index == 3) {
+                    backgroundIndex = 3;
+                    $('.main').style.backgroundImage = 'url(./assets/img/background-theme/backroundThemes/3.jpg)';
+                    $('.main-music-control').style.backgroundImage = 'none';
+                    $('.main-music-control').style.backgroundColor = '#D0CCC5';
+                    $('.sidebar__add-playlist').style.backgroundColor = '#DAD6D3';
+                    $('.nextsong__option-wrapper').style.backgroundColor = '#DAD6D3';
+                    $('.header__width-search-sub').style.backgroundColor = '#FFFFFE';
+                    $('.header__setting-list').style.backgroundColor = '#FFFFFE';
+                    $('.theme-modal__body').style.backgroundColor = '#E5E2E0';
+                    $('.nextsong__option-wrapper-listplay').style.backgroundColor = '#E5E2E0';
+                    $('.main-sidebar').style.backgroundColor = 'rgba(0, 0, 0, 0.05)';
+                    $('.header__width-search-input').classList.add('header__width-search-input--white');
+
+                    
+
+                    
+                    $$('.js__black-color').forEach((item) => {
+                        item.style.color = '#000';
+                    })
+                    $$('.js__gray-color').forEach((item) => {
+                        item.style.color = '#696969';
+                    })
+                    $$('.js__gray-backgroundColor').forEach((item) => {
+                        item.style.backgroundColor = "#DAD6D3";
+                    })
+                    $$('.js__black-border').forEach((item) => {
+                        item.style.border = "2px solid #000";
+                    })
+                    $('.music__option-item.music__option-item--active').style.backgroundColor = "#E5E2E0";
+                    $('.music__option-item.music__option-item--active').style.color = "#000";
+                }
+                
+
+
+                
+            }
+        });
+    },
+
     // RENDER LIST MUSIC ITEM
     renderPlayList : function (playListElement, songsData) {
         const htmls = songsData.map((song, index) => {
@@ -200,22 +277,22 @@ const app = {
                         </div>
 
                         <div class="songs-item-left-body">
-                            <h3 class="songs-item-left-body-name">${song.name}</h3>
-                            <span class="songs-item-left-body-singer">${song.singer}</span>
+                            <h3 class="songs-item-left-body-name js__black-color">${song.name}</h3>
+                            <span class="songs-item-left-body-singer js__gray-color">${song.singer}</span>
                         </div>
                     </div>
-                    <div class="songs-item-center">
+                    <div class="songs-item-center js__gray-color">
                         <span>${song.name} (Single)</span>
                     </div>
                     <div class="songs-item-right">
-                        <span class="songs-item-right-mv"><i class="fas fa-photo-video"></i></span>
-                        <span class="songs-item-right-lyric"><i class="fas fa-microphone"></i></span>
+                        <span class="songs-item-right-mv"><i class="fas fa-photo-video js__black-color"></i></span>
+                        <span class="songs-item-right-lyric"><i class="fas fa-microphone js__black-color"></i></span>
                         <span class="songs-item-right-tym">
                             <i class="fas fa-heart songs-item-right-tym-first"></i>
                             <i class="far fa-heart songs-item-right-tym-last"></i>
                         </span>
-                        <span class="songs-item-right-duration">${song.duration}</span>
-                        <span class="songs-item-right-more"><i class="fas fa-ellipsis-h"></i></span>
+                        <span class="songs-item-right-duration js__gray-color">${song.duration}</span>
+                        <span class="songs-item-right-more js__black-color"><i class="fas fa-ellipsis-h"></i></span>
                     </div>
                 </li>`
         })
@@ -234,8 +311,8 @@ const app = {
                     </div>
                 </div>
                 <div class="nextsong__item-body">
-                    <span class="nextsong__item-body-heading">${song.name}</span>
-                    <span class="nextsong__item-body-depsc">${song.singer}</span>
+                    <span class="nextsong__item-body-heading ${index == this.currentIndex ? '' : 'js__black-color'}">${song.name}</span>
+                    <span class="nextsong__item-body-depsc ${index == this.currentIndex ? '' : 'js__gray-color'}">${song.singer}</span>
                 </div>
                 <div class="nextsong__item-action">
                     <span class="nextsong__item-action-heart">
@@ -264,8 +341,8 @@ const app = {
                     </div>
                 </div>
                 <div class="nextsong__item-body">
-                    <span class="nextsong__item-body-heading">${song.name}</span>
-                    <span class="nextsong__item-body-depsc">${song.singer}</span>
+                    <span class="nextsong__item-body-heading ${index == this.currentIndex ? '' : 'js__black-color'}">${song.name}</span>
+                    <span class="nextsong__item-body-depsc ${index == this.currentIndex ? '' : 'js__gray-color'}">${song.singer}</span>
                 </div>
                 <div class="nextsong__item-action">
                     <span class="nextsong__item-action-heart">
@@ -285,7 +362,7 @@ const app = {
     renderNextSongList: function(playListElement) {
         if (this.currentIndex >= this.songsData.length - 1) {
             playListElement.innerHTML = `
-            <span class="nextsong__last-item-end">
+            <span class="nextsong__last-item-end js__gray-color">
                 HẾT BÀI RỒI BẠN ƠI! HAHA
             </span>`;
         } else {
@@ -296,15 +373,15 @@ const app = {
                             <div class="nextsong__item-playbtn"><i class="fas fa-play"></i></div>
                         </div>
                         <div class="nextsong__item-body">
-                            <span class="nextsong__item-body-heading">${song.name}</span>
-                            <span class="nextsong__item-body-depsc">${song.singer}</span>
+                            <span class="nextsong__item-body-heading js__black-color">${song.name}</span>
+                            <span class="nextsong__item-body-depsc js__gray-color">${song.singer}</span>
                         </div>
                         <div class="nextsong__item-action">
                             <span class="nextsong__item-action-heart">
                                 <i class="fas fa-heart nextsong__item-action-heart-icon1"></i>
                                 <i class="far fa-heart nextsong__item-action-heart-icon2"></i>
                             </span>
-                            <span class="nextsong__item-action-dot">
+                            <span class="nextsong__item-action-dot js__black-color">
                                 <i class="fas fa-ellipsis-h "></i>
                             </span>
                         </div>
@@ -404,12 +481,8 @@ const app = {
     renderNexrSong: function() {
         this.renderNextSongHeadding(nextSongHeadding,this.songsData);
         this.renderNextSongList(nextSongList);
+        themeItems[backgroundIndex].click();
     },
-
-
-
-
-
 
 
 
@@ -587,6 +660,7 @@ const app = {
             _this.scrollToActiveNextSong();
             _this.scrollToActiveSong();
             deleteActive();
+            
         }
 
         // KHI PREV SONG
@@ -718,10 +792,6 @@ const app = {
             }
         };
 
-
-
-        
-
         // KHI BẬT NÚT CHẠY RANDOM
         randomBtn.onclick = function() {
             _this.isRandom = !_this.isRandom;
@@ -764,7 +834,7 @@ const app = {
               _this.renderNexrSong();
               _this.scrollToActiveNextSong();
             }
-          };
+        };
 
         // KHI CLICK DUP VÀO BÀI NHẠC THÌ PHÁT NHẠC
         songItems.forEach((songItem, index) => {
@@ -836,61 +906,7 @@ const app = {
         themeOverlay.onclick = function() {
             themeModal.classList.remove('theme-modal--avtive'); 
         }
-
-        // THEME APPLY SKIN
-        themeItems.forEach((themeItem, index) => {
-            themeItem.onclick = function() {
-                if (index == 0) {
-                    backgroundIndex = 0;
-                    $('.main').style.backgroundImage = 'url(./assets/img/background-theme/backroundThemes/0.svg)';
-                    // $('.main-music-control').style.backgroundImage = 'url("../img/cntrl-player/playerThemes/theme1.png")';
-                    $('.main-music-control').style.backgroundColor = 'transparent';
-                    $('.sidebar__add-playlist').style.backgroundColor = '#411465';
-                    $('.nextsong__option-wrapper-listplay').style.backgroundColor = '#816399';
-                    $('.nextsong__option-wrapper').style.backgroundColor = '#4B206E';
-                    $('.header__width-search-sub').style.backgroundColor = '#6A39AF';
-                    $('.header__setting-list').style.backgroundColor = '#6A39AF';
-                    $('.theme-modal__body').style.backgroundColor = '#6A39AF';
-                } else if (index == 1) {
-                    backgroundIndex = 1;
-                    $('.main').style.backgroundImage = 'url(./assets/img/background-theme/backroundThemes/1.jpg)';
-                    $('.main-music-control').style.backgroundImage = 'none';
-                    $('.main-music-control').style.backgroundColor = '#202020';
-                    $('.sidebar__add-playlist').style.backgroundColor = '#333333';
-                    $('.nextsong__option-wrapper-listplay').style.backgroundColor = '#787878';
-                    $('.nextsong__option-wrapper').style.backgroundColor = '#3e3e3e';
-                    $('.header__width-search-sub').style.backgroundColor = '#3d3d3d';
-                    $('.header__setting-list').style.backgroundColor = '#3d3d3d';
-                    $('.theme-modal__body').style.backgroundColor = '#3d3d3d';
-                } else if (index == 2) {
-                    backgroundIndex = 2;
-                    $('.main').style.backgroundImage = 'url(./assets/img/background-theme/backroundThemes/2.jpg)';
-                    $('.main-music-control').style.backgroundImage = 'none';
-                    $('.main-music-control').style.backgroundColor = '#051740';
-                    $('.sidebar__add-playlist').style.backgroundColor = '#132958';
-                    $('.nextsong__option-wrapper').style.backgroundColor = '#1F3461';
-                    $('.header__width-search-sub').style.backgroundColor = '#1F3461';
-                    $('.header__setting-list').style.backgroundColor = '#1F3461';
-                    $('.theme-modal__body').style.backgroundColor = '#1F3461';
-                    $('.nextsong__option-wrapper-listplay').style.backgroundColor = '#637191';
-                } else if (index == 3) {
-                    backgroundIndex = 3;
-                    $('.main').style.backgroundImage = 'url(./assets/img/background-theme/backroundThemes/3.jpg)';
-                    $('.main-music-control').style.backgroundImage = 'none';
-                    $('.main-music-control').style.backgroundColor = '#D0CCC5';
-                    $('.sidebar__add-playlist').style.backgroundColor = '#DAD6D3';
-                    $('.nextsong__option-wrapper').style.backgroundColor = '#DAD6D3';
-                    $('.header__width-search-sub').style.backgroundColor = '#FFFFFE';
-                    $('.header__setting-list').style.backgroundColor = '#FFFFFE';
-                    $('.theme-modal__body').style.backgroundColor = '#E5E2E0';
-                    $('.nextsong__option-wrapper-listplay').style.backgroundColor = '#E5E2E0';
-                }
-                
-
-
-                
-            }
-        });
+        
     },
 
     // QUAY NỐT NHẠC VỆ TINH
@@ -924,6 +940,9 @@ const app = {
 
         // hiển thị thời gian chạy và thời lượng của audio hiện tại
         this.displayDurationTime();
+
+        // theme
+        this.applyTheme();
 
 
         // this.musicNote();

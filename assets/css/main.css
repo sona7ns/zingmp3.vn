@@ -345,6 +345,14 @@
     opacity: 0.8;
 }
 
+.header__width-search-input.header__width-search-input--white::placeholder {
+    color: #696969;
+    opacity: 0.8;
+}
+
+
+
+
 .header__width-search-sub {
     position: absolute;
     left: 0;
@@ -370,6 +378,12 @@
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
 }
+
+.header__width-search-sub.header__width-search-sub-white::before {
+    background-color: #FFFFFE;
+}
+
+
 
 .header__width-search-sub-header {
     color: var(--white-color);
