@@ -192,68 +192,268 @@ const app = {
                 if (index == 0) {
                     backgroundIndex = 0;
                     $('.main').style.backgroundImage = 'url(./assets/img/background-theme/backroundThemes/0.svg)';
-                    // $('.main-music-control').style.backgroundImage = 'url("../img/cntrl-player/playerThemes/theme1.png")';
-                    $('.main-music-control').style.backgroundColor = 'transparent';
+                    $('.main-music-control').style.backgroundImage = 'none';
+                    $('.main-music-control').style.backgroundColor = '#37075D';
                     $('.sidebar__add-playlist').style.backgroundColor = '#411465';
-                    $('.nextsong__option-wrapper-listplay').style.backgroundColor = '#816399';
+                    $('.sidebar__add-playlist').style.borderTop = '1px solid rgba(255, 255, 255, 0.1)';
                     $('.nextsong__option-wrapper').style.backgroundColor = '#4B206E';
-                    $('.header__width-search-sub').style.backgroundColor = '#6A39AF';
-                    $('.header__setting-list').style.backgroundColor = '#6A39AF';
+                    $('.header__width-search-sub').style.backgroundColor = '#3E3E3E';
+                    $('.header__width-search').classList.remove('js__gray-backgroundColor');
+                    $('.header__setting-list').style.backgroundColor = '#FFFFFE';
                     $('.theme-modal__body').style.backgroundColor = '#6A39AF';
+                    $('.nextsong__option-wrapper-listplay').style.backgroundColor = '#816399';
+                    $('.main-sidebar').style.backgroundColor = 'hsla(0,0%,100%,0.05)';
+                    $('.header__width-search-input').classList.remove('header__width-search-input--white');
+                    $('.header__width-search-input').classList.add('header__width-search-input--dark');
+                    $('.music__option-item.music__option-item--active').style.backgroundColor = "#816399";
+                    $('.music__option-item.music__option-item--active').style.color = "#000";
+                    $('.music-control__volume-input').style.backgroundColor = "rgba(255, 255, 255, 0.3)";
+                    $('.music-control__progress-input').style.backgroundColor = "rgba(255, 255, 255, 0.3)";
+
+                    $$('.js__main-color').forEach((item) => {
+                        item.style.color = '#fff';
+                    })
+                    $$('.js__sub-color').forEach((item) => {
+                        item.style.color = 'rgba(255, 255, 255, 0.5)';
+                    })
+                    $$('.js__backgroundColor').forEach((item) => {
+                        item.style.backgroundColor = "rgba(255, 255, 255, 0.1)";
+                    })
+                    $$('.js__border').forEach((item) => {
+                        item.style.border = "2px solid #fff";
+                    })
                 } else if (index == 1) {
                     backgroundIndex = 1;
                     $('.main').style.backgroundImage = 'url(./assets/img/background-theme/backroundThemes/1.jpg)';
                     $('.main-music-control').style.backgroundImage = 'none';
                     $('.main-music-control').style.backgroundColor = '#202020';
                     $('.sidebar__add-playlist').style.backgroundColor = '#333333';
+                    $('.sidebar__add-playlist').style.borderTop = '1px solid rgba(0, 0, 0, 0.1)';
+                    $('.nextsong__option-wrapper').style.backgroundColor = '#3E3E3E';
+                    $('.header__width-search-sub').style.backgroundColor = '#3E3E3E';
+                    $('.header__width-search').classList.remove('js__gray-backgroundColor');
+                    $('.header__setting-list').style.backgroundColor = '#FFFFFE';
+                    $('.theme-modal__body').style.backgroundColor = '#3D3D3D';
                     $('.nextsong__option-wrapper-listplay').style.backgroundColor = '#787878';
-                    $('.nextsong__option-wrapper').style.backgroundColor = '#3e3e3e';
-                    $('.header__width-search-sub').style.backgroundColor = '#3d3d3d';
-                    $('.header__setting-list').style.backgroundColor = '#3d3d3d';
-                    $('.theme-modal__body').style.backgroundColor = '#3d3d3d';
+                    $('.main-sidebar').style.backgroundColor = 'hsla(0,0%,100%,0.05)';
+                    $('.header__width-search-input').classList.remove('header__width-search-input--white');
+                    $('.header__width-search-input').classList.add('header__width-search-input--dark');
+                    $('.music__option-item.music__option-item--active').style.backgroundColor = "#787878";
+                    $('.music__option-item.music__option-item--active').style.color = "#000";
+                    $('.music-control__volume-input').style.backgroundColor = "rgba(255, 255, 255, 0.3)";
+                    $('.music-control__progress-input').style.backgroundColor = "rgba(255, 255, 255, 0.3)";
+
+                    $$('.js__main-color').forEach((item) => {
+                        item.style.color = '#fff';
+                    })
+                    $$('.js__sub-color').forEach((item) => {
+                        item.style.color = 'rgba(255, 255, 255, 0.5)';
+                    })
+                    $$('.js__backgroundColor').forEach((item) => {
+                        item.style.backgroundColor = "#3E3E3E";
+                    })
+                    $$('.js__border').forEach((item) => {
+                        item.style.border = "2px solid #fff";
+                    })
                 } else if (index == 2) {
                     backgroundIndex = 2;
                     $('.main').style.backgroundImage = 'url(./assets/img/background-theme/backroundThemes/2.jpg)';
                     $('.main-music-control').style.backgroundImage = 'none';
                     $('.main-music-control').style.backgroundColor = '#051740';
                     $('.sidebar__add-playlist').style.backgroundColor = '#132958';
+                    $('.sidebar__add-playlist').style.borderTop = '1px solid rgba(0, 0, 0, 0.1)';
                     $('.nextsong__option-wrapper').style.backgroundColor = '#1F3461';
-                    $('.header__width-search-sub').style.backgroundColor = '#1F3461';
-                    $('.header__setting-list').style.backgroundColor = '#1F3461';
-                    $('.theme-modal__body').style.backgroundColor = '#1F3461';
+                    $('.header__width-search-sub').style.backgroundColor = '#FFFFFE';
+                    $('.header__width-search').classList.remove('js__gray-backgroundColor');
+                    $('.header__setting-list').style.backgroundColor = '#FFFFFE';
+                    $('.theme-modal__body').style.backgroundColor = '#192F60';
                     $('.nextsong__option-wrapper-listplay').style.backgroundColor = '#637191';
+                    $('.main-sidebar').style.backgroundColor = 'rgba(0,0,0,0.05)';
+                    $('.header__width-search-input').classList.remove('header__width-search-input--white');
+                    $('.header__width-search-input').classList.add('header__width-search-input--dark');
+                    $('.music__option-item.music__option-item--active').style.backgroundColor = "#637191";
+                    $('.music__option-item.music__option-item--active').style.color = "#000";
+                    $('.music-control__volume-input').style.backgroundColor = "rgba(255, 255, 255, 0.3)";
+                    $('.music-control__progress-input').style.backgroundColor = "rgba(255, 255, 255, 0.3)";
+
+                    $$('.js__main-color').forEach((item) => {
+                        item.style.color = '#fff';
+                    })
+                    $$('.js__sub-color').forEach((item) => {
+                        item.style.color = 'rgba(255, 255, 255, 0.5)';
+                    })
+                    $$('.js__backgroundColor').forEach((item) => {
+                        item.style.backgroundColor = "#1F3461";
+                    })
+                    $$('.js__border').forEach((item) => {
+                        item.style.border = "2px solid #000";
+                    })
                 } else if (index == 3) {
                     backgroundIndex = 3;
                     $('.main').style.backgroundImage = 'url(./assets/img/background-theme/backroundThemes/3.jpg)';
                     $('.main-music-control').style.backgroundImage = 'none';
                     $('.main-music-control').style.backgroundColor = '#D0CCC5';
                     $('.sidebar__add-playlist').style.backgroundColor = '#DAD6D3';
+                    $('.sidebar__add-playlist').style.borderTop = '1px solid rgba(0, 0, 0, 0.1)';
                     $('.nextsong__option-wrapper').style.backgroundColor = '#DAD6D3';
                     $('.header__width-search-sub').style.backgroundColor = '#FFFFFE';
                     $('.header__setting-list').style.backgroundColor = '#FFFFFE';
-                    $('.theme-modal__body').style.backgroundColor = '#E5E2E0';
+                    $('.theme-modal__body').style.backgroundColor = '#FFFFFE';
                     $('.nextsong__option-wrapper-listplay').style.backgroundColor = '#E5E2E0';
                     $('.main-sidebar').style.backgroundColor = 'rgba(0, 0, 0, 0.05)';
                     $('.header__width-search-input').classList.add('header__width-search-input--white');
+                    $('.header__width-search-input').classList.remove('header__width-search-input--dark');
+                    $('.music-control__volume-input').style.backgroundColor = "rgba(0, 0, 0, 0.3)";
+                    $('.music-control__progress-input').style.backgroundColor = "rgba(0, 0, 0, 0.3)";
 
-                    
-
-                    
-                    $$('.js__black-color').forEach((item) => {
+                    $$('.js__main-color').forEach((item) => {
                         item.style.color = '#000';
                     })
-                    $$('.js__gray-color').forEach((item) => {
+                    $$('.js__sub-color').forEach((item) => {
                         item.style.color = '#696969';
                     })
-                    $$('.js__gray-backgroundColor').forEach((item) => {
+                    $$('.js__backgroundColor').forEach((item) => {
                         item.style.backgroundColor = "#DAD6D3";
                     })
-                    $$('.js__black-border').forEach((item) => {
+                    $$('.js__border').forEach((item) => {
                         item.style.border = "2px solid #000";
                     })
                     $('.music__option-item.music__option-item--active').style.backgroundColor = "#E5E2E0";
                     $('.music__option-item.music__option-item--active').style.color = "#000";
+                } else if (index == 4) {
+                    backgroundIndex = 4;
+                    $('.main').style.backgroundImage = 'url(./assets/img/background-theme/backroundThemes/4.jpg)';
+                    $('.main-music-control').style.backgroundImage = 'none';
+                    $('.main-music-control').style.backgroundColor = '#B4D0D0';
+                    $('.sidebar__add-playlist').style.backgroundColor = '#C9E4E6';
+                    $('.sidebar__add-playlist').style.borderTop = '1px solid rgba(0, 0, 0, 0.1)';
+                    $('.nextsong__option-wrapper').style.backgroundColor = '#C9E4E6';
+                    $('.header__width-search-sub').style.backgroundColor = '#FFFFFE';
+                    $('.header__width-search').classList.remove('js__gray-backgroundColor');
+                    $('.header__setting-list').style.backgroundColor = '#FFFFFE';
+                    $('.theme-modal__body').style.backgroundColor = '#C9E4E6';
+                    $('.nextsong__option-wrapper-listplay').style.backgroundColor = '#D9ECEE';
+                    $('.main-sidebar').style.backgroundColor = 'rgba(255, 255, 255, 0.3)';
+                    $('.header__width-search-input').classList.add('header__width-search-input--white');
+                    $('.header__width-search-input').classList.remove('header__width-search-input--dark');
+                    $('.music-control__volume-input').style.backgroundColor = "rgba(0, 0, 0, 0.3)";
+                    $('.music-control__progress-input').style.backgroundColor = "rgba(0, 0, 0, 0.3)";
+                    
+                    $$('.js__main-color').forEach((item) => {
+                        item.style.color = '#000';
+                    })
+                    $$('.js__sub-color').forEach((item) => {
+                        item.style.color = '#696969';
+                    })
+                    $$('.js__backgroundColor').forEach((item) => {
+                        item.style.backgroundColor = "#C9E4E6";
+                    })
+                    $$('.js__border').forEach((item) => {
+                        item.style.border = "2px solid #000";
+                    })
+                    $('.music__option-item.music__option-item--active').style.backgroundColor = "#D9ECEE";
+                    $('.music__option-item.music__option-item--active').style.color = "#000";
+                } else if (index == 5) {
+                    backgroundIndex = 5;
+                    $('.main').style.backgroundImage = 'url(./assets/img/background-theme/backroundThemes/5.jpg)';
+                    $('.main-music-control').style.backgroundImage = 'none';
+                    $('.main-music-control').style.backgroundColor = '#F9C6C5';
+                    $('.sidebar__add-playlist').style.backgroundColor = '#F6E7E4';
+                    $('.sidebar__add-playlist').style.borderTop = '1px solid rgba(0, 0, 0, 0.1)';
+                    $('.nextsong__option-wrapper').style.backgroundColor = '#E6D2CD';
+                    $('.header__width-search-sub').style.backgroundColor = '#FFFFFE';
+                    $('.header__width-search').classList.remove('js__gray-backgroundColor');
+                    $('.header__setting-list').style.backgroundColor = '#FFFFFE';
+                    $('.theme-modal__body').style.backgroundColor = '#F9C6C5';
+                    $('.nextsong__option-wrapper-listplay').style.backgroundColor = '#EEE0DC';
+                    $('.main-sidebar').style.backgroundColor = 'rgba(255, 255, 255, 0.3)';
+                    $('.header__width-search-input').classList.add('header__width-search-input--white');
+                    $('.header__width-search-input').classList.remove('header__width-search-input--dark');
+                    $('.music__option-item.music__option-item--active').style.backgroundColor = "#EEE0DC";
+                    $('.music__option-item.music__option-item--active').style.color = "#000";
+                    $('.music-control__volume-input').style.backgroundColor = "rgba(0, 0, 0, 0.3)";
+                    $('.music-control__progress-input').style.backgroundColor = "rgba(0, 0, 0, 0.3)";
+
+                    $$('.js__main-color').forEach((item) => {
+                        item.style.color = '#000';
+                    })
+                    $$('.js__sub-color').forEach((item) => {
+                        item.style.color = '#696969';
+                    })
+                    $$('.js__backgroundColor').forEach((item) => {
+                        item.style.backgroundColor = "#E6D2CD";
+                    })
+                    $$('.js__border').forEach((item) => {
+                        item.style.border = "2px solid #000";
+                    })
+                } else if (index == 6) {
+                    backgroundIndex = 6;
+                    $('.main').style.backgroundImage = 'url(./assets/img/background-theme/backroundThemes/6.jpg)';
+                    $('.main-music-control').style.backgroundImage = 'none';
+                    $('.main-music-control').style.backgroundColor = '#C6C4D1';
+                    $('.sidebar__add-playlist').style.backgroundColor = '#B1B0BA';
+                    $('.sidebar__add-playlist').style.borderTop = '1px solid rgba(0, 0, 0, 0.1)';
+                    $('.nextsong__option-wrapper').style.backgroundColor = '#B1B0BA';
+                    $('.header__width-search-sub').style.backgroundColor = '#FFFFFE';
+                    $('.header__width-search').classList.remove('js__gray-backgroundColor');
+                    $('.header__setting-list').style.backgroundColor = '#FFFFFE';
+                    $('.theme-modal__body').style.backgroundColor = '#E2E7F5';
+                    $('.nextsong__option-wrapper-listplay').style.backgroundColor = '#C9C8CF';
+                    $('.main-sidebar').style.backgroundColor = 'rgba(0,0,0,0.05)';
+                    $('.header__width-search-input').classList.add('header__width-search-input--white');
+                    $('.header__width-search-input').classList.remove('header__width-search-input--dark');
+                    $('.music__option-item.music__option-item--active').style.backgroundColor = "#C9C8CF";
+                    $('.music__option-item.music__option-item--active').style.color = "#000";
+                    $('.music-control__volume-input').style.backgroundColor = "rgba(0, 0, 0, 0.3)";
+                    $('.music-control__progress-input').style.backgroundColor = "rgba(0, 0, 0, 0.3)";
+
+                    $$('.js__main-color').forEach((item) => {
+                        item.style.color = '#000';
+                    })
+                    $$('.js__sub-color').forEach((item) => {
+                        item.style.color = '#696969';
+                    })
+                    $$('.js__backgroundColor').forEach((item) => {
+                        item.style.backgroundColor = "#B1B0BA";
+                    })
+                    $$('.js__border').forEach((item) => {
+                        item.style.border = "2px solid #000";
+                    })
+                } else if (index == 7) {
+                    backgroundIndex = 7;
+                    $('.main').style.backgroundImage = 'url(./assets/img/background-theme/backroundThemes/7.jpg)';
+                    $('.main-music-control').style.backgroundImage = 'none';
+                    $('.main-music-control').style.backgroundColor = '#FFFFFF';
+                    $('.sidebar__add-playlist').style.backgroundColor = '#F2F2F2';
+                    $('.sidebar__add-playlist').style.borderTop = '1px solid rgba(0, 0, 0, 0.1)';
+                    $('.nextsong__option-wrapper').style.backgroundColor = '#F2F2F2';
+                    $('.header__width-search-sub').style.backgroundColor = '#FFFFFE';
+                    $('.header__width-search').classList.remove('js__gray-backgroundColor');
+                    $('.header__setting-list').style.backgroundColor = '#FFFFFE';
+                    $('.theme-modal__body').style.backgroundColor = '#F2F2F2';
+                    $('.nextsong__option-wrapper-listplay').style.backgroundColor = '#FFFFFF';
+                    $('.main-sidebar').style.backgroundColor = 'rgba(0,0,0,0.05)';
+                    $('.header__width-search-input').classList.add('header__width-search-input--white');
+                    $('.header__width-search-input').classList.remove('header__width-search-input--dark');
+                    $('.music__option-item.music__option-item--active').style.backgroundColor = "#FFFFFF";
+                    $('.music__option-item.music__option-item--active').style.color = "#000";
+                    $('.music-control__volume-input').style.backgroundColor = "rgba(0, 0, 0, 0.3)";
+                    $('.music-control__progress-input').style.backgroundColor = "rgba(0, 0, 0, 0.3)";
+
+                    $$('.js__main-color').forEach((item) => {
+                        item.style.color = '#000';
+                    })
+                    $$('.js__sub-color').forEach((item) => {
+                        item.style.color = '#696969';
+                    })
+                    $$('.js__backgroundColor').forEach((item) => {
+                        item.style.backgroundColor = "#F2F2F2";
+                    })
+                    $$('.js__border').forEach((item) => {
+                        item.style.border = "2px solid #000";
+                    })
                 }
+                
                 
 
 
@@ -277,22 +477,22 @@ const app = {
                         </div>
 
                         <div class="songs-item-left-body">
-                            <h3 class="songs-item-left-body-name js__black-color">${song.name}</h3>
-                            <span class="songs-item-left-body-singer js__gray-color">${song.singer}</span>
+                            <h3 class="songs-item-left-body-name js__main-color">${song.name}</h3>
+                            <span class="songs-item-left-body-singer js__sub-color">${song.singer}</span>
                         </div>
                     </div>
-                    <div class="songs-item-center js__gray-color">
+                    <div class="songs-item-center js__sub-color">
                         <span>${song.name} (Single)</span>
                     </div>
                     <div class="songs-item-right">
-                        <span class="songs-item-right-mv"><i class="fas fa-photo-video js__black-color"></i></span>
-                        <span class="songs-item-right-lyric"><i class="fas fa-microphone js__black-color"></i></span>
+                        <span class="songs-item-right-mv"><i class="fas fa-photo-video js__main-color"></i></span>
+                        <span class="songs-item-right-lyric"><i class="fas fa-microphone js__main-color"></i></span>
                         <span class="songs-item-right-tym">
                             <i class="fas fa-heart songs-item-right-tym-first"></i>
                             <i class="far fa-heart songs-item-right-tym-last"></i>
                         </span>
-                        <span class="songs-item-right-duration js__gray-color">${song.duration}</span>
-                        <span class="songs-item-right-more js__black-color"><i class="fas fa-ellipsis-h"></i></span>
+                        <span class="songs-item-right-duration js__sub-color">${song.duration}</span>
+                        <span class="songs-item-right-more js__main-color"><i class="fas fa-ellipsis-h"></i></span>
                     </div>
                 </li>`
         })
@@ -311,8 +511,8 @@ const app = {
                     </div>
                 </div>
                 <div class="nextsong__item-body">
-                    <span class="nextsong__item-body-heading ${index == this.currentIndex ? '' : 'js__black-color'}">${song.name}</span>
-                    <span class="nextsong__item-body-depsc ${index == this.currentIndex ? '' : 'js__gray-color'}">${song.singer}</span>
+                    <span class="nextsong__item-body-heading ${index == this.currentIndex ? '' : 'js__main-color'}">${song.name}</span>
+                    <span class="nextsong__item-body-depsc ${index == this.currentIndex ? '' : 'js__sub-color'}">${song.singer}</span>
                 </div>
                 <div class="nextsong__item-action">
                     <span class="nextsong__item-action-heart">
@@ -341,8 +541,8 @@ const app = {
                     </div>
                 </div>
                 <div class="nextsong__item-body">
-                    <span class="nextsong__item-body-heading ${index == this.currentIndex ? '' : 'js__black-color'}">${song.name}</span>
-                    <span class="nextsong__item-body-depsc ${index == this.currentIndex ? '' : 'js__gray-color'}">${song.singer}</span>
+                    <span class="nextsong__item-body-heading ${index == this.currentIndex ? '' : 'js__main-color'}">${song.name}</span>
+                    <span class="nextsong__item-body-depsc ${index == this.currentIndex ? '' : 'js__sub-color'}">${song.singer}</span>
                 </div>
                 <div class="nextsong__item-action">
                     <span class="nextsong__item-action-heart">
@@ -362,7 +562,7 @@ const app = {
     renderNextSongList: function(playListElement) {
         if (this.currentIndex >= this.songsData.length - 1) {
             playListElement.innerHTML = `
-            <span class="nextsong__last-item-end js__gray-color">
+            <span class="nextsong__last-item-end js__sub-color">
                 HẾT BÀI RỒI BẠN ƠI! HAHA
             </span>`;
         } else {
@@ -373,15 +573,15 @@ const app = {
                             <div class="nextsong__item-playbtn"><i class="fas fa-play"></i></div>
                         </div>
                         <div class="nextsong__item-body">
-                            <span class="nextsong__item-body-heading js__black-color">${song.name}</span>
-                            <span class="nextsong__item-body-depsc js__gray-color">${song.singer}</span>
+                            <span class="nextsong__item-body-heading js__main-color">${song.name}</span>
+                            <span class="nextsong__item-body-depsc js__sub-color">${song.singer}</span>
                         </div>
                         <div class="nextsong__item-action">
                             <span class="nextsong__item-action-heart">
                                 <i class="fas fa-heart nextsong__item-action-heart-icon1"></i>
                                 <i class="far fa-heart nextsong__item-action-heart-icon2"></i>
                             </span>
-                            <span class="nextsong__item-action-dot js__black-color">
+                            <span class="nextsong__item-action-dot js__main-color">
                                 <i class="fas fa-ellipsis-h "></i>
                             </span>
                         </div>
