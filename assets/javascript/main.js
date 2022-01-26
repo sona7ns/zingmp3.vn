@@ -59,114 +59,114 @@ const app = {
     songsData : [
         {
             background: './assets/img/songs/0.webp',
-            name: 'Cưới Luôn Được Không',
-            singer: 'Út Nhị Cover',
+            name: 'Tình Yêu Ngủ Quên',
+            singer: 'Hoàng Tôn, LyHan, Orinn Remix',
             pathSong: './assets/music/list-song/0.mp3',
             duration : '04:27',
         },
         {
             background: './assets/img/songs/1.webp',
-            name: 'Cưa Là Đổ',
-            singer: 'Phát Hồ, X2X',
-            pathSong: './assets/music/list-song/1.mp3',
+            name: 'Váy Cưới',
+            singer: 'Thuỳ Duyên Cover, Huy Lee Remix',
+            pathSong: './assets/music/list-song/1.m4a',
             duration : '04:05',
         },
         {
-            background: './assets/img/songs/2.webp',
-            name: 'Là Ai Từ Bỏ, Là Ai Vô Tình',
-            singer: 'Hương Ly, Jombie',
-            pathSong: './assets/music/list-song/2.mp3',
+            background: './assets/img/songs/2.jpeg',
+            name: 'Yêu Đừng Sợ Đau',
+            singer: 'Ngô Lan Hương, Cukak Remix',
+            pathSong: './assets/music/list-song/2.m4a',
             duration : '03:51',
         },
         {
             background: './assets/img/songs/3.jpg',
-            name: 'Cưới Đi',
-            singer: '2T, ChangC',
-            pathSong: './assets/music/list-song/3.mp3',
+            name: 'Có Hẹn Với Thanh Xuân',
+            singer: 'Monstar ,1967 Remix',
+            pathSong: './assets/music/list-song/3.m4a',
             duration : '04:20',
         },
         {
             background: './assets/img/songs/4.webp',
-            name: 'Yêu Là Cưới',
-            singer: 'Phát Hồ, X2X',
-            pathSong: './assets/music/list-song/4.mp3',
+            name: 'Vui Lắm Nha',
+            singer: 'Hương Ly, Jombie, RIN Music Remix',
+            pathSong: './assets/music/list-song/4.m4a',
             duration : '05:16',
         },
         {
-            background: './assets/img/songs/5.jpg',
-            name: 'Sắp 30',
-            singer: 'Trình Đình Quang',
-            pathSong: './assets/music/list-song/5.mp3',
+            background: './assets/img/songs/5.webp',
+            name: 'Lưu Số Em Đi',
+            singer: 'Huỳnh Văn, V.P. Tiên, Đại Mèo Remix',
+            pathSong: './assets/music/list-song/5.m4a',
             duration : '04:10',
         },
         {
-            background: './assets/img/songs/6.jpg',
-            name: 'Độ Tộc 2',
-            singer: 'Masew, Pháo, Phúc Du, Độ Mixi',
-            pathSong: './assets/music/list-song/6.mp3',
+            background: './assets/img/songs/6.webp',
+            name: 'Như Một Người Dưng',
+            singer: 'Nguyễn Thạc Bảo Ngọc, Cukak Remix',
+            pathSong: './assets/music/list-song/6.m4a',
             duration : '05:05',
         },
         {
-            background: './assets/img/songs/7.jpg',
-            name: 'Sài Gòn Đêm Nay Mưa',
-            singer: 'Hoàng Duyên, Jsol',
-            pathSong: './assets/music/list-song/7.mp3',
+            background: './assets/img/songs/7.webp',
+            name: 'Ôm Nhiều Mộng Mơ',
+            singer: 'Phát Huy T4, Đại Mèo Remix',
+            pathSong: './assets/music/list-song/7.m4a',
             duration : '03:16',
         },
         {
-            background: './assets/img/songs/8.jpg',
-            name: 'Tình Bạn Diệu Kỳ',
-            singer: 'AMee, Ricky Star, Lăng LD',
-            pathSong: './assets/music/list-song/8.mp3',
+            background: './assets/img/songs/8.webp',
+            name: 'Hoa Tàn Tình Tan Remix',
+            singer: 'Giang Jolee, Remix',
+            pathSong: './assets/music/list-song/8.m4a',
             duration : '04:20',
         },
         {
-            background: './assets/img/songs/9.jpg',
-            name: 'Phải Chăng Em Đã Yêu?',
-            singer: 'Juky San, RedT',
-            pathSong: './assets/music/list-song/9.mp3',
+            background: './assets/img/songs/9.webp',
+            name: 'Không Bằng',
+            singer: 'Na, RIN Music Remix',
+            pathSong: './assets/music/list-song/9.m4a',
             duration : '03:23',
         },
         {
-            background: './assets/img/songs/10.jpg',
-            name: 'Muộn Rồi Mà Sao Còn',
-            singer: 'Sơn Tùng M-TP',
-            pathSong: './assets/music/list-song/10.mp3',
+            background: './assets/img/songs/10.webp',
+            name: 'Ai Chung Tình Được Mãi',
+            singer: 'Đinh Tùng Huy, ACV Remix',
+            pathSong: './assets/music/list-song/10.m4a',
             duration : '03:55',
         },
         {
             background: './assets/img/songs/11.webp',
-            name: 'Xin Đừng Nhấc Máy',
-            singer: 'B Ray, Han Sara, Great',
-            pathSong: './assets/music/list-song/11.mp3',
+            name: 'Cô Đơn Dành Cho Ai',
+            singer: 'NAL, LEE KEN, Orinn Remix',
+            pathSong: './assets/music/list-song/11.m4a',
             duration : '04:45',
         },
         {
             background: './assets/img/songs/12.webp',
-            name: 'Phố Đã Lên Đèn',
-            singer: 'Huyền Tâm Môn',
-            pathSong: './assets/music/list-song/12.mp3',
+            name: 'Ánh mắt ta chạm nhau',
+            singer: 'Ngô Lan Hương, Đại Mèo remix',
+            pathSong: './assets/music/list-song/12.m4a',
             duration : '06:01',
         },
         {
             background: './assets/img/songs/13.webp',
-            name: 'Ai Mang Cô Đơn Đi',
-            singer: 'K-ICM, APJ',
-            pathSong: './assets/music/list-song/13.mp3',
+            name: '2 Phút Hơn',
+            singer: 'Phao, KAIZ Remix',
+            pathSong: './assets/music/list-song/13.m4a',
             duration : '05:02',
         },
         {
             background: './assets/img/songs/14.webp',
-            name: 'Kẹo Bông Gòn',
-            singer: 'H2K, TRUNKY',
-            pathSong: './assets/music/list-song/14.mp3',
+            name: 'Là Ai Từ Bỏ Là Ai Vô Tình',
+            singer: 'HƯƠNG LY, JOMBIE (G5R), RIN Music Remix',
+            pathSong: './assets/music/list-song/14.m4a',
             duration : '03:25',
         },
         {
             background: './assets/img/songs/15.webp',
-            name: 'Phố Cũ Còn Anh',
-            singer: 'Quinn, Chilly',
-            pathSong: './assets/music/list-song/15.mp3',
+            name: 'Đường Tôi Chở Em Về',
+            singer: 'Bui Truong Linh, Cukak Remix',
+            pathSong: './assets/music/list-song/15.m4a',
             duration : '04:12',
         },
     ],
@@ -280,11 +280,11 @@ const app = {
                     $('.header__setting-list').style.backgroundColor = '#1F3461';
                     $('.theme-modal__body').style.backgroundColor = '#192F60';
                     $('.nextsong__option-wrapper-listplay').style.backgroundColor = '#637191';
-                    $('.main-sidebar').style.backgroundColor = 'rgba(0,0,0,0.05)';
+                    $('.main-sidebar').style.backgroundColor = 'hsla(0,0%,100%,0.05)';
                     $('.header__width-search-input').classList.remove('header__width-search-input--white');
                     $('.header__width-search-input').classList.add('header__width-search-input--dark');
                     $('.music__option-item.music__option-item--active').style.backgroundColor = "#637191";
-                    $('.music__option-item.music__option-item--active').style.color = "#000";
+                    $('.music__option-item.music__option-item--active').style.color = "#fff";
                     $('.music-control__volume-input').style.backgroundColor = "rgba(255, 255, 255, 0.3)";
                     $('.music-control__progress-input').style.backgroundColor = "rgba(255, 255, 255, 0.3)";
 
@@ -298,7 +298,7 @@ const app = {
                         item.style.backgroundColor = "#1F3461";
                     })
                     $$('.js__border').forEach((item) => {
-                        item.style.border = "2px solid #000";
+                        item.style.border = "2px solid #fff";
                     })
                 } else if (index == 3) {
                     backgroundIndex = 3;
@@ -514,7 +514,7 @@ const app = {
                         </div>
                     </div>
                     <div class="songs-item-center js__sub-color">
-                        <span>${song.name} (Single)</span>
+                        <span>${song.name} (Remix)</span>
                     </div>
                     <div class="songs-item-right">
                         <span class="songs-item-right-mv"><i class="fas fa-photo-video js__main-color"></i></span>
@@ -646,12 +646,12 @@ const app = {
 
     // KHI ACTIVE KHUẤT THÌ ĐƯA NEXT SONG ITEM ACTIVE LÊN VIEW
     scrollToActiveNextSong: function () {
-        setTimeout(() => {
-          $(".nextsong__fist-item-headding--active").scrollIntoView({
-            behavior: "smooth",
-            block: "nearest"
-          });
-        }, 300);
+        // setTimeout(() => {
+        //   $(".nextsong__fist-item-headding--active").scrollIntoView({
+        //     behavior: "smooth",
+        //     block: "nearest"
+        //   });
+        // }, 300);
     },
 
     RandomSong: function () {
