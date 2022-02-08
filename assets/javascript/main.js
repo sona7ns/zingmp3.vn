@@ -36,11 +36,14 @@ const themeClosebtn = $('.theme-modal__close-btn');
 const themeOverlay = $('.theme-modal__overlay');
 const themeBody = $('.theme-modal__body');
 const themeItems = $$('.js-theme-item');
+const tabs = $$('.tabs-item');
+const panes = $$('.panes-item');
+
+
+
+
+
 var backgroundIndex= 0;
-
-
-
-
 // x = 100  // center
 // y = 50   // center
 // r = 50   // radius
@@ -102,8 +105,8 @@ const app = {
         {
             background: './assets/img/songs/6.webp',
             name: 'Như Một Người Dưng',
-            singer: 'Nguyễn Thạc Bảo Ngọc, Cukak Remix',
-            pathSong: './assets/music/list-song/6.m4a',
+            singer: 'Nguyễn Thạc Bảo Ngọc, Remix',
+            pathSong: './assets/music/list-song/6.mp3',
             duration : '05:05',
         },
         {
@@ -158,15 +161,15 @@ const app = {
         {
             background: './assets/img/songs/14.webp',
             name: 'Là Ai Từ Bỏ Là Ai Vô Tình',
-            singer: 'HƯƠNG LY, JOMBIE (G5R), RIN Music Remix',
+            singer: 'Hương Ly, Jombie (G5R), RIN Music Remix',
             pathSong: './assets/music/list-song/14.m4a',
             duration : '03:25',
         },
         {
             background: './assets/img/songs/15.webp',
             name: 'Như Một Người Dưng',
-            singer: 'Nguyễn Thạc Bảo Ngọc, Remix',
-            pathSong: './assets/music/list-song/15.mp3',
+            singer: 'Nguyễn Thạc Bảo Ngọc, Cukak Remix',
+            pathSong: './assets/music/list-song/15.m4a',
             duration : '04:12',
         },
     ],
@@ -486,10 +489,7 @@ const app = {
                     })
                 }
                 
-                
-
-
-                
+                app.verifyOptionTextColor();
             }
         });
     },
@@ -716,9 +716,15 @@ const app = {
         themeItems[backgroundIndex].click();
     },
 
-
-
-    
+    verifyOptionTextColor: function() {
+        $$('.music__option-item').forEach((tab, index) => {
+            if(backgroundIndex === 0 || backgroundIndex === 1 || backgroundIndex === 2) {
+                tab.style.color = '#fff'
+            } else {
+                tab.style.color = '#000'
+            }
+        })
+    },
 
     // SỰ KIỆN VÀ XỬ LÝ
     handleEvents: function () {
@@ -732,12 +738,61 @@ const app = {
         
         const actionHeartNextSongs = $$('.nextsong__item-action-heart');
         const nextSongBox = $('.nextsong__box');
-        
-
 
 
         var sliderIndex = 1;
         var sliderLenght = _this.songsData.length;
+
+        // chuyển tab option
+        tabs.forEach((tab, index) => {
+            const pane = panes[index];
+            $('.panes-item:not(.music__option-item--active)').style.backgroundColor = 'transparent';
+            themeItems[backgroundIndex].click();
+            _this.verifyOptionTextColor();
+            tab.onclick = function() {
+                $('.music__option-item.music__option-item--active').classList.remove('music__option-item--active');
+                tab.classList.add('music__option-item--active')
+                $('.panes-item.active').classList.remove('active');
+                tabs[0].style.backgroundColor = 'transparent';
+                tabs[1].style.backgroundColor = 'transparent';
+                tabs[2].style.backgroundColor = 'transparent';
+                tabs[3].style.backgroundColor = 'transparent';
+                tab.style.backgroundColor = `var(--option-color-${backgroundIndex})`;
+                pane.classList.add('active')
+                if (index === 1) {
+                    _this.renderPlayList($('.option-music-list'),_this.songsData);
+                }
+                $('.music__option-item.music__option-item--active').classList.remove('js__main-color');
+                $$('.option-music-list .songs-item-left-img').forEach((item, index) => {
+                    item.onclick = function() {
+                        if (_this.isPlaying && _this.currentIndex == index) {
+                            audio.pause();
+                        } else if (!_this.isPlaying && _this.currentIndex == index) {
+                            audio.play();
+                        } else if (_this.currentIndex != index) {
+                            _this.currentIndex = index;
+                            _this.loadCurrentSong();
+                            audio.play();
+                            deleteActive();
+                            _this.renderNexrSong();
+                            _this.scrollToActiveNextSong();
+                        }
+                        if(_this.isRandom) {
+                            _this.renderNextSongHeadding(nextSongHeadding,_this.songsData);
+                            nextSongList.innerHTML = `
+                                <span class="nextsong__last-item-end">
+                                    Bật chế độ random thì cần gì xem trước bài phát tiếp theo nhể, đỡ phải code :)
+                                </span>`;
+                        } else if (!_this.isRandom && _this.currentIndex >= _this.songsData.length - 1) {
+                            $('.nextsong__last-item-end').textContent = 'HẾT BÀI RỒI BẠN ƠI! HAHA';
+                        } else {
+                            _this.renderNexrSong();
+                            _this.scrollToActiveNextSong();
+                        }
+                    }
+                })
+            }
+        })
 
         // khi mới mở web thì sẽ chọn hightlight dòng đầu tiên
         songItems[this.currentIndex].classList.add('songs-item-playbtn--active');

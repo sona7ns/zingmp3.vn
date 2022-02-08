@@ -15,7 +15,16 @@
     --header-color-5: #F9DBDB;
     --header-color-6: #BAB8C3;
     --header-color-7: #FFFFFF;
+
+    --option-color-0: #816399;
+    --option-color-1: #787878;
     
+    --option-color-2: #637191;
+    --option-color-3: #E5E2E0;
+    --option-color-4: #D9ECEE;
+    --option-color-5: #EEE0DC;
+    --option-color-6: #C9C8CF;
+    --option-color-7: #FFFFFF;
 
     --sidebar-bg: rgba(255, 255, 255, 0.05);
     --active-color: rgba(255, 255, 255, 0.1);
@@ -289,6 +298,7 @@ ul {
 
 .songs-item-center span{
     cursor: default;
+    white-space: nowrap;
 }
 
 .songs-item-right {

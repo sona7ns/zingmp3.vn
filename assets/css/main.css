@@ -93,7 +93,7 @@
 }
 
 .sidebar__library {
-    height: 507px;
+    height: calc(100vh - 421px);
     overflow-y: auto;
     position: relative;
 }
@@ -289,6 +289,7 @@
 .header__undo {
     color: var(--white-color);
     font-size: 1.6rem;
+    white-space: nowrap;
 }
 
 .header__undo i {
@@ -830,6 +831,15 @@
 
 /* pane option-all */
 
+.panes-item {
+    display: none;
+}
+
+.panes-item.active {
+    display: block;
+}
+
+
 .option-all {
     color: var(--white-color);
     margin-left: 60px;
@@ -947,6 +957,11 @@
 .option-all__songs-list {
     height: 241px;
     overflow-y: auto;
+}
+
+.option-music-list {
+    width: 100%;
+    margin-left: 30px;
 }
 
 .songs-item-left-img {
@@ -1190,39 +1205,24 @@
 
 
 
+.option-music,
+.option-playlist,
+.option-singer {
+    color: #fff;
+    margin: 0 60px;
+}
 
+.option-music {
 
+}
 
+.option-playlist {
 
+}
 
+.option-singer {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
 
 
