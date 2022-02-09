@@ -43,6 +43,7 @@ const panes = $$('.panes-item');
 
 
 
+
 var backgroundIndex= 0;
 // x = 100  // center
 // y = 50   // center
@@ -499,9 +500,46 @@ const app = {
         const htmls = songsData.map((song, index) => {
             return `
                 <!-- songs-item-playing--active-onplay songs-item--active songs-item-playbtn--active -->
-                <li class="songs-item ${index == this.currentIndex ? 'songs-item--active' : ''} " data-index="${index}">
+                <li class="songs-item js__song-item0 ${index == this.currentIndex ? 'songs-item--active' : ''} " data-index="${index}">
                     <div class="songs-item-left">
-                        <div style="background-image: url(${song.background});" class="songs-item-left-img">
+                        <div style="background-image: url(${song.background});" class="songs-item-left-img js__songs-item-left-img-0">
+                            <div class="songs-item-left-img-playbtn"><i class="fas fa-play"></i></div>
+                            <div class="songs-item-left-img-playing-box">
+                                <img class = "songs-item-left-img-playing" src="./assets/img/songs/icon-playing.gif" alt="playing">
+                            </div>
+                        </div>
+
+                        <div class="songs-item-left-body">
+                            <h3 class="songs-item-left-body-name js__main-color">${song.name}</h3>
+                            <span class="songs-item-left-body-singer js__sub-color">${song.singer}</span>
+                        </div>
+                    </div>
+                    <div class="songs-item-center js__sub-color">
+                        <span>${song.name} (Remix)</span>
+                    </div>
+                    <div class="songs-item-right">
+                        <span class="songs-item-right-mv"><i class="fas fa-photo-video js__main-color"></i></span>
+                        <span class="songs-item-right-lyric"><i class="fas fa-microphone js__main-color"></i></span>
+                        <span class="songs-item-right-tym">
+                            <i class="fas fa-heart songs-item-right-tym-first"></i>
+                            <i class="far fa-heart songs-item-right-tym-last"></i>
+                        </span>
+                        <span class="songs-item-right-duration js__sub-color">${song.duration}</span>
+                        <span class="songs-item-right-more js__main-color"><i class="fas fa-ellipsis-h"></i></span>
+                    </div>
+                </li>`
+        })
+        playListElement.innerHTML = htmls.join('');
+    },
+
+    // RENDER LIST MUSIC ITEM OPTION1
+    renderPlayList1 : function (playListElement, songsData) {
+        const htmls = songsData.map((song, index) => {
+            return `
+                <!-- songs-item-playing--active-onplay songs-item--active songs-item-playbtn--active -->
+                <li class="songs-item js__song-item1 ${index == this.currentIndex ? 'songs-item--active songs-item-playbtn--active' : ''} " data-index="${index}">
+                    <div class="songs-item-left">
+                        <div style="background-image: url(${song.background});" class="songs-item-left-img js__songs-item-left-img-1">
                             <div class="songs-item-left-img-playbtn"><i class="fas fa-play"></i></div>
                             <div class="songs-item-left-img-playing-box">
                                 <img class = "songs-item-left-img-playing" src="./assets/img/songs/icon-playing.gif" alt="playing">
@@ -730,15 +768,14 @@ const app = {
     handleEvents: function () {
         const _this = this;
         const songTyms = $$('.songs-item-right-tym');
-        const songItems = $$('.songs-item');
+        const songItems = $$('.js__song-item0');
         const nextSongsItem = $$('.nextsong__item');
-        
-        const playBtnIcons = $$('.songs-item-left-img');
+        const playBtnIcons = $$('.js__songs-item-left-img-0');
         const playNextSongBtnIcons = $$('.nextsong__item-img');
-        
+        const songItemsOption1 = $$('.js__song-item1');
+        const playBtnIconsOption1 = $$('.js__songs-item-left-img-1');
         const actionHeartNextSongs = $$('.nextsong__item-action-heart');
         const nextSongBox = $('.nextsong__box');
-
 
         var sliderIndex = 1;
         var sliderLenght = _this.songsData.length;
@@ -759,38 +796,10 @@ const app = {
                 tabs[3].style.backgroundColor = 'transparent';
                 tab.style.backgroundColor = `var(--option-color-${backgroundIndex})`;
                 pane.classList.add('active')
-                if (index === 1) {
-                    _this.renderPlayList($('.option-music-list'),_this.songsData);
-                }
+                // if (index === 1) {
+                //     _this.renderPlayList1($('.option-music-list'),_this.songsData);
+                // }
                 $('.music__option-item.music__option-item--active').classList.remove('js__main-color');
-                $$('.option-music-list .songs-item-left-img').forEach((item, index) => {
-                    item.onclick = function() {
-                        if (_this.isPlaying && _this.currentIndex == index) {
-                            audio.pause();
-                        } else if (!_this.isPlaying && _this.currentIndex == index) {
-                            audio.play();
-                        } else if (_this.currentIndex != index) {
-                            _this.currentIndex = index;
-                            _this.loadCurrentSong();
-                            audio.play();
-                            deleteActive();
-                            _this.renderNexrSong();
-                            _this.scrollToActiveNextSong();
-                        }
-                        if(_this.isRandom) {
-                            _this.renderNextSongHeadding(nextSongHeadding,_this.songsData);
-                            nextSongList.innerHTML = `
-                                <span class="nextsong__last-item-end">
-                                    Bật chế độ random thì cần gì xem trước bài phát tiếp theo nhể, đỡ phải code :)
-                                </span>`;
-                        } else if (!_this.isRandom && _this.currentIndex >= _this.songsData.length - 1) {
-                            $('.nextsong__last-item-end').textContent = 'HẾT BÀI RỒI BẠN ƠI! HAHA';
-                        } else {
-                            _this.renderNexrSong();
-                            _this.scrollToActiveNextSong();
-                        }
-                    }
-                })
             }
         })
 
@@ -886,7 +895,14 @@ const app = {
 
             songItems[_this.currentIndex].classList.add('songs-item-playing--active-onplay');
             songItems[_this.currentIndex].classList.add('songs-item--active');            
-            songItems[_this.currentIndex].classList.remove('songs-item-playbtn--active');  
+            songItems[_this.currentIndex].classList.remove('songs-item-playbtn--active'); 
+
+            songItemsOption1[_this.currentIndex].classList.add('songs-item-playing--active-onplay');
+            songItemsOption1[_this.currentIndex].classList.add('songs-item--active');            
+            songItemsOption1[_this.currentIndex].classList.remove('songs-item-playbtn--active'); 
+            
+            // songItemsOption1[_this.currentIndex].classList.add('songs-item-playing--active-onplay');
+            
             const nextSongItems = $$('.nextsong__item')
             nextSongItems[_this.currentIndex].classList.add('nextsong__fist-item-headding--active');          
             nextSongItems[_this.currentIndex].classList.remove('nextsong__fist-item-playbtn--active');          
@@ -900,6 +916,8 @@ const app = {
             thunbPlayerBox.style.transform = "translateX(0)";
             songItems[_this.currentIndex].classList.remove('songs-item-playing--active-onplay');
             songItems[_this.currentIndex].classList.add('songs-item-playbtn--active');
+            songItemsOption1[_this.currentIndex].classList.remove('songs-item-playing--active-onplay');
+            songItemsOption1[_this.currentIndex].classList.add('songs-item-playbtn--active');
             const nextSongItems = $$('.nextsong__item')
             nextSongItems[_this.currentIndex].classList.remove('nextsong__fist-item-headding--active');
             nextSongItems[_this.currentIndex].classList.add('nextsong__fist-item-playbtn--active');          
@@ -929,6 +947,15 @@ const app = {
             });
         }
 
+        deleteActive1 = function() {
+            songItemsOption1.forEach((songItem, index) => {
+                songItem.classList.remove('songs-item-playing--active-onplay');
+                songItem.classList.remove('songs-item--active');
+                songItem.classList.remove('songs-item-playbtn--active');
+            });
+        }
+
+
         // KHI NEXT SONG
         nextBtn.onclick = function() {
             if (_this.isRandom) {
@@ -947,6 +974,7 @@ const app = {
             _this.scrollToActiveNextSong();
             _this.scrollToActiveSong();
             deleteActive();
+            deleteActive1();
             
         }
 
@@ -968,6 +996,7 @@ const app = {
             }
             audio.play();
             deleteActive();
+            deleteActive1();
             _this.scrollToActiveSong();
         }
 
@@ -991,6 +1020,7 @@ const app = {
             }
         }
 
+        // KHI BẤM VÀO NÚT PLAY Ở THUMB BÀI BÁT Ở PHẦN TỔNG QUAN
         playBtnIcons.forEach((playBtnIcon, index) => {
             playBtnIcon.onclick = function() {
                 if (_this.isPlaying && _this.currentIndex == index) {
@@ -1002,6 +1032,7 @@ const app = {
                     _this.loadCurrentSong();
                     audio.play();
                     deleteActive();
+                    deleteActive1();
                     _this.renderNexrSong();
                     _this.scrollToActiveNextSong();
                 }
@@ -1019,6 +1050,38 @@ const app = {
                 }
             }
         });
+
+        // KHI BẤM VÀO NÚT PLAY Ở THUMB BÀI BÁT Ở PHẦN MUSIC OPTION1
+        playBtnIconsOption1.forEach((item, index) => {
+            item.onclick = function() {
+                if (_this.isPlaying && _this.currentIndex == index) {
+                    audio.pause();
+                } else if (!_this.isPlaying && _this.currentIndex == index) {
+                    audio.play();
+                } else if (_this.currentIndex != index) {
+                    _this.currentIndex = index;
+                    _this.loadCurrentSong();
+                    audio.play();
+                    deleteActive();
+                    deleteActive1();
+                    // _this.renderPlayList1($('.option-music-list'),_this.songsData);
+                    _this.renderNexrSong();
+                    _this.scrollToActiveNextSong();
+                }
+                if(_this.isRandom) {
+                    _this.renderNextSongHeadding(nextSongHeadding,_this.songsData);
+                    nextSongList.innerHTML = `
+                        <span class="nextsong__last-item-end">
+                            Bật chế độ random thì cần gì xem trước bài phát tiếp theo nhể, đỡ phải code :)
+                        </span>`;
+                } else if (!_this.isRandom && _this.currentIndex >= _this.songsData.length - 1) {
+                    $('.nextsong__last-item-end').textContent = 'HẾT BÀI RỒI BẠN ƠI! HAHA';
+                } else {
+                    _this.renderNexrSong();
+                    _this.scrollToActiveNextSong();
+                }
+            }
+        })
 
         // KHI CLICK VÀO NEXT SONG BOX
         nextSongBox.onclick = function (e) {
@@ -1136,6 +1199,7 @@ const app = {
                 _this.currentIndex = index;
                 _this.loadCurrentSong();
                 deleteActive();
+                deleteActive1();
                 audio.play();
 
                 if(_this.isRandom) {
@@ -1149,6 +1213,25 @@ const app = {
             
         })
 
+        // KHI CLICK DUP VÀO BÀI NHẠC THÌ PHÁT NHẠC
+        songItemsOption1.forEach((songItem, index) => {
+            songItem.ondblclick = function() {
+                _this.currentIndex = index;
+                _this.loadCurrentSong();
+                deleteActive();
+                deleteActive1();
+                audio.play();
+
+                if(_this.isRandom) {
+                    // không render next song list
+                    _this.renderNextSongHeadding(nextSongHeadding,_this.songsData);
+                } else {
+                    _this.renderNexrSong();
+                    _this.scrollToActiveNextSong();
+                }
+            }
+            
+        })
 
         // CUỘN LÊN THÌ LÀM TRONG THANH HEADER
         mainContainer.onscroll = function() {
@@ -1219,6 +1302,8 @@ const app = {
     start: function() {
         // render ra danh sách nhạc ở phần tổng quan
         this.renderPlayList(optionAllSongList,this.songsData);
+        // render ra danh sách nhạc ở phần tab music
+        this.renderPlayList1($('.option-music-list'),this.songsData);
 
         // render next song
         this.renderNexrSong();
@@ -1238,6 +1323,7 @@ const app = {
         // theme
         this.applyTheme();
 
+        this.loadCurrentSong();
 
         // this.musicNote();
     }
