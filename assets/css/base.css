@@ -18,7 +18,6 @@
 
     --option-color-0: #816399;
     --option-color-1: #787878;
-    
     --option-color-2: #637191;
     --option-color-3: #E5E2E0;
     --option-color-4: #D9ECEE;
@@ -263,6 +262,7 @@ ul {
 }
 
 .songs-item-left-body-name {
+    color: #fff;
     font-size: 1.4rem;
     font-weight: 500;
     padding: 0;

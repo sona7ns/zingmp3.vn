@@ -18,7 +18,8 @@ const nextBtn = $('.music-control__icon4');
 const nameSong = $('.music-control__left-content-song');
 const nameSinger = $('.music-control__left-content-singer');
 const cdThumb = $('.music-control__left-img');
-const playAllBtn = $('.option-all__song-heading-right-playall-btn');
+const playAllBtn = $('.js__playall-0');
+const playAllBtn1 = $('.js__playall-1');
 const randomBtn = $('.music-control__icon1');
 const repeatBtn = $('.music-control__icon5');
 const volumeProgress = $('#progress1');
@@ -38,6 +39,9 @@ const themeBody = $('.theme-modal__body');
 const themeItems = $$('.js-theme-item');
 const tabs = $$('.tabs-item');
 const panes = $$('.panes-item');
+const sideBarTabs = $$('.js__sidebar-tabs');
+const containerPanes = $$('.js__container-panes');
+const slidersDiscover = $$('.container-discover__slider-item');
 
 
 
@@ -568,6 +572,85 @@ const app = {
         })
         playListElement.innerHTML = htmls.join('');
     },
+
+    // RENDER LIST ZINGCHART
+    renderZingChart : function () {
+        const htmls = this.songsData.map((song, index) => {
+            return index < 10 ? `
+                <!-- songs-item-playing--active-onplay songs-item--active songs-item-playbtn--active -->
+                <li class="songs-item">
+                    <div class="songs-item-left">
+                        <span class="zingchart__item-left-stt ${index == 0 ? 'zingchart__item-first': index == 1 ? 'zingchart__item-second' : index == 2 ? 'zingchart__item-third' : ''}">${index+1}</span>
+                        <span class="zingchart__item-left-line js__main-color">-</span>
+                        <div style="background-image: url(${song.background});" class="songs-item-left-img">
+                            <div class="songs-item-left-img-playbtn"><i class="fas fa-play"></i></div>
+                            <div class="songs-item-left-img-playing-box">
+                                <img class = "songs-item-left-img-playing" src="./assets/img/songs/icon-playing.gif" alt="playing">
+                            </div>
+                        </div>
+
+                        <div class="songs-item-left-body">
+                            <h3 class="songs-item-left-body-name js__main-color">${song.name}</h3>
+                            <span class="songs-item-left-body-singer js__sub-color">${song.singer}</span>
+                        </div>
+                    </div>
+                    <div class="songs-item-center js__sub-color">
+                        <span>${song.name} (Remix)</span>
+                    </div>
+                    <div class="songs-item-right">
+                        <span class="songs-item-right-mv"><i class="fas fa-photo-video js__main-color"></i></span>
+                        <span class="songs-item-right-lyric"><i class="fas fa-microphone js__main-color"></i></span>
+                        <span class="songs-item-right-tym">
+                            <i class="fas fa-heart songs-item-right-tym-first"></i>
+                            <i class="far fa-heart songs-item-right-tym-last"></i>
+                        </span>
+                        <span class="songs-item-right-duration js__sub-color">${song.duration}</span>
+                        <span class="songs-item-right-more js__main-color"><i class="fas fa-ellipsis-h"></i></span>
+                    </div>
+                </li>` : ''
+        })
+        $('.js__zingchart__list').innerHTML = htmls.join('');
+    },
+
+    // RENDER LIST ZINGCHART MORE
+    renderZingChartMore : function () {
+        const htmls = this.songsData.map((song, index) => {
+            return `
+                <!-- songs-item-playing--active-onplay songs-item--active songs-item-playbtn--active -->
+                <li class="songs-item">
+                    <div class="songs-item-left">
+                        <span class="zingchart__item-left-stt ${index == 0 ? 'zingchart__item-first': index == 1 ? 'zingchart__item-second' : index == 2 ? 'zingchart__item-third' : ''}">${index+1}</span>
+                        <span class="zingchart__item-left-line">-</span>
+                        <div style="background-image: url(${song.background});" class="songs-item-left-img">
+                            <div class="songs-item-left-img-playbtn"><i class="fas fa-play"></i></div>
+                            <div class="songs-item-left-img-playing-box">
+                                <img class = "songs-item-left-img-playing" src="./assets/img/songs/icon-playing.gif" alt="playing">
+                            </div>
+                        </div>
+
+                        <div class="songs-item-left-body">
+                            <h3 class="songs-item-left-body-name js__main-color">${song.name}</h3>
+                            <span class="songs-item-left-body-singer js__sub-color">${song.singer}</span>
+                        </div>
+                    </div>
+                    <div class="songs-item-center js__sub-color">
+                        <span>${song.name} (Remix)</span>
+                    </div>
+                    <div class="songs-item-right">
+                        <span class="songs-item-right-mv"><i class="fas fa-photo-video js__main-color"></i></span>
+                        <span class="songs-item-right-lyric"><i class="fas fa-microphone js__main-color"></i></span>
+                        <span class="songs-item-right-tym">
+                            <i class="fas fa-heart songs-item-right-tym-first"></i>
+                            <i class="far fa-heart songs-item-right-tym-last"></i>
+                        </span>
+                        <span class="songs-item-right-duration js__sub-color">${song.duration}</span>
+                        <span class="songs-item-right-more js__main-color"><i class="fas fa-ellipsis-h"></i></span>
+                    </div>
+                </li>`
+        })
+        $('.js__zingchart__list').innerHTML = htmls.join('');
+    },
+
     // RENDER HEADDING NEXT SONG 
     renderNextSongHeadding: function(playListElement, songs){
         const htmls = this.songsData.map((song, index) => {
@@ -778,7 +861,28 @@ const app = {
         const nextSongBox = $('.nextsong__box');
 
         var sliderIndex = 1;
+        var sliderIndex1 = 1;
         var sliderLenght = _this.songsData.length;
+
+
+
+        // NHẤN MORE HIỂN THỊ 100 BÀI HÁT
+        $('.js__zingchart__100more').onclick = function() {
+            _this.renderZingChartMore();
+            this.style.display = 'none';
+        }
+
+        // CHUYỂN TAB CÁ NHÂN / KHÁM PHÁ / ZINGCHART
+        sideBarTabs.forEach((tab, index) => {
+            tab.onclick = function() {
+                $('.js__sidebar-tabs.sidebar__item--active').classList.remove('sidebar__item--active');
+                tab.classList.add('sidebar__item--active');
+                containerPanes[0].style.display = "none";
+                containerPanes[1].style.display = "none";
+                containerPanes[2].style.display = "none";
+                containerPanes[index].style.display = "block";
+            }
+        })
 
         // chuyển tab option
         tabs.forEach((tab, index) => {
@@ -852,7 +956,7 @@ const app = {
         });
         cdThumbAnimate.pause();
 
-        //   LÀM SLIDER
+        //   LÀM SLIDER BÊN TAP CÁ NHÂN
         changeImage = function() {
             sliderItems.forEach((item,index) => {
                     // index == sliderIndex ? sliderItems[index].classList.replace('option-all__song-slider-img-third','option-all__song-slider-img-first') : index == sliderIndex + 1 ?  sliderItems[index].classList.replace('option-all__song-slider-img-third','option-all__song-slider-img-second'):sliderItems[index].classList.replace('option-all__song-slider-img-third','option-all__song-slider-img-third');
@@ -866,6 +970,10 @@ const app = {
                     sliderItems[index].classList.replace('option-all__song-slider-img-first','option-all__song-slider-img-third');
                     sliderItems[index].classList.replace('option-all__song-slider-img-second','option-all__song-slider-img-third');
                 }
+                if (sliderIndex == sliderLenght - 1) {
+                    sliderItems[0].classList.replace('option-all__song-slider-img-first','option-all__song-slider-img-second');
+                    sliderItems[0].classList.replace('option-all__song-slider-img-third','option-all__song-slider-img-second');
+                }
             })
             sliderIndex++;
             if (sliderIndex >= sliderLenght) {
@@ -873,6 +981,49 @@ const app = {
             }
         }
         setInterval(changeImage,2000);
+
+        //   LÀM SLIDER BÊN TAP KHÁM PHÁ
+        changeImage1 = function() {
+            slidersDiscover.forEach((item,index) => {
+                if (index == sliderIndex1) {
+                    slidersDiscover[index].classList.replace('container-discover__slider-item-second','container-discover__slider-item-first');
+                    slidersDiscover[index].classList.replace('container-discover__slider-item-third','container-discover__slider-item-first');
+                    slidersDiscover[index].classList.replace('container-discover__slider-item-four','container-discover__slider-item-first');
+                } else if (index == sliderIndex1 + 1) {
+                    slidersDiscover[index].classList.replace('container-discover__slider-item-first','container-discover__slider-item-second');
+                    slidersDiscover[index].classList.replace('container-discover__slider-item-third','container-discover__slider-item-second');
+                    slidersDiscover[index].classList.replace('container-discover__slider-item-four','container-discover__slider-item-second');
+                } else if (index == sliderIndex1 + 2) {
+                    slidersDiscover[index].classList.replace('container-discover__slider-item-first','container-discover__slider-item-third');
+                    slidersDiscover[index].classList.replace('container-discover__slider-item-second','container-discover__slider-item-third');
+                    slidersDiscover[index].classList.replace('container-discover__slider-item-four','container-discover__slider-item-third');
+                } else {
+                    slidersDiscover[index].classList.replace('container-discover__slider-item-first','container-discover__slider-item-four');
+                    slidersDiscover[index].classList.replace('container-discover__slider-item-second','container-discover__slider-item-four');
+                    slidersDiscover[index].classList.replace('container-discover__slider-item-third','container-discover__slider-item-four');
+                }
+                if (sliderIndex1 == 2) {
+                    slidersDiscover[0].classList.replace('container-discover__slider-item-first','container-discover__slider-item-third');
+                    slidersDiscover[0].classList.replace('container-discover__slider-item-second','container-discover__slider-item-third');
+                    slidersDiscover[0].classList.replace('container-discover__slider-item-four','container-discover__slider-item-third');
+                } else if (sliderIndex1 == 3) {
+                    slidersDiscover[0].classList.replace('container-discover__slider-item-first','container-discover__slider-item-second');
+                    slidersDiscover[0].classList.replace('container-discover__slider-item-third','container-discover__slider-item-second');
+                    slidersDiscover[0].classList.replace('container-discover__slider-item-four','container-discover__slider-item-second');
+                    slidersDiscover[1].classList.replace('container-discover__slider-item-first','container-discover__slider-item-third');
+                    slidersDiscover[1].classList.replace('container-discover__slider-item-second','container-discover__slider-item-third');
+                    slidersDiscover[1].classList.replace('container-discover__slider-item-four','container-discover__slider-item-third');
+                }
+            })
+            sliderIndex1++;
+            if (sliderIndex1 >= 4) {
+                sliderIndex1 = 0;
+            }
+        }
+        setInterval(changeImage1,3000);
+
+
+
 
         // XỬ LÝ KHI CLICK VÀO NÚT PLAY
         playBtn.onclick = function () {
@@ -1000,12 +1151,33 @@ const app = {
             _this.scrollToActiveSong();
         }
 
-        // KHI BAM VÀO NÚT PHÁT TẤT CẢ
+        // KHI BAM VÀO NÚT PHÁT TẤT CẢ OPTION-0
         playAllBtn.onclick = function() {
             _this.currentIndex = 0;
             _this.loadCurrentSong();
             audio.play();
             deleteActive();
+            _this.scrollToActiveSong();
+            if(_this.isRandom) {
+                _this.renderNextSongHeadding(nextSongHeadding,_this.songsData);
+                nextSongList.innerHTML = `
+                    <span class="nextsong__last-item-end">
+                        Bật chế độ random thì cần gì xem trước bài phát tiếp theo nhể, đỡ phải code :)
+                    </span>`;
+            } else {
+                _this.renderNexrSong();
+                // setTimeout(_this.scrollToActiveNextSong(), 2000);
+                _this.scrollToActiveNextSong();
+            }
+        }
+
+        // KHI BAM VÀO NÚT PHÁT TẤT CẢ OPTION-1
+        playAllBtn1.onclick = function() {
+            _this.currentIndex = 0;
+            _this.loadCurrentSong();
+            audio.play();
+            deleteActive();
+            deleteActive1();
             _this.scrollToActiveSong();
             if(_this.isRandom) {
                 _this.renderNextSongHeadding(nextSongHeadding,_this.songsData);
@@ -1304,12 +1476,14 @@ const app = {
         this.renderPlayList(optionAllSongList,this.songsData);
         // render ra danh sách nhạc ở phần tab music
         this.renderPlayList1($('.option-music-list'),this.songsData);
-
         // render next song
         this.renderNexrSong();
-
         // render next song start
         this.renderNextSongHeaddingStart(nextSongHeadding,this.songsData);
+        // render zingchart
+        this.renderZingChart();
+
+
 
         // Define các thuộc tính cho object
         this.defineProperties();
