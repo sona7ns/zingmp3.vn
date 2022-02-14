@@ -48,6 +48,10 @@
     display: none;
 }
 
+.white-color {
+    color: #fff;
+}
+
 /* seleter * apply tất cả css lên tất cả phần tử html */
 * {
     /* có tính chất kế thừa thẻ cha, cứ ghi vào đây sau giải thích */

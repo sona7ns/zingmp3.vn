@@ -983,7 +983,7 @@ const app = {
         setInterval(changeImage,2000);
 
         //   LÀM SLIDER BÊN TAP KHÁM PHÁ
-        changeImage1 = function() {
+        changeImage1Replate = function() {
             slidersDiscover.forEach((item,index) => {
                 if (index == sliderIndex1) {
                     slidersDiscover[index].classList.replace('container-discover__slider-item-second','container-discover__slider-item-first');
@@ -1015,13 +1015,27 @@ const app = {
                     slidersDiscover[1].classList.replace('container-discover__slider-item-four','container-discover__slider-item-third');
                 }
             })
+        }
+        changeImage1 = function() {
+            changeImage1Replate();
             sliderIndex1++;
             if (sliderIndex1 >= 4) {
                 sliderIndex1 = 0;
             }
         }
-        setInterval(changeImage1,3000);
-
+        setInterval(changeImage1,5000);
+        // khi bấm vào nut right của slider
+        $('.js__container-discover__slider-right').onclick = function() {
+            changeImage1();
+        }
+        // khi bấm vào nut left của slider
+        $('.js__container-discover__slider-left').onclick = function() {
+            changeImage1Replate();
+            sliderIndex1--;
+            if (sliderIndex1 < 0) {
+                sliderIndex1 = 3;
+            }
+        }
 
 
 
