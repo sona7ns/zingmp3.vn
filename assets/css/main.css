@@ -1488,11 +1488,25 @@
     margin: 0 60px;
 }
 
+#toast {
+    position: fixed;
+    top: 32px;
+    right: 32px;
+}
 
-
-
-
-
+.toast__item {
+    /* background-color: rgba(0, 0, 0, 0.3); */
+    background-color: rgb(236, 170, 95);
+    font-size: 2rem;
+    font-weight: 500;
+    color: rgb(17, 129, 233);
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin: 10px 0;
+    border: 2px solid #fff;
+    animation: slideInLeft ease .3s, fadeOut linear 1s 3s forwards;
+    cursor: default;
+}
 
 
 /*=== END CONTAINER ===*/

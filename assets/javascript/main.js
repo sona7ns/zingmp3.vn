@@ -193,6 +193,24 @@ const app = {
         })
     },
 
+    toastSlide: function() {
+        const toatMain = $('#toast');
+        if (toatMain) {
+            const toast = document.createElement('div');
+            toast.classList.add('toast');
+            toast.innerHTML = `
+                <div class="toast__item">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <span>Chức năng này đang được phát triển, bạn vui lòng thử lại sau !</span>
+                </div>
+            `;
+            toatMain.appendChild(toast);
+            setTimeout(function() {
+                toatMain.removeChild(toast);
+            }, 3000)
+        }
+    },
+
     // THEME APPLY SKIN
     applyTheme: function() {
         themeItems.forEach((themeItem, index) => {
@@ -1469,6 +1487,18 @@ const app = {
         themeOverlay.onclick = function() {
             themeModal.classList.remove('theme-modal--avtive'); 
         }
+
+        // TOAST
+        $$('.js__toast').forEach((item, index) => {
+            item.onclick = function() {
+                _this.toastSlide();
+            }
+        })
+        
+        
+        
+        
+
         
     },
 
