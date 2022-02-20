@@ -123,7 +123,7 @@ const app = {
         },
         {
             background: './assets/img/songs/8.webp',
-            name: 'Hoa Tàn Tình Tan Remix',
+            name: 'Hoa Tàn Tình Tan',
             singer: 'Giang Jolee, Remix',
             pathSong: './assets/music/list-song/8.m4a',
             duration : '04:20',
@@ -217,6 +217,10 @@ const app = {
             themeItem.onclick = function() {
                 if (index == 0) {
                     backgroundIndex = 0;
+                    $('.header').style.backgroundColor = `var(--header-color-${backgroundIndex})`;
+                    $('.header').style.boxShadow = '0 3px 5px rgba(0,0,0,0.1)';
+                    $('.header').style.backgroundColor = `var(--header-color-${backgroundIndex})`;
+                    $('.header').style.boxShadow = '0 3px 5px rgba(0,0,0,0.1)';
                     $('.main').style.backgroundImage = 'url(./assets/img/background-theme/backroundThemes/0.svg)';
                     $('.main-music-control').style.backgroundImage = '';
                     $('.main-music-control').style.backgroundColor = '#37075D';
@@ -254,6 +258,8 @@ const app = {
                     })
                 } else if (index == 1) {
                     backgroundIndex = 1;
+                    $('.header').style.backgroundColor = `var(--header-color-${backgroundIndex})`;
+                    $('.header').style.boxShadow = '0 3px 5px rgba(0,0,0,0.1)';
                     $('.main').style.backgroundImage = 'url(./assets/img/background-theme/backroundThemes/1.jpg)';
                     $('.main-music-control').style.backgroundImage = 'none';
                     $('.main-music-control').style.backgroundColor = '#202020';
@@ -291,6 +297,8 @@ const app = {
                     })
                 } else if (index == 2) {
                     backgroundIndex = 2;
+                    $('.header').style.backgroundColor = `var(--header-color-${backgroundIndex})`;
+                    $('.header').style.boxShadow = '0 3px 5px rgba(0,0,0,0.1)';
                     $('.main').style.backgroundImage = 'url(./assets/img/background-theme/backroundThemes/2.jpg)';
                     $('.main-music-control').style.backgroundImage = 'none';
                     $('.main-music-control').style.backgroundColor = '#051740';
@@ -328,6 +336,8 @@ const app = {
                     })
                 } else if (index == 3) {
                     backgroundIndex = 3;
+                    $('.header').style.backgroundColor = `var(--header-color-${backgroundIndex})`;
+                    $('.header').style.boxShadow = '0 3px 5px rgba(0,0,0,0.1)';
                     $('.main').style.backgroundImage = 'url(./assets/img/background-theme/backroundThemes/3.jpg)';
                     $('.main-music-control').style.backgroundImage = 'none';
                     $('.main-music-control').style.backgroundColor = '#D0CCC5';
@@ -364,6 +374,8 @@ const app = {
                     $('.music__option-item.music__option-item--active').style.color = "#000";
                 } else if (index == 4) {
                     backgroundIndex = 4;
+                    $('.header').style.backgroundColor = `var(--header-color-${backgroundIndex})`;
+                    $('.header').style.boxShadow = '0 3px 5px rgba(0,0,0,0.1)';
                     $('.main').style.backgroundImage = 'url(./assets/img/background-theme/backroundThemes/4.jpg)';
                     $('.main-music-control').style.backgroundImage = 'none';
                     $('.main-music-control').style.backgroundColor = '#B4D0D0';
@@ -401,6 +413,8 @@ const app = {
                     $('.music__option-item.music__option-item--active').style.color = "#000";
                 } else if (index == 5) {
                     backgroundIndex = 5;
+                    $('.header').style.backgroundColor = `var(--header-color-${backgroundIndex})`;
+                    $('.header').style.boxShadow = '0 3px 5px rgba(0,0,0,0.1)';
                     $('.main').style.backgroundImage = 'url(./assets/img/background-theme/backroundThemes/5.jpg)';
                     $('.main-music-control').style.backgroundImage = 'none';
                     $('.main-music-control').style.backgroundColor = '#F9C6C5';
@@ -438,6 +452,8 @@ const app = {
                     })
                 } else if (index == 6) {
                     backgroundIndex = 6;
+                    $('.header').style.backgroundColor = `var(--header-color-${backgroundIndex})`;
+                    $('.header').style.boxShadow = '0 3px 5px rgba(0,0,0,0.1)';
                     $('.main').style.backgroundImage = 'url(./assets/img/background-theme/backroundThemes/6.jpg)';
                     $('.main-music-control').style.backgroundImage = 'none';
                     $('.main-music-control').style.backgroundColor = '#C6C4D1';
@@ -475,6 +491,8 @@ const app = {
                     })
                 } else if (index == 7) {
                     backgroundIndex = 7;
+                    $('.header').style.backgroundColor = `var(--header-color-${backgroundIndex})`;
+                    $('.header').style.boxShadow = '0 3px 5px rgba(0,0,0,0.1)';
                     $('.main').style.backgroundImage = 'url(./assets/img/background-theme/backroundThemes/7.jpg)';
                     $('.main-music-control').style.backgroundImage = 'none';
                     $('.main-music-control').style.backgroundColor = '#FFFFFF';
@@ -536,7 +554,7 @@ const app = {
                             <span class="songs-item-left-body-singer js__sub-color">${song.singer}</span>
                         </div>
                     </div>
-                    <div class="songs-item-center js__sub-color">
+                    <div class="songs-item-center tablet-hiden js__sub-color">
                         <span>${song.name} (Remix)</span>
                     </div>
                     <div class="songs-item-right">
@@ -573,7 +591,7 @@ const app = {
                             <span class="songs-item-left-body-singer js__sub-color">${song.singer}</span>
                         </div>
                     </div>
-                    <div class="songs-item-center js__sub-color">
+                    <div class="songs-item-center tablet-hiden js__sub-color">
                         <span>${song.name} (Remix)</span>
                     </div>
                     <div class="songs-item-right">
@@ -612,7 +630,7 @@ const app = {
                             <span class="songs-item-left-body-singer js__sub-color">${song.singer}</span>
                         </div>
                     </div>
-                    <div class="songs-item-center js__sub-color">
+                    <div class="songs-item-center tablet-hiden js__sub-color">
                         <span>${song.name} (Remix)</span>
                     </div>
                     <div class="songs-item-right">
@@ -651,7 +669,7 @@ const app = {
                             <span class="songs-item-left-body-singer js__sub-color">${song.singer}</span>
                         </div>
                     </div>
-                    <div class="songs-item-center js__sub-color">
+                    <div class="songs-item-center tablet-hiden js__sub-color">
                         <span>${song.name} (Remix)</span>
                     </div>
                     <div class="songs-item-right">

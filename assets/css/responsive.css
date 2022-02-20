@@ -1,15 +1,178 @@
-/* MOBILE & TABLET: width <= 1023px */
-@media only screen and (max-width: 63.9375em) {
-    .mobile-tablet-hiden {
+/* LAPTOP 14 - 15in6: 1025px --> 1366px */
+@media (min-width: 64.0625em) and (max-width: 85.375em) {
+    .laptop-hiden {
         display: none;
+    }
+    .main-nextsong {
+        width: var(--next-song-width-laptop);
+    }
+    .nextsong__last-heading {
+        width: 100%;
+    }
+    .nextsong__last-list {
+        width: 100%;
+    }
+    .nextsong__item {
+        width: 100%;
+    }
+    .nextsong__item:hover .nextsong__item-action{
+        display: none;
+    }
+    .nextsong__item-body-depsc,
+    .nextsong__item-body-heading {
+        width: 180px;
+    }
+    .nextsong__item:hover .nextsong__item-body-depsc,
+    .nextsong__item:hover .nextsong__item-body-heading {
+        width: 180px;
+    }
+
+    .sidebar__add-playlist,
+    .main-sidebar {
+        width: 200px;
+    }
+    .nextsong__box {
+        margin-left: 3px;
+        margin-right: 1px;
+    }
+    .header-wrapper,
+    .main-container {
+        left: 200px;
+        right: var(--next-song-width-laptop);
+    }
+    .option-all {
+        margin-left: 35px;
+        margin-right: 30px;
+    }
+
+    .main {
+        background-size: contain;
+    }
+
+    .option-all__song-slider-img-first {
+        width: 168px;
+        height: 168px;
+        transform: translateX(-10px);
+    }
+    .option-all__song-slider-img-second {
+        width: 134px;
+        height: 134px;
+        top: 27px;
+        transform: translateX(-60px);
+    }
+    .option-all__song-slider-img-third {
+        width: 100px;
+        height: 100px;
+        top: 46px;
+        transform: translateX(-107px);
+    }
+    
+    .option-all__song-slider {
+        width: 197px;
+        height: 206px;
+    }
+    .option-all__song-slider {
+        margin-top: 36px;
+    }
+    .songs-item-left-body {
+        width: 265px;
+    }
+    .songs-item:hover .songs-item-center span{
+        width: 82px;
+    }
+    .col.laptop-l-6{
+        max-width: 50%;
+    }
+
+    .theme-modal__body-group-wrapper {
+        height: 500px;
     }
 }
 
-/* TABLET: width >= 740px and width <= 1023px */
-@media only screen and (min-width: 46.25em) and (max-width: 63.9375em) {
+/* MOBILE --> TABLET --> TABLET PRO: width <= 1024px */
+@media only screen and (max-width: 64em) {
+    .mobile-tablet-hiden {
+        display: none;
+    }
+
+    .main {
+        background-size: contain;
+    }
+}
+
+/* TABLET --> TABLET PRO: width >= 740px and width <= 1024px */
+@media only screen and (min-width: 46.25em) and (max-width: 64em) {
     .tablet-hiden {
         display: none;
     }
+    
+    .sidebar__add-playlist,
+    .main-sidebar {
+        width: 200px;
+    }
+
+    .header-wrapper,
+    .main-container {
+        left: 200px;
+        right: 0;
+    }
+
+    .option-all__song-slider-img-first {
+        width: 168px;
+        height: 168px;
+        transform: translateX(-10px);
+    }
+    .option-all__song-slider-img-second {
+        width: 134px;
+        height: 134px;
+        top: 27px;
+        transform: translateX(-60px);
+    }
+    .option-all__song-slider-img-third {
+        width: 100px;
+        height: 100px;
+        top: 46px;
+        transform: translateX(-107px);
+    }
+
+    .option-all {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
+    .option-all__song-slider {
+        width: 197px;
+        height: 206px;
+    }
+    .option-all__song-slider {
+        margin-top: 36px;
+    }
+    .option-all__songs-list {
+        margin-left: 20px;
+    }
+    
+    .songs-item-right-mv,
+    .songs-item-right-lyric {
+        display: block;
+    }
+
+    .option-all__playlist-item-margin-top{
+        margin-top: 40px;
+    }
+
+    .option-all__playlist-item-margin_top {
+        margin-bottom: 50px;
+    }
+
+    .rs__main-music-control-flex-1 {
+        flex: 1;
+    }
+
+    .container-discover__slider-left,
+    .container-discover__slider-right {
+        display: block;
+    }
+
 }
 
 /* MOBILE: width <= 739px */
@@ -17,4 +180,5 @@
     .mobile-hiden {
         display: none;
     }
+
 }
