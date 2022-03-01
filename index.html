@@ -9,6 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zing Mp3 (Fake by Sơn)</title>
+    <link rel="icon" href="./assets/img/icon-home/small-logo.svg" type="image/gif" sizes="16x16">
     <!-- reset css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <!-- css grid để kết hợp chia khung và responsive -->
@@ -32,7 +33,7 @@
     <div class="main" style="background-image: url(./assets/img/background-theme/backroundThemes/0.svg);">
         <div class="grid">
             <!-- BEGIN SIDEBAR -->
-            <div class="main-sidebar">
+            <div class="main-sidebar mobile-hiden">
                 <a href="#"></a>
                 <div class="sidebar__logo"></div>
                 <div class="sidebar__persional">
@@ -142,7 +143,7 @@
                 <!-- header--active -->
                 <div class="header-wrapper">
                     <div class="header">
-                        <div class="header__undo js__sub-color">
+                        <div class="header__undo mobile-hiden js__sub-color">
                             <i class="fas fa-arrow-left hover js__toast"></i>
                             <i class="fas fa-arrow-right hover js__toast header__undo--disble"></i>
                         </div>
@@ -196,13 +197,13 @@
                             <div class="header__theme js__sub-color js__backgroundColor">
                                 <i class="fas fa-tshirt"></i>
                             </div>
-                            <div class="header__upload js__sub-color js__toast js__backgroundColor hover">
+                            <div class="header__upload mobile-hiden js__sub-color js__toast js__backgroundColor hover">
                                 <i class="fas fa-upload"></i>
                             </div>
     
                             <div class="header__right-overlay hiden"></div>
                             <!-- header__setting--active -->
-                            <div class="header__setting js__sub-color js__backgroundColor">
+                            <div class="header__setting mobile-hiden js__sub-color js__backgroundColor">
                                 <i class="fas fa-cog header__setting-icon"></i>
                                 <ul class="header__setting-list">
                                     <li class="header__setting-item">
@@ -261,7 +262,7 @@
                             <img src="./assets/img/header/user/0.jpg" alt="avata" class="profile__img">
                         </a>
                         <span class="profile__name js__main-color">Văn Sơn Nguyễn</span>
-                        <div class="profile__vip">
+                        <div class="profile__vip mobile-hiden ">
                             <span class="profile__vip-upgrate btn js__toast">Nâng cấp vip</span>
                             <span class="profile__vip-entercode btn js__main-color js__backgroundColor js__toast">Nhập code vip</span>
                             <span class="profile__vip-more js__main-color js__backgroundColor"><i class="fas fa-ellipsis-h"></i></span>
@@ -275,7 +276,7 @@
                             <li class="tabs-item music__option-item js__main-color">Bài hát</li>
                             <li class="tabs-item music__option-item js__main-color">Playlist</li>
                             <li class="tabs-item music__option-item js__main-color">Nghệ sĩ</li>
-                            <li class="music__option-item js__main-color js__toast">
+                            <li class="music__option-item mobile-hiden  js__main-color js__toast">
                                 <i class="fas fa-ellipsis-h"></i>
                             </li>
                         </ul>
@@ -284,14 +285,14 @@
                     <div class="option-all panes-item active">
                         <!-- song -->
                         <div class="option-all__song option-all__margin_bot">
-                            <div class="option-heading option-all__song-heading">
-                                <h3 class="option-heading-name option-all__song-heading-left js__main-color">Bài Hát</h3>
+                            <div class="option-heading option-all__song-heading ">
+                                <h3 class="option-heading-name option-all__song-heading-left mobile-hiden js__main-color">Bài Hát</h3>
                                 <div class="option-all__song-heading-right">
-                                    <div class="more-list">
+                                    <div class="more-list mobile-hiden">
                                         <span class="js__main-color">Tất cả</span>
                                         <i class="fas fa-chevron-right js__main-color"></i>
                                     </div>
-                                    <div class="btn option-all__song-heading-right-upload-btn js__main-color js__backgroundColor">
+                                    <div class="btn option-all__song-heading-right-upload-btn mobile-hiden js__main-color js__backgroundColor">
                                         <i class="fas fa-upload"></i>
                                         Tải lên
                                     </div>
@@ -302,7 +303,7 @@
                                 </div>
                             </div>
                             <div class="grid row">
-                                <div class="col l-3 m-3">
+                                <div class="col l-3 m-0 s-0">
                                     <div class="option-all__song-slider">
                                         <!-- first second -->
                                         <img src="./assets/img/slider/0.webp" alt="anh slider" class="option-all__song-slider-img option-all__song-slider-img-first">
@@ -324,7 +325,7 @@
                                     </div>
                                 </div>
                                 
-                                <div class="col l-9 m-9">
+                                <div class="col l-9 m-12 s-12">
                                     <div class="option-all__songs">
                                         <ul class="option-all__songs-list songs-list">
                                             <!-- songs-item--active -->
@@ -360,20 +361,20 @@
                         <div class="option-all__playlist option-all__margin_bot">
                             <div class="option-heading option-all__playlist-heading">
                                 <h3 class="option-heading-name js__main-color">Playlist</h3>
-                                <div class="more-list ">
+                                <div class="more-list mobile-hiden">
                                     <span class="js__main-color">Tất cả</span>
                                     <i class="fas fa-chevron-right js__main-color"></i>
                                 </div>
                             </div>
                             <ul class="option-all__playlist-list">
                                 <div class="row">
-                                    <div class="col l-2-4 m-3">
+                                    <div class="col l-2-4 m-3 s-6 mobile-margin-bot-10px">
                                         <li class="option-all__playlist-item0">
                                             <i class="fas fa-plus"></i>
                                             <span>Tạo playlist mới</span>
                                         </li>
                                     </div>
-                                    <div class="col l-2-4 m-3">
+                                    <div class="col l-2-4 m-3 s-6 mobile-margin-bot-10px">
                                         <li class="option-all__playlist-item">
                                             <div class="option-all__playlist-item-img-wrapper">
                                                 <div class="option-all__playlist-item-img-wrapper-action">
@@ -389,7 +390,7 @@
                                             </div>
                                         </li>
                                     </div>
-                                    <div class="col l-2-4 m-3">
+                                    <div class="col l-2-4 m-3 s-6 mobile-margin-bot-10px">
                                         <li class="option-all__playlist-item">
                                             <div class="option-all__playlist-item-img-wrapper">
                                                 <div class="option-all__playlist-item-img-wrapper-action">
@@ -405,7 +406,7 @@
                                             </div>
                                         </li>
                                     </div>
-                                    <div class="col l-2-4 m-3">
+                                    <div class="col l-2-4 m-3 s-6 mobile-margin-bot-10px">
                                         <li class="option-all__playlist-item">
                                             <div class="option-all__playlist-item-img-wrapper">
                                                 <div class="option-all__playlist-item-img-wrapper-action">
@@ -421,7 +422,7 @@
                                             </div>
                                         </li>
                                     </div>
-                                    <div class="col l-2-4 m-0">
+                                    <div class="col l-2-4 m-0 s-6 mobile-margin-bot-10px">
                                         <li class="option-all__playlist-item option-all__playlist-item-margin-top">
                                             <div class="option-all__playlist-item-img-wrapper">
                                                 <div class="option-all__playlist-item-img-wrapper-action">
@@ -445,14 +446,14 @@
                         <div class="option-all__playlist option-all__margin_bot">
                             <div class="option-heading option-all__playlist-heading">
                                 <h3 class="option-heading-name js__main-color">MV</h3>
-                                <div class="more-list">
+                                <div class="more-list mobile-hiden">
                                     <span class="js__main-color">Tất cả</span>
                                     <i class="fas fa-chevron-right js__main-color"></i>
                                 </div>
                             </div>
                             <ul class="option-all__playlist-list">
                                 <div class="row">
-                                    <div class="col l-4 m-4">
+                                    <div class="col l-4 m-4 s-12 mobile-margin-bot-30px">
                                         <li class="option-all__playlist-item">
                                             <div class="option-all__playlist-item-img-wrapper">
                                                 <div class="option-all__playlist-item-img-wrapper-action">
@@ -471,7 +472,7 @@
                                             </div>
                                         </li>
                                     </div>
-                                    <div class="col l-4 m-4">
+                                    <div class="col l-4 m-4 s-12 mobile-margin-bot-30px">
                                         <li class="option-all__playlist-item">
                                             <div class="option-all__playlist-item-img-wrapper">
                                                 <div class="option-all__playlist-item-img-wrapper-action">
@@ -490,7 +491,7 @@
                                             </div>
                                         </li>
                                     </div>
-                                    <div class="col l-4 m-4">
+                                    <div class="col l-4 m-4 s-12 mobile-margin-bot-30px">
                                         <li class="option-all__playlist-item">
                                             <div class="option-all__playlist-item-img-wrapper">
                                                 <div class="option-all__playlist-item-img-wrapper-action">
@@ -516,14 +517,14 @@
                         <div class="option-all__playlist option-all__margin_bot">
                             <div class="option-heading option-all__playlist-heading">
                                 <h3 class="option-heading-name js__main-color">Nghệ Sĩ</h3>
-                                <div class="more-list">
+                                <div class="more-list mobile-hiden">
                                     <span class="js__main-color">Tất cả</span>
                                     <i class="fas fa-chevron-right js__main-color"></i>
                                 </div>
                             </div>
                             <ul class="option-all__playlist-list">
                                 <div class="row">
-                                    <div class="col l-2-4 m-4">
+                                    <div class="col l-2-4 m-4 s-6 mobile-margin-bot-30px ">
                                         <li class="option-all__playlist-item option-all__playlist-item-margin_top">
                                             <div class="option-all__playlist-item-img-wrapper option-all__playlist-item-img-wrapper-mv">
                                                 <div class="option-all__playlist-item-img-wrapper-action">
@@ -543,7 +544,7 @@
                                             </div>
                                         </li>
                                     </div>
-                                    <div class="col l-2-4 m-4">
+                                    <div class="col l-2-4 m-4 s-6 mobile-margin-bot-30px ">
                                         <li class="option-all__playlist-item option-all__playlist-item-margin_top">
                                             <div class="option-all__playlist-item-img-wrapper option-all__playlist-item-img-wrapper-mv">
                                                 <div class="option-all__playlist-item-img-wrapper-action">
@@ -563,7 +564,7 @@
                                             </div>
                                         </li>
                                     </div>
-                                    <div class="col l-2-4 m-4">
+                                    <div class="col l-2-4 m-4 s-6 mobile-margin-bot-30px ">
                                         <li class="option-all__playlist-item option-all__playlist-item-margin_top">
                                             <div class="option-all__playlist-item-img-wrapper option-all__playlist-item-img-wrapper-mv">
                                                 <div class="option-all__playlist-item-img-wrapper-action">
@@ -583,7 +584,7 @@
                                             </div>
                                         </li>
                                     </div>
-                                    <div class="col l-2-4 m-4">
+                                    <div class="col l-2-4 m-4 s-6 mobile-margin-bot-30px ">
                                         <li class="option-all__playlist-item option-all__playlist-item-margin_top">
                                             <div class="option-all__playlist-item-img-wrapper option-all__playlist-item-img-wrapper-mv">
                                                 <div class="option-all__playlist-item-img-wrapper-action">
@@ -603,7 +604,7 @@
                                             </div>
                                         </li>
                                     </div>
-                                    <div class="col l-2-4 m-4">
+                                    <div class="col l-2-4 m-4 s-6 mobile-margin-bot-30px ">
                                         <li class="option-all__playlist-item option-all__playlist-item-margin_top">
                                             <div class="option-all__playlist-item-img-wrapper option-all__playlist-item-img-wrapper-mv">
                                                 <div class="option-all__playlist-item-img-wrapper-action">
@@ -678,7 +679,7 @@
                     <!-- option 2 -->
                     <div class="option-playlist panes-item">
                         <div class="option-all__playlist option-all__margin_bot">
-                            <div class="option-heading option-all__playlist-heading">
+                            <div class="option-heading option-all__playlist-heading mobile-hiden">
                                 <h3 class="option-heading-name js__main-color">Playlist</h3>
                                 <div class="more-list ">
                                     <span class="js__main-color">Tất cả</span>
@@ -687,13 +688,13 @@
                             </div>
                             <ul class="option-all__playlist-list">
                                 <div class="row">
-                                    <div class="col l-2-4 m-3">
+                                    <div class="col l-2-4 m-3 s-6 mobile-margin-bot-30px">
                                         <li class="option-all__playlist-item0">
                                             <i class="fas fa-plus"></i>
                                             <span>Tạo playlist mới</span>
                                         </li>
                                     </div>
-                                    <div class="col l-2-4 m-3">
+                                    <div class="col l-2-4 m-3 s-6 mobile-margin-bot-30px">
                                         <li class="option-all__playlist-item">
                                             <div class="option-all__playlist-item-img-wrapper">
                                                 <div class="option-all__playlist-item-img-wrapper-action">
@@ -709,7 +710,7 @@
                                             </div>
                                         </li>
                                     </div>
-                                    <div class="col l-2-4 m-3">
+                                    <div class="col l-2-4 m-3 s-6 mobile-margin-bot-30px">
                                         <li class="option-all__playlist-item">
                                             <div class="option-all__playlist-item-img-wrapper">
                                                 <div class="option-all__playlist-item-img-wrapper-action">
@@ -725,7 +726,7 @@
                                             </div>
                                         </li>
                                     </div>
-                                    <div class="col l-2-4 m-3">
+                                    <div class="col l-2-4 m-3 s-6 mobile-margin-bot-30px">
                                         <li class="option-all__playlist-item">
                                             <div class="option-all__playlist-item-img-wrapper">
                                                 <div class="option-all__playlist-item-img-wrapper-action">
@@ -741,7 +742,7 @@
                                             </div>
                                         </li>
                                     </div>
-                                    <div class="col l-2-4 m-0">
+                                    <div class="col l-2-4 m-0 s-6 mobile-margin-bot-30px">
                                         <li class="option-all__playlist-item">
                                             <div class="option-all__playlist-item-img-wrapper">
                                                 <div class="option-all__playlist-item-img-wrapper-action">
@@ -761,7 +762,7 @@
                             </ul>
                         </div>
     
-                        <div class="option-all__playlist option-all__margin_bot">
+                        <div class="option-all__playlist option-all__margin_bot mobile-hiden">
                             <div class="option-heading option-all__playlist-heading">
                                 <h3 class="option-heading-name js__main-color">MV</h3>
                                 <div class="more-list">
@@ -835,7 +836,7 @@
                     <!-- option 3 -->
                     <div class="option-singer panes-item">
                         <div class="option-all__playlist option-all__margin_bot">
-                            <div class="option-heading option-all__playlist-heading">
+                            <div class="option-heading option-all__playlist-heading mobile-hiden">
                                 <h3 class="option-heading-name js__main-color">Nghệ Sĩ</h3>
                                 <div class="more-list">
                                     <span class="js__main-color">Tất cả</span>
@@ -844,7 +845,7 @@
                             </div>
                             <ul class="option-all__playlist-list">
                                 <div class="row">
-                                    <div class="col l-2-4 m-4">
+                                    <div class="col l-2-4 m-4 s-6 mobile-margin-bot-30px">
                                         <li class="option-all__playlist-item option-all__playlist-item-margin_top">
                                             <div class="option-all__playlist-item-img-wrapper option-all__playlist-item-img-wrapper-mv">
                                                 <div class="option-all__playlist-item-img-wrapper-action">
@@ -864,7 +865,7 @@
                                             </div>
                                         </li>
                                     </div>
-                                    <div class="col l-2-4 m-4">
+                                    <div class="col l-2-4 m-4 s-6 mobile-margin-bot-30px">
                                         <li class="option-all__playlist-item option-all__playlist-item-margin_top">
                                             <div class="option-all__playlist-item-img-wrapper option-all__playlist-item-img-wrapper-mv">
                                                 <div class="option-all__playlist-item-img-wrapper-action">
@@ -884,7 +885,7 @@
                                             </div>
                                         </li>
                                     </div>
-                                    <div class="col l-2-4 m-4">
+                                    <div class="col l-2-4 m-4 s-6 mobile-margin-bot-30px">
                                         <li class="option-all__playlist-item option-all__playlist-item-margin_top">
                                             <div class="option-all__playlist-item-img-wrapper option-all__playlist-item-img-wrapper-mv">
                                                 <div class="option-all__playlist-item-img-wrapper-action">
@@ -904,7 +905,7 @@
                                             </div>
                                         </li>
                                     </div>
-                                    <div class="col l-2-4 m-4">
+                                    <div class="col l-2-4 m-4 s-6 mobile-margin-bot-30px">
                                         <li class="option-all__playlist-item option-all__playlist-item-margin_top">
                                             <div class="option-all__playlist-item-img-wrapper option-all__playlist-item-img-wrapper-mv">
                                                 <div class="option-all__playlist-item-img-wrapper-action">
@@ -924,7 +925,7 @@
                                             </div>
                                         </li>
                                     </div>
-                                    <div class="col l-2-4 m-4">
+                                    <div class="col l-2-4 m-4 s-6 mobile-margin-bot-30px">
                                         <li class="option-all__playlist-item option-all__playlist-item-margin_top">
                                             <div class="option-all__playlist-item-img-wrapper option-all__playlist-item-img-wrapper-mv">
                                                 <div class="option-all__playlist-item-img-wrapper-action">
@@ -965,10 +966,10 @@
                         <div class="container-discover__slider-item container-discover__slider-item-four">
                             <img src="./assets/img/slider-discover/4.jpg" alt="anh" class="container-discover__slider-item-img">
                         </div>
-                        <div class="container-discover__slider-left js__container-discover__slider-left">
+                        <div class="container-discover__slider-left mobile-hiden js__container-discover__slider-left">
                             <i class="fas fa-chevron-left js__main-color"></i>
                         </div>
-                        <div class="container-discover__slider-right js__container-discover__slider-right">
+                        <div class="container-discover__slider-right mobile-hiden js__container-discover__slider-right">
                             <i class="fas fa-chevron-right js__main-color"></i>
                         </div>
                     </div>
@@ -976,20 +977,20 @@
                     <div class="container-discover__playlist option-all__playlist option-all__margin_bot">
                         <div class="option-heading option-all__playlist-heading">
                             <h3 class="option-heading-name white-color js__main-color">Playlist</h3>
-                            <div class="more-list ">
+                            <div class="more-list mobile-hiden">
                                 <span class="js__main-color">Tất cả</span>
                                 <i class="fas fa-chevron-right js__main-color"></i>
                             </div>
                         </div>
                         <ul class="option-all__playlist-list">
                             <div class="row">
-                                <div class="col l-2-4 m-3">
+                                <div class="col l-2-4 m-3 s-6 mobile-margin-bot-30px">
                                     <li class="option-all__playlist-item0">
                                         <i class="fas fa-plus white-color"></i>
                                         <span class="white-color">Tạo playlist mới</span>
                                     </li>
                                 </div>
-                                <div class="col l-2-4 m-3">
+                                <div class="col l-2-4 m-3 s-6 mobile-margin-bot-30px">
                                     <li class="option-all__playlist-item">
                                         <div class="option-all__playlist-item-img-wrapper">
                                             <div class="option-all__playlist-item-img-wrapper-action">
@@ -1005,7 +1006,7 @@
                                         </div>
                                     </li>
                                 </div>
-                                <div class="col l-2-4 m-3">
+                                <div class="col l-2-4 m-3 s-6 mobile-margin-bot-30px">
                                     <li class="option-all__playlist-item">
                                         <div class="option-all__playlist-item-img-wrapper">
                                             <div class="option-all__playlist-item-img-wrapper-action">
@@ -1021,7 +1022,7 @@
                                         </div>
                                     </li>
                                 </div>
-                                <div class="col l-2-4 m-3">
+                                <div class="col l-2-4 m-3 s-6 mobile-margin-bot-30px">
                                     <li class="option-all__playlist-item">
                                         <div class="option-all__playlist-item-img-wrapper">
                                             <div class="option-all__playlist-item-img-wrapper-action">
@@ -1037,7 +1038,7 @@
                                         </div>
                                     </li>
                                 </div>
-                                <div class="col l-2-4 m-0">
+                                <div class="col l-2-4 m-0 s-6 mobile-margin-bot-30px">
                                     <li class="option-all__playlist-item">
                                         <div class="option-all__playlist-item-img-wrapper">
                                             <div class="option-all__playlist-item-img-wrapper-action">
@@ -1060,14 +1061,14 @@
                     <div class="option-all__playlist option-all__margin_bot">
                         <div class="option-heading option-all__playlist-heading">
                             <h3 class="option-heading-name js__main-color">MV</h3>
-                            <div class="more-list">
+                            <div class="more-list mobile-hiden">
                                 <span class="js__main-color">Tất cả</span>
                                 <i class="fas fa-chevron-right js__main-color"></i>
                             </div>
                         </div>
                         <ul class="option-all__playlist-list">
                             <div class="row">
-                                <div class="col l-4 m-4">
+                                <div class="col l-4 m-4 s-12 mobile-margin-bot-30px">
                                     <li class="option-all__playlist-item">
                                         <div class="option-all__playlist-item-img-wrapper">
                                             <div class="option-all__playlist-item-img-wrapper-action">
@@ -1086,7 +1087,7 @@
                                         </div>
                                     </li>
                                 </div>
-                                <div class="col l-4 m-4">
+                                <div class="col l-4 m-4 s-12 mobile-margin-bot-30px">
                                     <li class="option-all__playlist-item">
                                         <div class="option-all__playlist-item-img-wrapper">
                                             <div class="option-all__playlist-item-img-wrapper-action">
@@ -1105,7 +1106,7 @@
                                         </div>
                                     </li>
                                 </div>
-                                <div class="col l-4 m-4">
+                                <div class="col l-4 m-4 s-12 mobile-margin-bot-30px">
                                     <li class="option-all__playlist-item">
                                         <div class="option-all__playlist-item-img-wrapper">
                                             <div class="option-all__playlist-item-img-wrapper-action">
@@ -1131,14 +1132,14 @@
                     <div class="option-all__playlist option-all__margin_bot">
                         <div class="option-heading option-all__playlist-heading">
                             <h3 class="option-heading-name js__main-color">Nghệ Sĩ</h3>
-                            <div class="more-list">
+                            <div class="more-list mobile-hiden">
                                 <span class="js__main-color">Tất cả</span>
                                 <i class="fas fa-chevron-right js__main-color"></i>
                             </div>
                         </div>
                         <ul class="option-all__playlist-list">
                             <div class="row">
-                                <div class="col l-2-4 m-4">
+                                <div class="col l-2-4 m-4 s-6 mobile-margin-bot-30px">
                                     <li class="option-all__playlist-item option-all__playlist-item-margin_top">
                                         <div class="option-all__playlist-item-img-wrapper option-all__playlist-item-img-wrapper-mv">
                                             <div class="option-all__playlist-item-img-wrapper-action">
@@ -1158,7 +1159,7 @@
                                         </div>
                                     </li>
                                 </div>
-                                <div class="col l-2-4 m-4">
+                                <div class="col l-2-4 m-4 s-6 mobile-margin-bot-30px">
                                     <li class="option-all__playlist-item option-all__playlist-item-margin_top">
                                         <div class="option-all__playlist-item-img-wrapper option-all__playlist-item-img-wrapper-mv">
                                             <div class="option-all__playlist-item-img-wrapper-action">
@@ -1178,7 +1179,7 @@
                                         </div>
                                     </li>
                                 </div>
-                                <div class="col l-2-4 m-4">
+                                <div class="col l-2-4 m-4 s-6 mobile-margin-bot-30px">
                                     <li class="option-all__playlist-item option-all__playlist-item-margin_top">
                                         <div class="option-all__playlist-item-img-wrapper option-all__playlist-item-img-wrapper-mv">
                                             <div class="option-all__playlist-item-img-wrapper-action">
@@ -1198,7 +1199,7 @@
                                         </div>
                                     </li>
                                 </div>
-                                <div class="col l-2-4 m-4">
+                                <div class="col l-2-4 m-4 s-6 mobile-margin-bot-30px">
                                     <li class="option-all__playlist-item option-all__playlist-item-margin_top">
                                         <div class="option-all__playlist-item-img-wrapper option-all__playlist-item-img-wrapper-mv">
                                             <div class="option-all__playlist-item-img-wrapper-action">
@@ -1218,7 +1219,7 @@
                                         </div>
                                     </li>
                                 </div>
-                                <div class="col l-2-4 m-4">
+                                <div class="col l-2-4 m-4 s-6 mobile-margin-bot-30px">
                                     <li class="option-all__playlist-item option-all__playlist-item-margin_top">
                                         <div class="option-all__playlist-item-img-wrapper option-all__playlist-item-img-wrapper-mv">
                                             <div class="option-all__playlist-item-img-wrapper-action">
@@ -1253,7 +1254,7 @@
                     </div>
                     <div class="zingchart-week__headding zingchart__headding js__main-color">Bảng Xếp Hạng Tuần</div>
                     <div class="row">
-                        <div class="col l-4 laptop-l-6 m-12">
+                        <div class="col l-4 laptop-l-6 m-12 s-12">
                             <div class="zingchart-week__item-wrapper js__backgroundColor">
                                 <span class="zingchart-week__headding js__main-color">Việt Nam</span>
                                 <ul class="zingchart-week__list">
@@ -1269,7 +1270,7 @@
                                                 <span class="js__main-color zingchart-week__item-center-content-singer">Hoàng Tôn, LyHan, Orinn Remix</span>
                                             </div>
                                         </div>
-                                        <div class="zingchart-week__item-right js__main-color">05:08</div>
+                                        <div class="zingchart-week__item-right mobile-hiden js__main-color">05:08</div>
                                     </li>
                                     <li class="zingchart-week__item">
                                         <div class="zingchart-week__item-left">
@@ -1283,7 +1284,7 @@
                                                 <span class="js__main-color zingchart-week__item-center-content-singer">Thuỳ Duyên Cover, Huy Lee Remix</span>
                                             </div>
                                         </div>
-                                        <div class="zingchart-week__item-right js__main-color">04:20</div>
+                                        <div class="zingchart-week__item-right mobile-hiden js__main-color">04:20</div>
                                     </li>
                                     <li class="zingchart-week__item">
                                         <div class="zingchart-week__item-left">
@@ -1297,7 +1298,7 @@
                                                 <span class="js__main-color zingchart-week__item-center-content-singer">Ngô Lan Hương, Cukak Remix</span>
                                             </div>
                                         </div>
-                                        <div class="zingchart-week__item-right js__main-color">04:56</div>
+                                        <div class="zingchart-week__item-right mobile-hiden js__main-color">04:56</div>
                                     </li>
                                     <li class="zingchart-week__item">
                                         <div class="zingchart-week__item-left">
@@ -1311,7 +1312,7 @@
                                                 <span class="js__main-color zingchart-week__item-center-content-singer">Monstar ,1967 Remix</span>
                                             </div>
                                         </div>
-                                        <div class="zingchart-week__item-right js__main-color">05:26</div>
+                                        <div class="zingchart-week__item-right mobile-hiden js__main-color">05:26</div>
                                     </li>
                                     <li class="zingchart-week__item">
                                         <div class="zingchart-week__item-left">
@@ -1325,7 +1326,7 @@
                                                 <span class="js__main-color zingchart-week__item-center-content-singer">Hương Ly, Jombie, RIN Music Remix</span>
                                             </div>
                                         </div>
-                                        <div class="zingchart-week__item-right js__main-color">03:56</div>
+                                        <div class="zingchart-week__item-right mobile-hiden js__main-color">03:56</div>
                                     </li>
                                 </ul>
                                 <div class="zingchart__100more zingchart-week__100more">
@@ -1333,7 +1334,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col l-4 laptop-l-6 m-12">
+                        <div class="col l-4 laptop-l-6 m-12 s-12">
                             <div class="zingchart-week__item-wrapper js__backgroundColor">
                                 <span class="zingchart-week__headding js__main-color">US-UK</span>
                                 <ul class="zingchart-week__list">
@@ -1349,7 +1350,7 @@
                                                 <span class="js__main-color zingchart-week__item-center-content-singer">Hoàng Tôn, LyHan, Orinn Remix</span>
                                             </div>
                                         </div>
-                                        <div class="zingchart-week__item-right js__main-color">05:08</div>
+                                        <div class="zingchart-week__item-right mobile-hiden js__main-color">05:08</div>
                                     </li>
                                     <li class="zingchart-week__item">
                                         <div class="zingchart-week__item-left">
@@ -1363,7 +1364,7 @@
                                                 <span class="js__main-color zingchart-week__item-center-content-singer">Thuỳ Duyên Cover, Huy Lee Remix</span>
                                             </div>
                                         </div>
-                                        <div class="zingchart-week__item-right js__main-color">04:20</div>
+                                        <div class="zingchart-week__item-right mobile-hiden js__main-color">04:20</div>
                                     </li>
                                     <li class="zingchart-week__item">
                                         <div class="zingchart-week__item-left">
@@ -1377,7 +1378,7 @@
                                                 <span class="js__main-color zingchart-week__item-center-content-singer">Ngô Lan Hương, Cukak Remix</span>
                                             </div>
                                         </div>
-                                        <div class="zingchart-week__item-right js__main-color">04:56</div>
+                                        <div class="zingchart-week__item-right mobile-hiden js__main-color">04:56</div>
                                     </li>
                                     <li class="zingchart-week__item">
                                         <div class="zingchart-week__item-left">
@@ -1391,7 +1392,7 @@
                                                 <span class="js__main-color zingchart-week__item-center-content-singer">Monstar ,1967 Remix</span>
                                             </div>
                                         </div>
-                                        <div class="zingchart-week__item-right js__main-color">05:26</div>
+                                        <div class="zingchart-week__item-right mobile-hiden js__main-color">05:26</div>
                                     </li>
                                     <li class="zingchart-week__item">
                                         <div class="zingchart-week__item-left">
@@ -1405,7 +1406,7 @@
                                                 <span class="js__main-color zingchart-week__item-center-content-singer">Hương Ly, Jombie, RIN Music Remix</span>
                                             </div>
                                         </div>
-                                        <div class="zingchart-week__item-right js__main-color">03:56</div>
+                                        <div class="zingchart-week__item-right mobile-hiden js__main-color">03:56</div>
                                     </li>
                                 </ul>
                                 <div class="zingchart__100more zingchart-week__100more">
@@ -1413,7 +1414,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col l-4 laptop-l-6 m-12">
+                        <div class="col l-4 laptop-l-6 m-12 s-12">
                             <div class="zingchart-week__item-wrapper js__backgroundColor">
                                 <span class="zingchart-week__headding js__main-color">K-Pop</span>
                                 <ul class="zingchart-week__list">
@@ -1429,7 +1430,7 @@
                                                 <span class="js__main-color zingchart-week__item-center-content-singer">Hoàng Tôn, LyHan, Orinn Remix</span>
                                             </div>
                                         </div>
-                                        <div class="zingchart-week__item-right js__main-color">05:08</div>
+                                        <div class="zingchart-week__item-right mobile-hiden js__main-color">05:08</div>
                                     </li>
                                     <li class="zingchart-week__item">
                                         <div class="zingchart-week__item-left">
@@ -1443,7 +1444,7 @@
                                                 <span class="js__main-color zingchart-week__item-center-content-singer">Thuỳ Duyên Cover, Huy Lee Remix</span>
                                             </div>
                                         </div>
-                                        <div class="zingchart-week__item-right js__main-color">04:20</div>
+                                        <div class="zingchart-week__item-right mobile-hiden js__main-color">04:20</div>
                                     </li>
                                     <li class="zingchart-week__item">
                                         <div class="zingchart-week__item-left">
@@ -1457,7 +1458,7 @@
                                                 <span class="js__main-color zingchart-week__item-center-content-singer">Ngô Lan Hương, Cukak Remix</span>
                                             </div>
                                         </div>
-                                        <div class="zingchart-week__item-right js__main-color">04:56</div>
+                                        <div class="zingchart-week__item-right mobile-hiden js__main-color">04:56</div>
                                     </li>
                                     <li class="zingchart-week__item">
                                         <div class="zingchart-week__item-left">
@@ -1471,7 +1472,7 @@
                                                 <span class="js__main-color zingchart-week__item-center-content-singer">Monstar ,1967 Remix</span>
                                             </div>
                                         </div>
-                                        <div class="zingchart-week__item-right js__main-color">05:26</div>
+                                        <div class="zingchart-week__item-right mobile-hiden js__main-color">05:26</div>
                                     </li>
                                     <li class="zingchart-week__item">
                                         <div class="zingchart-week__item-left">
@@ -1485,7 +1486,7 @@
                                                 <span class="js__main-color zingchart-week__item-center-content-singer">Hương Ly, Jombie, RIN Music Remix</span>
                                             </div>
                                         </div>
-                                        <div class="zingchart-week__item-right js__main-color">03:56</div>
+                                        <div class="zingchart-week__item-right mobile-hiden js__main-color">03:56</div>
                                     </li>
                                 </ul>
                                 <div class="zingchart__100more zingchart-week__100more">
@@ -1498,6 +1499,12 @@
 
             </div>
             <!-- END CONTAINER -->
+
+            <!-- LIST SONG MOBILE -->
+            <!-- <div class="container-mobile">
+                tesst
+            </div> -->
+
 
             <!-- theme modal -->
             <!-- theme-modal--avtive -->
@@ -1728,13 +1735,37 @@
             </div>
             <!-- END NEXT-SONG -->
 
-
-
+            <!-- BEGIN TAB ON MOBILE -->
+            <div class="mobile-tab">
+                <ul class="mobile-tab__list">
+                    <li class="mobile-tab__item active js__mobile-tab__item js__main-color">
+                        <i class="far fa-play-circle"></i>
+                        Cá Nhân
+                    </li>
+                    <li class="mobile-tab__item js__mobile-tab__item js__main-color">
+                        <i class="fas fa-compact-disc"></i>
+                        Khám Phá
+                    </li>
+                    <li class="mobile-tab__item js__mobile-tab__item js__main-color">
+                        <i class="fas fa-chart-line"></i>
+                        #zingchart
+                    </li>
+                    <li class="mobile-tab__item js__main-color">
+                        <i class="fas fa-broadcast-tower"></i>
+                        Radio
+                    </li>
+                    <li class="mobile-tab__item js__main-color">
+                        <i class="far fa-list-alt"></i>
+                        Theo Dõi
+                    </li>
+                </ul>
+            </div>
+            <!-- END TAB ON MOBILE -->
 
             <!-- BEGIN MUSIC CONTROL -->
             <div class="main-music-control">
                 <div class="row">
-                    <div class="col l-3">
+                    <div class="col l-3 m-3 s-8">
                         <div class="music-control__left">
                             <div class="music-control__left-img-box">
                                 <div class="music-control__left-img" style="background-image: url(./assets/img/songs/0.webp);"></div>
@@ -1762,7 +1793,7 @@
                                 <span class="music-control__left-content-song js__main-color">Cưới luôn được không</span>
                                 <span class="music-control__left-content-singer js__sub-color">Út nhị Cover</span>
                             </div>
-                            <div class="music-control__left-action">
+                            <div class="music-control__left-action tablet-hiden mobile-hiden">
                                 <!-- music-control__left-action-tym-box-active -->
                                 <div class="music-control__left-action-tym-box">
                                     <i class="fas fa-heart music-control__left-action-tym"></i>
@@ -1772,37 +1803,37 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col l-6 rs__main-music-control-flex-1">
+                    <div class="col l-6 m-7 s-4 rs__main-music-control-flex-1">
                         <div class="music-control__center">
                             <div class="music-control__center-action music-control__icon">
                                 <!-- music-control__icon-random--active -->
-                                <i class="fas fa-random music-control__icon1 js__main-color"></i>
-                                <i class="fas fa-caret-left music-control__icon2 js__main-color"></i>
+                                <i class="fas fa-random music-control__icon1 js__music-control__icon1 js__main-color mobile-hiden"></i>
+                                <i class="fas fa-caret-left music-control__icon2 js__music-control__icon2 js__main-color"></i>
                                 <!-- music-control__icon-play--active -->
-                                <div class="music-control__icon-play">
+                                <div class="music-control__icon-play js__music-control__icon-play">
                                     <i class="fas fa-play music-control__icon3 js__main-color js__border"></i>
                                     <i class="fas fa-pause music-control__icon33 js__main-color js__border"></i>
                                 </div>
-                                <i class="fas fa-caret-right music-control__icon4 js__main-color"></i>
+                                <i class="fas fa-caret-right music-control__icon4 js__music-control__icon4 js__main-color"></i>
                                 <!-- music-control__icon-repeat--active -->
-                                <i class="fas fa-redo music-control__icon5 js__main-color"></i>
+                                <i class="fas fa-redo music-control__icon5 js__music-control__icon5 mobile-hiden js__main-color"></i>
                             </div>
-                            <div class="music-control__progress">
-                                <span class="music-control__progress-time-start js__main-color">00:00</span>
+                            <div class="music-control__progress mobile-hiden">
+                                <span class="music-control__progress-time-start js__music-control__progress-time-start js__main-color">00:00</span>
                                 <input id="progress" class="music-control__progress-input" type="range" value="0" step="1" min="0" max="100">
                                 <!-- <div class="music-control__progress-update">
                                     <div class="music-control__progress-update-timeline"></div>
                                 </div> -->
-                                <span class="music-control__progress-time-duration js__main-color">00:00</span>
+                                <span class="music-control__progress-time-duration js__music-control__progress-time-duration js__main-color">00:00</span>
                             </div>
                             <audio id="audio" src="./assets/music/list-song/0.mp3"></audio>
                         </div>
                     </div>
-                    <div class="col l-3">
+                    <div class="col l-3 m-2 s-0">
                         <div class="music-control__right">
-                            <i class="music-control__right-icon1 js__main-color js__toast fas fa-photo-video"></i>
-                            <i class="music-control__right-icon2 js__main-color js__toast fas fa-microphone"></i>
-                            <i class="music-control__right-icon3 js__main-color js__toast far fa-square"></i>
+                            <i class="music-control__right-icon1 ipad-air-hiden js__main-color js__toast fas fa-photo-video"></i>
+                            <i class="music-control__right-icon2 ipad-air-hiden js__main-color js__toast fas fa-microphone"></i>
+                            <i class="music-control__right-icon3 ipad-air-hiden js__main-color js__toast far fa-square"></i>
                             <!-- music-control__right--active -->
                             <div class="music-control__right-volume-icon">
                                 <i class="music-control__right-icon4 js__main-color fas fa-volume-down"></i>
@@ -1817,6 +1848,51 @@
             </div>
             <!-- END MUSIC CONTROL -->
         </div>
+
+        <!-- BEGIN PLAYER ON MOBILE -->
+        <!-- active -->
+        <div class="mobile-player">
+            <div class="mobile-player__headding">
+                <img src="./assets/img/icon-home/small-logo.svg" alt="icon-home" class="mobile-player__headding-img">
+                <div class="mobile-player__headding-option">
+                    <span class="mobile-player__headding-option-item">ĐANG PHÁT</span>
+                    <span class="mobile-player__headding-option-item">LYRIC</span>
+                </div>
+                <div class="mobile-player__headding-close"><i class="fas fa-times"></i></div>
+            </div>
+            <div class="mobile-player__body">
+                <div class="mobile-player__body-thumb" style="background-image: url(./assets/img/songs/0.webp);"></div>
+                <div class="mobile-player__body-now">
+                    <span class="mobile-player__body-now-name">Tình Yêu Ngủ Quên</span>
+                    <span class="mobile-player__body-now-singer">Hoàng Tôn, LyHan, Orinn Remix</span>
+                    <span class="mobile-player__body-now-extra">Remix Version</span>
+                </div>
+            </div>
+            <div class="mobile-player__ctrl">
+                <div class="music-control__center-action music-control__icon">
+                    <!-- music-control__icon-random--active -->
+                    <i class="fas fa-random music-control__icon1 mobile-player__ctrl-icon js__mobile-player__ctrl-icon1"></i>
+                    <i class="fas fa-caret-left music-control__icon2 mobile-player__ctrl-icon js__mobile-player__ctrl-icon2"></i>
+                    <!-- music-control__icon-play--active -->
+                    <div class="music-control__icon-play mobile-player__ctrl-icon js__mobile-player__ctrl-icon">
+                        <i class="fas fa-play music-control__icon3"></i>
+                        <i class="fas fa-pause music-control__icon33"></i>
+                    </div>
+                    <i class="fas fa-caret-right music-control__icon4 mobile-player__ctrl-icon js__mobile-player__ctrl-icon4"></i>
+                    <!-- music-control__icon-repeat--active -->
+                    <i class="fas fa-redo music-control__icon5 mobile-player__ctrl-icon js__mobile-player__ctrl-icon5"></i>
+                </div>
+                <div class="music-control__progress mobile-player__ctrl-progress">
+                    <span class="music-control__progress-time-start mobile-player__ctrl-progress-time-start">00:00</span>
+                    <input id="progress2" class="music-control__progress-input mobile-player__ctrl-progress-input" type="range" value="0" step="1" min="0" max="100">
+                    <span class="music-control__progress-time-duration mobile-player__ctrl-progress-time-duration">00:00</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- END PLAYER ON MOBILE -->
+
+
     </div>
 
     <div id="toast">

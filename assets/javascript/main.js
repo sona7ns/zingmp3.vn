@@ -8,20 +8,20 @@ const audio = $('#audio');
 // var sliderItems=Array.from($$('.option-all__song-slider-img'));
 const sliderBox = $('.option-all__song-slider');
 const sliderItems = $$('.option-all__song-slider-img');
-const playBtn = $('.music-control__icon-play');
+const playBtn = $('.js__music-control__icon-play');
 const thunbPlayerBox = $('.music-control__left');
 const progress = $('#progress');
-const remainTime = $('.music-control__progress-time-start');
-const durationTime = $('.music-control__progress-time-duration');
-const prevBtn = $('.music-control__icon2');
-const nextBtn = $('.music-control__icon4');
+const remainTime = $('.js__music-control__progress-time-start');
+const durationTime = $('.js__music-control__progress-time-duration');
+const prevBtn = $('.js__music-control__icon2');
+const nextBtn = $('.js__music-control__icon4');
 const nameSong = $('.music-control__left-content-song');
 const nameSinger = $('.music-control__left-content-singer');
 const cdThumb = $('.music-control__left-img');
 const playAllBtn = $('.js__playall-0');
 const playAllBtn1 = $('.js__playall-1');
-const randomBtn = $('.music-control__icon1');
-const repeatBtn = $('.music-control__icon5');
+const randomBtn = $('.js__music-control__icon1');
+const repeatBtn = $('.js__music-control__icon5');
 const volumeProgress = $('#progress1');
 const nextSongHeadding = $('.nextsong__fist');
 const nextSongList = $('.nextsong__last-list');
@@ -67,31 +67,31 @@ const app = {
     songsData : [
         {
             background: './assets/img/songs/0.webp',
-            name: 'Tình Yêu Ngủ Quên',
-            singer: 'Hoàng Tôn, LyHan, Orinn Remix',
+            name: 'Anh Đã Lạc Vào',
+            singer: 'Green, Đại Mèo Remix',
             pathSong: './assets/music/list-song/0.mp3',
             duration : '04:27',
         },
         {
             background: './assets/img/songs/1.webp',
-            name: 'Váy Cưới',
-            singer: 'Thuỳ Duyên Cover, Huy Lee Remix',
-            pathSong: './assets/music/list-song/1.m4a',
+            name: 'Chạy Về Khóc Với Anh',
+            singer: 'Erik, Duzme Remix',
+            pathSong: './assets/music/list-song/1.mp3',
             duration : '04:05',
         },
         {
             background: './assets/img/songs/2.jpeg',
-            name: 'Yêu Đừng Sợ Đau',
-            singer: 'Ngô Lan Hương, Cukak Remix',
-            pathSong: './assets/music/list-song/2.m4a',
+            name: 'Sẵn Sàng Yêu Em Đi Thôi',
+            singer: 'Woni, Minh Tú, Đại Mèo Remix',
+            pathSong: './assets/music/list-song/2.mp3',
             duration : '03:51',
         },
         {
             background: './assets/img/songs/3.jpg',
-            name: 'Có Hẹn Với Thanh Xuân',
-            singer: 'Monstar ,1967 Remix',
-            pathSong: './assets/music/list-song/3.m4a',
-            duration : '04:20',
+            name: 'Tình Yêu Ngủ Quên',
+            singer: 'Hoàng Tôn, LyHan, Orinn Remix',
+            pathSong: './assets/music/list-song/3.mp3',
+            duration : '04:27',
         },
         {
             background: './assets/img/songs/4.webp',
@@ -171,11 +171,11 @@ const app = {
             duration : '03:25',
         },
         {
-            background: './assets/img/songs/15.webp',
-            name: 'Như Một Người Dưng',
-            singer: 'Nguyễn Thạc Bảo Ngọc, Cukak Remix',
+            background: './assets/img/songs/2.jpeg',
+            name: 'Yêu Đừng Sợ Đau',
+            singer: 'Ngô Lan Hương, Cukak Remix',
             pathSong: './assets/music/list-song/15.m4a',
-            duration : '04:12',
+            duration : '03:51',
         },
     ],
     currentIndex : 0,
@@ -224,6 +224,7 @@ const app = {
                     $('.main').style.backgroundImage = 'url(./assets/img/background-theme/backroundThemes/0.svg)';
                     $('.main-music-control').style.backgroundImage = '';
                     $('.main-music-control').style.backgroundColor = '#37075D';
+                    $('.mobile-tab').style.backgroundColor = '#37075D';
                     $('.sidebar__add-playlist').style.backgroundColor = '#411465';
                     $('.sidebar__add-playlist').style.borderTop = '1px solid rgba(255, 255, 255, 0.1)';
                     $('.nextsong__option-wrapper').style.backgroundColor = '#4B206E';
@@ -263,6 +264,7 @@ const app = {
                     $('.main').style.backgroundImage = 'url(./assets/img/background-theme/backroundThemes/1.jpg)';
                     $('.main-music-control').style.backgroundImage = 'none';
                     $('.main-music-control').style.backgroundColor = '#202020';
+                    $('.mobile-tab').style.backgroundColor = '#202020';
                     $('.sidebar__add-playlist').style.backgroundColor = '#333333';
                     $('.sidebar__add-playlist').style.borderTop = '1px solid rgba(0, 0, 0, 0.1)';
                     $('.nextsong__option-wrapper').style.backgroundColor = '#3E3E3E';
@@ -302,6 +304,7 @@ const app = {
                     $('.main').style.backgroundImage = 'url(./assets/img/background-theme/backroundThemes/2.jpg)';
                     $('.main-music-control').style.backgroundImage = 'none';
                     $('.main-music-control').style.backgroundColor = '#051740';
+                    $('.mobile-tab').style.backgroundColor = '#051740';
                     $('.sidebar__add-playlist').style.backgroundColor = '#132958';
                     $('.sidebar__add-playlist').style.borderTop = '1px solid rgba(0, 0, 0, 0.1)';
                     $('.nextsong__option-wrapper').style.backgroundColor = '#1F3461';
@@ -341,6 +344,7 @@ const app = {
                     $('.main').style.backgroundImage = 'url(./assets/img/background-theme/backroundThemes/3.jpg)';
                     $('.main-music-control').style.backgroundImage = 'none';
                     $('.main-music-control').style.backgroundColor = '#D0CCC5';
+                    $('.mobile-tab').style.backgroundColor = '#D0CCC5';
                     $('.sidebar__add-playlist').style.backgroundColor = '#DAD6D3';
                     $('.sidebar__add-playlist').style.borderTop = '1px solid rgba(0, 0, 0, 0.1)';
                     $('.nextsong__option-wrapper').style.backgroundColor = '#DAD6D3';
@@ -379,6 +383,7 @@ const app = {
                     $('.main').style.backgroundImage = 'url(./assets/img/background-theme/backroundThemes/4.jpg)';
                     $('.main-music-control').style.backgroundImage = 'none';
                     $('.main-music-control').style.backgroundColor = '#B4D0D0';
+                    $('.mobile-tab').style.backgroundColor = '#B4D0D0';
                     $('.sidebar__add-playlist').style.backgroundColor = '#C9E4E6';
                     $('.sidebar__add-playlist').style.borderTop = '1px solid rgba(0, 0, 0, 0.1)';
                     $('.nextsong__option-wrapper').style.backgroundColor = '#C9E4E6';
@@ -418,6 +423,7 @@ const app = {
                     $('.main').style.backgroundImage = 'url(./assets/img/background-theme/backroundThemes/5.jpg)';
                     $('.main-music-control').style.backgroundImage = 'none';
                     $('.main-music-control').style.backgroundColor = '#F9C6C5';
+                    $('.mobile-tab').style.backgroundColor = '#F9C6C5';
                     $('.sidebar__add-playlist').style.backgroundColor = '#F6E7E4';
                     $('.sidebar__add-playlist').style.borderTop = '1px solid rgba(0, 0, 0, 0.1)';
                     $('.nextsong__option-wrapper').style.backgroundColor = '#E6D2CD';
@@ -457,6 +463,7 @@ const app = {
                     $('.main').style.backgroundImage = 'url(./assets/img/background-theme/backroundThemes/6.jpg)';
                     $('.main-music-control').style.backgroundImage = 'none';
                     $('.main-music-control').style.backgroundColor = '#C6C4D1';
+                    $('.mobile-tab').style.backgroundColor = '#C6C4D1';
                     $('.sidebar__add-playlist').style.backgroundColor = '#B1B0BA';
                     $('.sidebar__add-playlist').style.borderTop = '1px solid rgba(0, 0, 0, 0.1)';
                     $('.nextsong__option-wrapper').style.backgroundColor = '#B1B0BA';
@@ -496,6 +503,7 @@ const app = {
                     $('.main').style.backgroundImage = 'url(./assets/img/background-theme/backroundThemes/7.jpg)';
                     $('.main-music-control').style.backgroundImage = 'none';
                     $('.main-music-control').style.backgroundColor = '#FFFFFF';
+                    $('.mobile-tab').style.backgroundColor = '#FFFFFF';
                     $('.sidebar__add-playlist').style.backgroundColor = '#F2F2F2';
                     $('.sidebar__add-playlist').style.borderTop = '1px solid rgba(0, 0, 0, 0.1)';
                     $('.nextsong__option-wrapper').style.backgroundColor = '#F2F2F2';
@@ -554,12 +562,12 @@ const app = {
                             <span class="songs-item-left-body-singer js__sub-color">${song.singer}</span>
                         </div>
                     </div>
-                    <div class="songs-item-center tablet-hiden js__sub-color">
+                    <div class="songs-item-center tablet-hiden mobile-hiden  js__sub-color">
                         <span>${song.name} (Remix)</span>
                     </div>
-                    <div class="songs-item-right">
-                        <span class="songs-item-right-mv"><i class="fas fa-photo-video js__main-color"></i></span>
-                        <span class="songs-item-right-lyric"><i class="fas fa-microphone js__main-color"></i></span>
+                    <div class="songs-item-right mobile-hiden ">
+                        <span class="songs-item-right-mv ipad-air-hiden"><i class="fas fa-photo-video js__main-color"></i></span>
+                        <span class="songs-item-right-lyric ipad-air-hiden"><i class="fas fa-microphone js__main-color"></i></span>
                         <span class="songs-item-right-tym">
                             <i class="fas fa-heart songs-item-right-tym-first"></i>
                             <i class="far fa-heart songs-item-right-tym-last"></i>
@@ -591,12 +599,12 @@ const app = {
                             <span class="songs-item-left-body-singer js__sub-color">${song.singer}</span>
                         </div>
                     </div>
-                    <div class="songs-item-center tablet-hiden js__sub-color">
+                    <div class="songs-item-center tablet-hiden mobile-hiden js__sub-color">
                         <span>${song.name} (Remix)</span>
                     </div>
-                    <div class="songs-item-right">
-                        <span class="songs-item-right-mv"><i class="fas fa-photo-video js__main-color"></i></span>
-                        <span class="songs-item-right-lyric"><i class="fas fa-microphone js__main-color"></i></span>
+                    <div class="songs-item-right mobile-hiden">
+                        <span class="songs-item-right-mv ipad-air-hiden"><i class="fas fa-photo-video js__main-color"></i></span>
+                        <span class="songs-item-right-lyric ipad-air-hiden"><i class="fas fa-microphone js__main-color"></i></span>
                         <span class="songs-item-right-tym">
                             <i class="fas fa-heart songs-item-right-tym-first"></i>
                             <i class="far fa-heart songs-item-right-tym-last"></i>
@@ -630,12 +638,12 @@ const app = {
                             <span class="songs-item-left-body-singer js__sub-color">${song.singer}</span>
                         </div>
                     </div>
-                    <div class="songs-item-center tablet-hiden js__sub-color">
+                    <div class="songs-item-center tablet-hiden mobile-hiden js__sub-color">
                         <span>${song.name} (Remix)</span>
                     </div>
-                    <div class="songs-item-right">
-                        <span class="songs-item-right-mv"><i class="fas fa-photo-video js__main-color"></i></span>
-                        <span class="songs-item-right-lyric"><i class="fas fa-microphone js__main-color"></i></span>
+                    <div class="songs-item-right mobile-hiden">
+                        <span class="songs-item-right-mv ipad-air-hiden"><i class="fas fa-photo-video js__main-color"></i></span>
+                        <span class="songs-item-right-lyric ipad-air-hiden"><i class="fas fa-microphone js__main-color"></i></span>
                         <span class="songs-item-right-tym">
                             <i class="fas fa-heart songs-item-right-tym-first"></i>
                             <i class="far fa-heart songs-item-right-tym-last"></i>
@@ -669,12 +677,12 @@ const app = {
                             <span class="songs-item-left-body-singer js__sub-color">${song.singer}</span>
                         </div>
                     </div>
-                    <div class="songs-item-center tablet-hiden js__sub-color">
+                    <div class="songs-item-center tablet-hiden mobile-hiden js__sub-color">
                         <span>${song.name} (Remix)</span>
                     </div>
-                    <div class="songs-item-right">
-                        <span class="songs-item-right-mv"><i class="fas fa-photo-video js__main-color"></i></span>
-                        <span class="songs-item-right-lyric"><i class="fas fa-microphone js__main-color"></i></span>
+                    <div class="songs-item-right mobile-hiden">
+                        <span class="songs-item-right-mv ipad-air-hiden"><i class="fas fa-photo-video js__main-color"></i></span>
+                        <span class="songs-item-right-lyric ipad-air-hiden"><i class="fas fa-microphone js__main-color"></i></span>
                         <span class="songs-item-right-tym">
                             <i class="fas fa-heart songs-item-right-tym-first"></i>
                             <i class="far fa-heart songs-item-right-tym-last"></i>
@@ -823,8 +831,11 @@ const app = {
 
     loadCurrentSong: function () {
         nameSong.textContent = this.currentSong.name;
+        $('.mobile-player__body-now-name').textContent = this.currentSong.name;
         nameSinger.textContent = this.currentSong.singer;
-        cdThumb.style.backgroundImage = `url('${this.currentSong.background}')`;
+        $('.mobile-player__body-now-singer').textContent = this.currentSong.singer;
+        $('.mobile-player__body-thumb').style.backgroundImage = `url('${this.currentSong.background}')`;
+        this.displayDurationTime();
         audio.src = this.currentSong.pathSong;
     },
 
@@ -854,6 +865,8 @@ const app = {
     // HIỂN THỊ REMAIN TIME TIME VÀO PLAYER
     displayRemainTime : function() {
         remainTime.textContent = this.formatTime(audio.currentTime);
+        // on mobile
+        $('.mobile-player__ctrl-progress-time-start').textContent = this.formatTime(audio.currentTime);
     },
 
     // HIỂN THỊ VÀ DURATION TIME VÀO PLAYER
@@ -864,6 +877,7 @@ const app = {
         //     durationTime.textContent = this.formatTime(audio.duration);
         // }
         durationTime.textContent = this.currentSong.duration;
+        $('.mobile-player__ctrl-progress-time-duration').textContent = this.currentSong.duration;
     },
 
     // render next song
@@ -900,7 +914,14 @@ const app = {
         var sliderIndex1 = 1;
         var sliderLenght = _this.songsData.length;
 
+        // KHI BẤM VÀO PLAYER ON MOBILE THÌ HIỆN PLAYER TO TRÊN ĐIỆN THOẠI
+        $('.music-control__left').onclick = function() {
+            $('.mobile-player').classList.add('active');
+        }
 
+        $('.mobile-player__headding-close').onclick = function() {
+            $('.mobile-player').classList.remove('active');
+        }
 
         // NHẤN MORE HIỂN THỊ 100 BÀI HÁT
         $('.js__zingchart__100more').onclick = function() {
@@ -913,6 +934,18 @@ const app = {
             tab.onclick = function() {
                 $('.js__sidebar-tabs.sidebar__item--active').classList.remove('sidebar__item--active');
                 tab.classList.add('sidebar__item--active');
+                containerPanes[0].style.display = "none";
+                containerPanes[1].style.display = "none";
+                containerPanes[2].style.display = "none";
+                containerPanes[index].style.display = "block";
+            }
+        })
+
+        // CHUYỂN TAB CÁ NHÂN / KHÁM PHÁ / ZINGCHART TRÊN MOBILE
+        $$('.js__mobile-tab__item').forEach((tab, index) => {
+            tab.onclick = function() {
+                $('.mobile-tab__item.active').classList.remove('active');
+                tab.classList.add('active');
                 containerPanes[0].style.display = "none";
                 containerPanes[1].style.display = "none";
                 containerPanes[2].style.display = "none";
@@ -991,6 +1024,13 @@ const app = {
             iterations: Infinity
         });
         cdThumbAnimate.pause();
+
+        // XỬ LÝ CD QUAY/DỪNG TO TRÊN MOBILE
+        const cdThumbAnimateMobile = $('.mobile-player__body-thumb').animate([{ transform: "rotate(360deg)" }], {
+            duration: 10000, // 10 seconds
+            iterations: Infinity
+        });
+        cdThumbAnimateMobile.pause();
 
         //   LÀM SLIDER BÊN TAP CÁ NHÂN
         changeImage = function() {
@@ -1084,6 +1124,15 @@ const app = {
             }
         }
 
+        // XỬ LÝ KHI CLICK VÀO NÚT PLAY ON MOBILE
+        $('.js__mobile-player__ctrl-icon').onclick = function () {
+            if (_this.isPlaying) {
+              audio.pause();
+            } else {
+              audio.play();
+            }
+        }
+
         // Khi song được play
         audio.onplay = function () {
             const nextSongsItemHeadding = $$('.nextsong__fist-item');
@@ -1091,7 +1140,9 @@ const app = {
             _this.isPlaying = true;
             // player.classList.add("playing");
             cdThumbAnimate.play();
+            cdThumbAnimateMobile.play();
             playBtn.classList.add('music-control__icon-play--active');
+            $('.js__mobile-player__ctrl-icon').classList.add('music-control__icon-play--active');
             thunbPlayerBox.style.transform = "translateX(20px)";
 
             songItems[_this.currentIndex].classList.add('songs-item-playing--active-onplay');
@@ -1113,7 +1164,9 @@ const app = {
         audio.onpause = function () {
             _this.isPlaying = false;
             cdThumbAnimate.pause();
+            cdThumbAnimateMobile.pause();
             playBtn.classList.remove('music-control__icon-play--active');
+            $('.js__mobile-player__ctrl-icon').classList.remove('music-control__icon-play--active');
             thunbPlayerBox.style.transform = "translateX(0)";
             songItems[_this.currentIndex].classList.remove('songs-item-playing--active-onplay');
             songItems[_this.currentIndex].classList.add('songs-item-playbtn--active');
@@ -1129,12 +1182,19 @@ const app = {
             if (audio.duration) {
                 const progressPercent = Math.floor((audio.currentTime / audio.duration) * 100);
                 progress.value = progressPercent;
+                // on mobile
+                $('#progress2').value = progressPercent;
             }
             _this.displayRemainTime();
         }
 
         // KHI TUA SONG
         progress.onchange = function (e) {
+            const seekTime = (audio.duration / 100) * e.target.value;
+            audio.currentTime = seekTime;
+        }
+        // KHI TUA SONG ON MOBILE
+        $('#progress2').onchange = function (e) {
             const seekTime = (audio.duration / 100) * e.target.value;
             audio.currentTime = seekTime;
         }
@@ -1176,11 +1236,53 @@ const app = {
             _this.scrollToActiveSong();
             deleteActive();
             deleteActive1();
-            
+        }
+
+        // KHI NEXT SONG ON MOBILE
+        $('.js__mobile-player__ctrl-icon4').onclick = function() {
+            if (_this.isRandom) {
+                _this.RandomSong();
+                // không render list next song
+                _this.renderNextSongHeadding(nextSongHeadding,this.songsData);
+                nextSongList.innerHTML = `
+                    <span class="nextsong__last-item-end">
+                        Bật chế độ random thì cần gì xem trước bài phát tiếp theo nhể, đỡ phải code :)
+                    </span>`;
+            } else {
+                _this.nextSong();
+                _this.renderNexrSong();
+            }
+            audio.play();
+            _this.scrollToActiveNextSong();
+            _this.scrollToActiveSong();
+            deleteActive();
+            deleteActive1();
         }
 
         // KHI PREV SONG
         prevBtn.onclick = function() {
+            if (_this.isRandom) {
+                _this.RandomSong();
+                // không render list next song
+                _this.renderNextSongHeadding(nextSongHeadding,this.songsData);
+                nextSongList.innerHTML = `
+                    <span class="nextsong__last-item-end">
+                        Bật chế độ random thì cần gì xem trước bài phát tiếp theo nhể, đỡ phải code :)
+                    </span>`;
+                _this.scrollToActiveNextSong();
+            } else {
+                _this.prevSong();
+                _this.renderNexrSong();
+                _this.scrollToActiveNextSong();
+            }
+            audio.play();
+            deleteActive();
+            deleteActive1();
+            _this.scrollToActiveSong();
+        }
+
+        // KHI PREV SONG ON MOBILE
+        $('.js__mobile-player__ctrl-icon2').onclick = function() {
             if (_this.isRandom) {
                 _this.RandomSong();
                 // không render list next song
@@ -1392,6 +1494,35 @@ const app = {
             }
         }
 
+        // KHI BẬT NÚT CHẠY RANDOM ON MOBILE
+        $('.js__mobile-player__ctrl-icon1').onclick = function() {
+            _this.isRandom = !_this.isRandom;
+            _this.isRepeat = false;
+            randomBtn.classList.toggle("music-control__icon-random--active", _this.isRandom);
+            $('.js__mobile-player__ctrl-icon1').classList.toggle("music-control__icon-random--active", _this.isRandom);
+            if (_this.isRandom) {
+                randomBtn.style.color = 'var(--primary-color)';
+            } else {
+                randomBtn.style.color = '#fff';
+            }
+            $('.js__mobile-player__ctrl-icon5').classList.toggle("music-control__icon-repeat--active", _this.isRepeat);
+            
+            if(_this.isRandom) {
+                _this.renderNextSongHeadding(nextSongHeadding,_this.songsData);
+                nextSongList.innerHTML = `
+                    <span class="nextsong__last-item-end">
+                        Bật chế độ random thì cần gì xem trước <br> bài phát tiếp theo nhể, đỡ phải code :)
+                    </span>`;
+            } else {
+                if (_this.currentIndex >= _this.songsData.length - 1) {
+                    $('.nextsong__last-item-end').textContent = 'HẾT BÀI RỒI BẠN ƠI! HAHA';
+                } else {
+                    _this.renderNexrSong();
+                    _this.scrollToActiveNextSong();
+                }
+            }
+        }
+
         // KHI BẬT NÚT CHẠY REPEAT
         repeatBtn.onclick = function() {
             _this.isRepeat = !_this.isRepeat;
@@ -1400,6 +1531,18 @@ const app = {
             repeatBtn.classList.toggle("music-control__icon-repeat--active", _this.isRepeat);
             repeatBtn.style.color = 'var(--primary-color)';
             randomBtn.classList.toggle("music-control__icon-random--active", _this.isRandom);
+            _this.renderNexrSong();
+            _this.scrollToActiveNextSong();
+        }
+
+        // KHI BẬT NÚT CHẠY REPEAT ON MOBILE
+        $('.js__mobile-player__ctrl-icon5').onclick = function() {
+            _this.isRepeat = !_this.isRepeat;
+            _this.isRandom = false;
+            // _this.setConfig("isRepeat", _this.isRepeat);
+            $('.js__mobile-player__ctrl-icon5').classList.toggle("music-control__icon-repeat--active", _this.isRepeat);
+            // $('.js__mobile-player__ctrl-icon5').style.color = 'var(--primary-color)';
+            $('.js__mobile-player__ctrl-icon1').classList.toggle("music-control__icon-random--active", _this.isRandom);
             _this.renderNexrSong();
             _this.scrollToActiveNextSong();
         }

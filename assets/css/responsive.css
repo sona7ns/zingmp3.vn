@@ -175,10 +175,243 @@
 
 }
 
+/* TABLET AIR width >= 740px and width <= 1023px */
+@media only screen and (min-width: 46.25em) and (max-width: 63.9375em) {
+    .ipad-air-hiden {
+        display: none !important
+    }
+
+    .songs-item-left-body {
+        width: unset;
+    }
+
+    .profile__vip-entercode {
+        display: none;
+    }
+
+    .music-control__left-content-singer {
+        width: 73%;
+    }
+
+    .songs-item-left-img {
+        /* padding-left: 20px; */
+        margin-left: 10px;
+    }
+
+    .songs-item-right {
+        width: auto;
+        
+    }
+    .main-container-zingchart {
+        margin: 90px 40px 0 40px;
+    }
+    .songs-item:hover .songs-item-right-mv,
+    .songs-item:hover .songs-item-right-lyric,
+    .songs-item:hover .songs-item-right-more{
+        display: none;
+    }
+
+    .songs-item:hover .songs-item-right-duration{
+        display: block;
+    }
+
+    .theme-modal__body {
+        width: 630px;
+    }
+
+}
+
+
+
 /* MOBILE: width <= 739px */
 @media only screen and (max-width: 46.1875em) {
     .mobile-hiden {
+        display: none !important
+    }
+
+    .main {
+        background-size: cover;
+    }
+
+    .header-wrapper {
+        left: 0;
+        right: 0;
+    }
+
+    .header__width-search {
+        margin-left: 0;
+    }
+
+    .header__width-search-input {
+        width: 80%;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    .main-container {
+        left: 0;
+        right: 0;
+    }
+
+    .music__option {
+        margin-top: 30px;
+        margin-bottom: 10px;
+    }
+
+    .music__option-list {
+        width: 320px;
+    }
+
+    .songs-item-left-body {
+        width: unset;
+    }
+
+    .option-heading {
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+    .option-all__song-heading-right {
+        margin-left: 0;
+    }
+
+    ::-webkit-scrollbar {
+        width: 0px;
+    }
+
+    .option-all__songs {
+        width: 100%;
+    }
+
+    .option-all {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .option-all__songs-list {
+        width: 102%;
+    }
+
+    .mobile-margin-bot-10px {
+        margin-bottom: 10px;
+    }
+    .mobile-margin-bot-30px {
+        margin-bottom: 30px;
+    }
+
+    .theme-modal__body {
+        width: 334px;
+    }
+
+    .theme-modal__body-group-wrapper {
+        height: 444px;
+    }
+
+    .option-all__song-heading {
         display: none;
+    }
+
+    .option-music,
+    .option-playlist,
+    .option-singer {
+        margin: 0 20px;
+    }
+
+    .option-music-list {
+        margin-right: -4px;
+        margin-left: 4px;
+    }
+
+    .tabs-item.music__option-item {
+        margin-right: 3px;
+    }
+
+    .music-control__left,
+    .main-music-control {
+        height: 60px;
+    }
+
+    .music-control__center {
+        height: 60px;
+        margin-right: 20px;
+    }
+
+    .music-control__left-img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .music-control__left-content-singer {
+        padding-top: 0;
+        width: 190px;
+    }
+
+    .music-control__left-content-song {
+        padding-bottom: 0;
+    }
+
+    .music-control__icon-play:hover .music-control__icon33,
+    .music-control__icon-play:hover .music-control__icon3 {
+        color: #fff !important;
+        border: 2px solid #fff !important
+    }
+
+    .main-music-control {
+        padding: 0 0 0 6px;
+        bottom: 60px;
+    }
+
+    .main-container {
+        height: calc(100vh - 120px);
+    }
+    
+    .music-control__icon4:hover,
+    .music-control__icon2:hover {
+        background-color: transparent;
+    }
+
+    .container-discover__slider-item {
+        width: 100%;
+    }
+
+    .container-discover__slider-item-second {
+        z-index: 2;
+        opacity: 1;
+        transform: translateX(-100%);
+    }
+    
+    .container-discover__slider-item-third {
+        transform: translateX(0);
+        z-index: 5;
+        opacity: 1;
+    }
+    
+    .container-discover__slider-item-four {
+        position: relative;
+        transform: translateX(100%);
+        z-index: 4;
+        opacity: 1;
+    }
+
+    .main-container-discover {
+        margin: 100px 20px 60px 20px;
+    }
+
+    .container-discover__slider {
+        overflow: hidden;
+    }
+
+    .main-container-zingchart {
+        margin: 90px 20px 0 20px;
+    }
+
+    .zingchart__headding {
+        display: block;
+        text-align: center;
+    }
+
+    .mobile-player__ctrl-icon:hover {
+        background-color: transparent;
     }
 
 }
