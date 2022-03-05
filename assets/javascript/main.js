@@ -835,6 +835,7 @@ const app = {
         nameSinger.textContent = this.currentSong.singer;
         $('.mobile-player__body-now-singer').textContent = this.currentSong.singer;
         $('.mobile-player__body-thumb').style.backgroundImage = `url('${this.currentSong.background}')`;
+        $('.music-control__left-img').style.backgroundImage = `url('${this.currentSong.background}')`;
         this.displayDurationTime();
         audio.src = this.currentSong.pathSong;
     },
